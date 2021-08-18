@@ -20,6 +20,8 @@ shinyServer(function(input, output, session) {
     output$Rplot<-renderPlot(plotR(input$om, input$rho, input$freq))
     output$REESSB<-renderPlot(plotREESSB(input$om, input$rho, input$freq))
     output$REEF<-renderPlot(plotREEF(input$om, input$rho, input$freq))
+    output$rhoSSB<-renderPlot(plotrhoSSB(input$om, input$rho, input$freq))
+    
     })
 })  # End of ShinyServer
 ## ------------------------------------------------------------------------------------ ##

@@ -33,14 +33,17 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                         mainPanel(
                                           actionButton("do", "Create plots"),
                                           tabsetPanel(
-                                            tabPanel("Plots", 
+                                            tabPanel("Estimated/ True", 
                                                     fluidRow(
                                                       splitLayout(plotOutput("SSBplot"), plotOutput("Fplot"))),
                                                     fluidRow(
                                                       splitLayout(plotOutput("Catchplot"), plotOutput("Rplot")))),
                                             tabPanel("REE",
                                                      fluidRow(
-                                                       splitLayout(plotOutput("REESSB"), plotOutput("REEF"))))
+                                                       splitLayout(plotOutput("REESSB"), plotOutput("REEF")))),
+                                            tabPanel("Mohns Rho",
+                                                     fluidRow(
+                                                       splitLayout(plotOutput("rhoSSB"), plotOutput("rhoF"))))
                                             )),
                              )))))
 
