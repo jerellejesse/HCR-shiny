@@ -14,7 +14,13 @@ shinyServer(function(input, output, session) {
   print("launching app...")
   # Do a control rule 
   observeEvent(input$do,{
-    output$plts<-renderPlot(plotSSB(input$om,input$rho,input$freq))})
+    output$SSBplot<-renderPlot(plotSSB(input$om,input$rho,input$freq))
+    output$Fplot<-renderPlot(plotF(input$om, input$rho, input$freq))
+    output$Catchplot<-renderPlot(plotCatch(input$om, input$rho, input$freq))
+    output$Rplot<-renderPlot(plotR(input$om, input$rho, input$freq))
+    output$REESSB<-renderPlot(plotREESSB(input$om, input$rho, input$freq))
+    output$REEF<-renderPlot(plotREEF(input$om, input$rho, input$freq))
+    })
 })  # End of ShinyServer
 ## ------------------------------------------------------------------------------------ ##
 

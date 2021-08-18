@@ -31,8 +31,16 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                                             "Annual updates" = "1")),
                                                               style = "font-size:100%")),
                                         mainPanel(
-                                          plotOutput("CTL2",width="400px",height="300px"),
                                           actionButton("do", "Create plots"),
-                                          plotOutput("plts"))),
-                             ))))
+                                          tabsetPanel(
+                                            tabPanel("Plots", 
+                                                    fluidRow(
+                                                      splitLayout(plotOutput("SSBplot"), plotOutput("Fplot"))),
+                                                    fluidRow(
+                                                      splitLayout(plotOutput("Catchplot"), plotOutput("Rplot")))),
+                                            tabPanel("REE",
+                                                     fluidRow(
+                                                       splitLayout(plotOutput("REESSB"), plotOutput("REEF"))))
+                                            )),
+                             )))))
 
