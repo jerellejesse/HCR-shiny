@@ -214,6 +214,8 @@ write.csv(df,here("Data/RhoSSB.csv"))
 
 
 ##### merge together #####
+library(here)
+library(dplyr)
 SSB<-read.csv(here("Data/SSB.csv"))[-1]
 F<-read.csv(here("Data/F.csv"))[-1]
 R<-read.csv(here("Data/R.csv"))[-1]
@@ -239,7 +241,7 @@ plot(data$Year[data$Scenario==4], data$F_full[data$Scenario==4])
  
 # add scenario descriptions
 data<-read.csv(here("Data/shiny_data.csv"))[-1]
-scenarios<-read.csv("Scenarios.csv")
+scenarios<-read.csv(here("Data/scenarios.csv"))
 
 full_data<-full_join(data,scenarios, by=c("Scenario"))[, c(1,2,14:17,3:13)]
 write.csv(full_data, here("Data/shiny_data_jj.csv"))
