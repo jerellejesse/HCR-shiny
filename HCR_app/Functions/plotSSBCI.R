@@ -1,4 +1,4 @@
-plotREESSB <- function(om,rho,freq)
+plotSSBCI <- function(om,rho,freq)
 {
   df<-read.csv(here('Data/Table.csv'))
   df<-df[df$OM==om,]
@@ -10,8 +10,9 @@ plotREESSB <- function(om,rho,freq)
   df$HCR[df$HCR==4]<-'Constrained ramp'
   df$HCR<-as.factor(df$HCR)
   df<-df[df$Year>2019,]
-  ggplot(df)+geom_line(aes(x=Year,y=REESSB,color=HCR))+
+  ggplot(df)+geom_line(aes(x=Year,y=SSB,color=HCR))+
+    geom_ribbon(aes(y=SSB,x=Year,ymin=SSBCI_Lower,ymax=SSBCI_Upper,fill=HCR),alpha=0.2)+
     theme_classic()+theme(text=element_text(size=18),legend.position='top')+
-    ylab('% REE SSB')+
-    scale_color_colorblind()
+    ylab('SSB (mt)')+
+    scale_color_colorblind()+ scale_fill_colorblind()
 }

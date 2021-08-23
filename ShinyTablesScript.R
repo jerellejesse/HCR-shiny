@@ -171,7 +171,7 @@ Catchsim<-matrix(NA,nrow=56,ncol=length(sims))
 
 for (k in 1:length(sims)){
   load(sims[k])
-  Catchsim[,k]<-omvalGlobal[[1]]$Mohns_Rho_SSB[134:189]
+  Catchsim[,k]<-omvalGlobal[[1]]$Mohns_Rho_F[134:189]
 }
 
 Catchsim<-rowMedians(Catchsim,na.rm=T)
@@ -196,7 +196,7 @@ for (i in 2:32){
   
   for (k in 1:length(sims)){
     load(sims[k])
-    Catchsim[,k]<-omvalGlobal[[1]]$Mohns_Rho_SSB[134:189]
+    Catchsim[,k]<-omvalGlobal[[1]]$Mohns_Rho_F[134:189]
   }
   
   Catchsim<-rowMedians(Catchsim,na.rm=T)
@@ -207,9 +207,9 @@ for (i in 2:32){
   df<-full_join(df,df2)
 }
 
-df<-rename(df, rhoSSB=Catchsim)
+df<-rename(df, rhoF=Catchsim)
 
-write.csv(df,here("Data/RhoSSB.csv"))
+write.csv(df,here("Data/RhoF.csv"))
 
 
 
@@ -223,19 +223,21 @@ Catch<-read.csv(here("Data/Catch.csv"))[-1]
 REESSB<-read.csv(here("Data/REE_SSB.csv"))[-1]
 REEF<-read.csv(here("Data/REE_F.csv"))[-1]
 RhoSSB<-read.csv(here("Data/RhoSSB.csv"))[-1]
+RhoF<-read.csv(here("Data/RhoF.csv"))[-1]
 
 all_data<-full_join(SSB,F, by=c("Year","Scenario"))%>%
   full_join(R, by=c("Year", "Scenario"))%>%
   full_join(Catch, by=c("Year", "Scenario"))%>%
   full_join(REESSB, by=c("Year", "Scenario"))%>%
   full_join(REEF, by=c("Year", "Scenario"))%>%
-  full_join(RhoSSB, by=c("Year", "Scenario"))
+  full_join(RhoSSB, by=c("Year", "Scenario"))%>%
+  full_join(RhoF, by=c("Year","Scenario"))
 
 #reorder columns
-data<-all_data[, c(2,4,1,3,5,6,7,8,9,10,11,12,13)]
+data<-all_data[, c(2,4,1,3,5,6,7,8,9,10,11,12,13,14)]
 
 #export as csv
-#write.csv(data,here("Data/shiny_data.csv"))
+write.csv(data,here("Data/shiny_data.csv"))
 
 plot(data$Year[data$Scenario==4], data$F_full[data$Scenario==4])
  
@@ -243,5 +245,5 @@ plot(data$Year[data$Scenario==4], data$F_full[data$Scenario==4])
 data<-read.csv(here("Data/shiny_data.csv"))[-1]
 scenarios<-read.csv(here("Data/scenarios.csv"))
 
-full_data<-full_join(data,scenarios, by=c("Scenario"))[, c(1,2,14:17,3:13)]
+full_data<-full_join(data,scenarios, by=c("Scenario"))[, c(1,2,15:18,3:14)]
 write.csv(full_data, here("Data/shiny_data_jj.csv"))

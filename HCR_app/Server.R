@@ -21,6 +21,11 @@ shinyServer(function(input, output, session) {
     output$REESSB<-renderPlot(plotREESSB(input$om, input$rho, input$freq))
     output$REEF<-renderPlot(plotREEF(input$om, input$rho, input$freq))
     output$rhoSSB<-renderPlot(plotrhoSSB(input$om, input$rho, input$freq))
+    output$rhoF<-renderPlot(plotrhoF(input$om, input$rho, input$freq))
+    output$FCI<-renderPlot(plotFCI(input$om, input$rho, input$freq))
+    output$SSBCI<-renderPlot(plotSSBCI(input$om, input$rho, input$freq))
+    output$CatchCI<-renderPlot(plotCatchCI(input$om, input$rho, input$freq))
+    output$RCI<-renderPlot(plotRCI(input$om, input$rho, input$freq))
     
     })
 })  # End of ShinyServer

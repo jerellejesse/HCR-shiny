@@ -1,6 +1,6 @@
 plotR <- function(om,rho,freq)
 {
-  df<-read.csv(here('Data/shiny_data_jj.csv'))
+  df<-read.csv(here('Data/Table.csv'))
   df<-df[df$OM==om,]
   df<-df[df$Rho==rho,]
   df<-df[df$Frequency==freq,]

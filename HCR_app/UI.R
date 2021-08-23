@@ -23,27 +23,121 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                                             "Not Overfished Catchability Misspecified Scenario" = "6")), 
                                                               style = "font-size:100%"),
                                                      tags$div(selectInput("rho", "Rho-adjustment Scenario:",
-                                                                          c("No rho-adjustment" = "1",
-                                                                            "Rho-adjustment" = "2")),
+                                                                          c("No rho-adjustment" = "2",
+                                                                            "Rho-adjustment" = "1")),
                                                               style = "font-size:100%"), 
                                                      tags$div(selectInput("freq", "Stock assessment frequency:",
-                                                                          c("Two year updates" = "2",
-                                                                            "Annual updates" = "1")),
+                                                                          c("Two year updates" = "1",
+                                                                            "Annual updates" = "2")),
+                                                              style = "font-size:100%")),
+                                       mainPanel() # close main panel
+                                      )), #close tab panel
+                             
+                                        tabPanel("Stock Performance",
+                                          sidebarLayout(
+                                            sidebarPanel(width=3,
+                                                     div(helpText("Specifications"), style = "font-size:100%"),
+                                                     tags$div(selectInput("om", "Operating Model and Stock Assessment Misspecification Scenario:",
+                                                                          c("Base Case Overfished Scenario" = "1",
+                                                                            "Base Case Not Overfished Scenario" = "2",
+                                                                            "Overfished Mortality Misspecified Scenario" = "3",
+                                                                            "Overfished Recruitment Misspecified Scenario" = "4",
+                                                                            "Overfished Mortality and Recruitment Misspecified Scenario" = "5",
+                                                                            "Not Overfished Catchability Misspecified Scenario" = "6")), 
+                                                              style = "font-size:100%"),
+                                                     tags$div(selectInput("rho", "Rho-adjustment Scenario:",
+                                                                          c("No rho-adjustment" = "2",
+                                                                            "Rho-adjustment" = "1")),
+                                                              style = "font-size:100%"), 
+                                                     tags$div(selectInput("freq", "Stock assessment frequency:",
+                                                                          c("Two year updates" = "1",
+                                                                            "Annual updates" = "2")),
                                                               style = "font-size:100%")),
                                         mainPanel(
                                           actionButton("do", "Create plots"),
                                           tabsetPanel(
                                             tabPanel("Estimated/ True", 
-                                                    fluidRow(
-                                                      splitLayout(plotOutput("SSBplot"), plotOutput("Fplot"))),
-                                                    fluidRow(
-                                                      splitLayout(plotOutput("Catchplot"), plotOutput("Rplot")))),
-                                            tabPanel("REE",
                                                      fluidRow(
-                                                       splitLayout(plotOutput("REESSB"), plotOutput("REEF")))),
-                                            tabPanel("Mohns Rho",
+                                                       splitLayout(plotOutput("SSBplot"), plotOutput("Fplot"))),
                                                      fluidRow(
-                                                       splitLayout(plotOutput("rhoSSB"), plotOutput("rhoF"))))
-                                            )),
-                             )))))
+                                                       splitLayout(plotOutput("Catchplot"), plotOutput("Rplot")))),
+                                            tabPanel("True 95% confidence interval",
+                                                     fluidRow(
+                                                       splitLayout(plotOutput("SSBCI"), plotOutput("FCI"))),
+                                                     fluidRow(
+                                                       splitLayout(plotOutput("CatchCI"), plotOutput("RCI")))),
+                                            tabPanel("Catch", plotOutput("CatchBox"))
+                                          )) #close main panel
+                                        )), #close tab panel
+                                        tabPanel("Assessment Performance",
+                                              sidebarLayout(
+                                                 sidebarPanel(width=3,
+                                                              div(helpText("Specifications"), style = "font-size:100%"),
+                                                              tags$div(selectInput("om", "Operating Model and Stock Assessment Misspecification Scenario:",
+                                                                                   c("Base Case Overfished Scenario" = "1",
+                                                                                     "Base Case Not Overfished Scenario" = "2",
+                                                                                     "Overfished Mortality Misspecified Scenario" = "3",
+                                                                                     "Overfished Recruitment Misspecified Scenario" = "4",
+                                                                                     "Overfished Mortality and Recruitment Misspecified Scenario" = "5",
+                                                                                     "Not Overfished Catchability Misspecified Scenario" = "6")), 
+                                                                       style = "font-size:100%"),
+                                                              tags$div(selectInput("rho", "Rho-adjustment Scenario:",
+                                                                                   c("No rho-adjustment" = "2",
+                                                                                     "Rho-adjustment" = "1")),
+                                                                       style = "font-size:100%"), 
+                                                              tags$div(selectInput("freq", "Stock assessment frequency:",
+                                                                                   c("Two year updates" = "1",
+                                                                                     "Annual updates" = "2")),
+                                                                       style = "font-size:100%")),
+                                                 mainPanel(
+                                                   actionButton("do", "Create plots"),
+                                                   tabsetPanel(
+                                                     tabPanel("REE",
+                                                              fluidRow(
+                                                                splitLayout(plotOutput("REESSB"), plotOutput("REEF")))),
+                                                     tabPanel("Mohns Rho",
+                                                              fluidRow(
+                                                                splitLayout(plotOutput("rhoSSB"), plotOutput("rhoF")))),
+                                                     tabPanel("Reference Point Error",
+                                                              fluidRow(
+                                                                splitLayout(plotOutput("SSBerror"), plotOutput("Ferror"))))
+                                                     
+                                                   ))# close main panel
+                             )), #close tab panel
+                             tabPanel("Management Performance",
+                                      sidebarLayout(
+                                        sidebarPanel(width=3,
+                                                     div(helpText("Specifications"), style = "font-size:100%"),
+                                                     tags$div(selectInput("om", "Operating Model and Stock Assessment Misspecification Scenario:",
+                                                                          c("Base Case Overfished Scenario" = "1",
+                                                                            "Base Case Not Overfished Scenario" = "2",
+                                                                            "Overfished Mortality Misspecified Scenario" = "3",
+                                                                            "Overfished Recruitment Misspecified Scenario" = "4",
+                                                                            "Overfished Mortality and Recruitment Misspecified Scenario" = "5",
+                                                                            "Not Overfished Catchability Misspecified Scenario" = "6")), 
+                                                              style = "font-size:100%"),
+                                                     tags$div(selectInput("rho", "Rho-adjustment Scenario:",
+                                                                          c("No rho-adjustment" = "2",
+                                                                            "Rho-adjustment" = "1")),
+                                                              style = "font-size:100%"), 
+                                                     tags$div(selectInput("freq", "Stock assessment frequency:",
+                                                                          c("Two year updates" = "1",
+                                                                            "Annual updates" = "2")),
+                                                              style = "font-size:100%")),
+                                        mainPanel(actionButton("do", "Create plots"),
+                                                  tabsetPanel(
+                                                    tabPanel("Stock Trajectory", plotOutput("kobe")),
+                                                    tabPanel("Ratio",
+                                                             fluidRow(
+                                                               splitLayout(plotOutput("SSBratio"), plotOutput("Fratio")))),
+                                                    tabPanel("Spider",
+                                                             fluidRow(
+                                                               splitLayout(plotOutput("short"), plotOutput("medium"), plotOutput("long"))))
+                                         ))# close main panel
+                                      )), #close tab panel
+                             tabPanel("Compare Scenarios",
+                                     mainPanel(
+                                        )# close main panel
+                                      ) #close tab panel
+                             )))# close navbar
 
