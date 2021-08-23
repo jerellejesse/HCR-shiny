@@ -2,7 +2,7 @@
 ## Define server logic required to run scripts
 ## ------------------------------------------------------------------------------------ ##
 defaultVals<-c(0.1,.1,.3,.5,.5)
-NumberOfOptions <- 1
+NumberOfOptions <- 2
 library(ggplot2)
 library(ggthemes)
 library(here)
@@ -18,16 +18,20 @@ shinyServer(function(input, output, session) {
     output$Fplot<-renderPlot(plotF(input$om, input$rho, input$freq))
     output$Catchplot<-renderPlot(plotCatch(input$om, input$rho, input$freq))
     output$Rplot<-renderPlot(plotR(input$om, input$rho, input$freq))
-    output$REESSB<-renderPlot(plotREESSB(input$om, input$rho, input$freq))
-    output$REEF<-renderPlot(plotREEF(input$om, input$rho, input$freq))
-    output$rhoSSB<-renderPlot(plotrhoSSB(input$om, input$rho, input$freq))
-    output$rhoF<-renderPlot(plotrhoF(input$om, input$rho, input$freq))
+    
     output$FCI<-renderPlot(plotFCI(input$om, input$rho, input$freq))
     output$SSBCI<-renderPlot(plotSSBCI(input$om, input$rho, input$freq))
     output$CatchCI<-renderPlot(plotCatchCI(input$om, input$rho, input$freq))
     output$RCI<-renderPlot(plotRCI(input$om, input$rho, input$freq))
     
     })
+  
+  observeEvent(input$do2, {
+    output$REESSB<-renderPlot(plotREESSB(input$om2, input$rho2, input$freq2))
+    output$REEF<-renderPlot(plotREEF(input$om2, input$rho2, input$freq2))
+    output$rhoSSB<-renderPlot(plotrhoSSB(input$om2, input$rho2, input$freq2))
+    output$rhoF<-renderPlot(plotrhoF(input$om2, input$rho2, input$freq2))
+  })
 })  # End of ShinyServer
 ## ------------------------------------------------------------------------------------ ##
 
