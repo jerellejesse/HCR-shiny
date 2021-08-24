@@ -7,31 +7,21 @@ library(here)
 # ----------------------------------------#
 
 defaultVals<-c(0.1,.1,.3,.5,.5)
-
+data<-read.csv(here('Data/shiny_data_jj.csv'))
 shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                              # Enter specifications
-                             tabPanel("Specifications",
-                                      sidebarLayout(
-                                        sidebarPanel(width=3,
-                                                     div(helpText("Specifcations"), style = "font-size:100%"),
-                                                     tags$div(selectInput("om0", "Operating Model and Stock Assessment Misspecification Scenario:",
-                                                                          c("Base Case Overfished Scenario" = "1",
-                                                                            "Base Case Not Overfished Scenario" = "2",
-                                                                            "Overfished Mortality Misspecified Scenario" = "3",
-                                                                            "Overfished Recruitment Misspecified Scenario" = "4",
-                                                                            "Overfished Mortality and Recruitment Misspecified Scenario" = "5",
-                                                                            "Not Overfished Catchability Misspecified Scenario" = "6")), 
-                                                              style = "font-size:100%"),
-                                                     tags$div(selectInput("rho0", "Rho-adjustment Scenario:",
-                                                                          c("No rho-adjustment" = "2",
-                                                                            "Rho-adjustment" = "1")),
-                                                              style = "font-size:100%"), 
-                                                     tags$div(selectInput("freq0", "Stock assessment frequency:",
-                                                                          c("Two year updates" = "1",
-                                                                            "Annual updates" = "2")),
-                                                              style = "font-size:100%")),
-                                       mainPanel() # close main panel
-                                      )), #close tab panel
+                             tabPanel("Home",
+                                      mainPanel(
+                                         fluidRow(column(12,"About",
+                                         fluidRow(column(12,
+                                          tabsetPanel(
+                                            tabPanel("Harvest Control Rules"),
+                                           tabPanel("Operating Models"),
+                                           tabPanel("Performance Metrics")
+                                         )#close tabset
+                                         ))))# close rows
+                                         ) # close main panel
+                                      ), #close tab panel
                              
                                         tabPanel("Stock Performance",
                                           sidebarLayout(
@@ -43,18 +33,12 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                                             "Overfished Mortality Misspecified Scenario" = "3",
                                                                             "Overfished Recruitment Misspecified Scenario" = "4",
                                                                             "Overfished Mortality and Recruitment Misspecified Scenario" = "5",
-                                                                            "Not Overfished Catchability Misspecified Scenario" = "6")), 
+                                                                            "Not Overfished Catchability Misspecified Scenario" = "6")),  
                                                               style = "font-size:100%"),
-                                                     tags$div(selectInput("rho", "Rho-adjustment Scenario:",
-                                                                          c("No rho-adjustment" = "2",
-                                                                            "Rho-adjustment" = "1")),
-                                                              style = "font-size:100%"), 
-                                                     tags$div(selectInput("freq", "Stock assessment frequency:",
-                                                                          c("Two year updates" = "1",
-                                                                            "Annual updates" = "2")),
-                                                              style = "font-size:100%")),
+                                                     tags$div(uiOutput("dynamicRho")), tags$div(uiOutput("dynamicFreq"))),
                                         mainPanel(
-                                          actionButton("do", "Create plots"),
+                                          fluidRow(column(12,"Reading Plots",
+                                         fluidRow(column(12, actionButton("do", "Create plots"),
                                           tabsetPanel(
                                             tabPanel("Estimated/ True", 
                                                      fluidRow(
@@ -67,7 +51,9 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                      fluidRow(
                                                        splitLayout(plotOutput("CatchCI"), plotOutput("RCI")))),
                                             tabPanel("Catch", plotOutput("CatchBox"))
-                                          )) #close main panel
+                                          )#close tabset
+                                          ))))#close rows
+                                         )#close main panel
                                         )), #close tab panel
                                         tabPanel("Assessment Performance",
                                               sidebarLayout(
