@@ -23,6 +23,11 @@ plot3<-ggplot(df)+geom_line(aes(x=Year,y=Fest,color=HCR))+geom_point(aes(x=Year,
   theme_classic()+theme(text=element_text(size=18),legend.position='right')+
   ylab('F')+geom_vline(xintercept=2019, linetype='dotted')+
   scale_color_colorblind()
+plot4<-ggplot(df)+geom_line(aes(x=Year,y=REEF,color=HCR),size=1)+
+  theme_classic()+theme(text=element_text(size=18),legend.position='right')+
+  ylab('%REE F')+ ylim(min(-15,min(df$Catchsim)),15)+
+  scale_color_colorblind()+
+  scale_x_continuous(limits = c(2020,2040))
 require(gridExtra)
-grid.arrange(plot1, plot2, plot3, ncol=1)
+grid.arrange(plot1, plot2, plot3, plot4, ncol=1)
 }
