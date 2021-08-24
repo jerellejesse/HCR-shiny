@@ -12,6 +12,15 @@ invisible(sapply(ffiles, source))
 shinyServer(function(input, output, session) {
   
   print("launching app...")
+  data<-read.csv(here("Data/shiny_data_jj.csv"))
+  output$dynamicRho<-renderUI({
+    selectInput("rho", "Rho-adjustment scenario:", data$Rho[data$OM %in% input$om])
+  })
+  
+  output$dynamicFreq<-renderUI({
+    selectInput("freq", "Stock assessment frequency:", data$Frequency[data$OM %in% input$om])
+  })
+  
   # Do a control rule 
   observeEvent(input$do,{
     output$SSBplot<-renderPlot(plotSSB(input$om,input$rho,input$freq))
