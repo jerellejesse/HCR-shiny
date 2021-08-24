@@ -76,6 +76,8 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                                                      "Annual updates" = "2")),
                                                                        style = "font-size:100%")),
                                                  mainPanel(
+                                                   fluidRow(column(12, "Reading Plots",
+                                                   fluidRow(column(12,
                                                    actionButton("do2", "Create plots"),
                                                    tabsetPanel(
                                                      tabPanel("REE",
@@ -88,7 +90,9 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                               fluidRow(
                                                                 splitLayout(plotOutput("SSBerror"), plotOutput("Ferror"))))
                                                      
-                                                   ))# close main panel
+                                                   )#close tabset
+                                                   ))))#close rows
+                                                   )# close main panel
                              )), #close tab panel
                              tabPanel("Management Performance",
                                       sidebarLayout(
@@ -110,7 +114,10 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                                           c("Two year updates" = "1",
                                                                             "Annual updates" = "2")),
                                                               style = "font-size:100%")),
-                                        mainPanel(actionButton("do3", "Create plots"),
+                                        mainPanel(
+                                          fluidRow(column(12,"Reading Plots",
+                                          fluidRow(column(12,
+                                          actionButton("do3", "Create plots"),
                                                   tabsetPanel(
                                                     tabPanel("Stock Trajectory", plotOutput("kobe")),
                                                     tabPanel("Ratio",
@@ -119,11 +126,39 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                     tabPanel("Spider",
                                                              fluidRow(
                                                                splitLayout(plotOutput("short"), plotOutput("medium"), plotOutput("long"))))
-                                         ))# close main panel
+                                         )#close tabset
+                                         ))))#close rows
+                                         )# close main panel
                                       )), #close tab panel
                              tabPanel("Compare Scenarios",
-                                     mainPanel(
-                                        )# close main panel
+                                      sidebarLayout(
+                                        sidebarPanel(width=3,
+                                                     div(helpText("Specifications"), style = "font-size:100%"),
+                                                     tags$div(checkboxGroupInput("om4", "Operating Model and Stock Assessment Misspecification Scenario:",
+                                                                          c("Base Case Overfished Scenario" = "1",
+                                                                            "Base Case Not Overfished Scenario" = "2",
+                                                                            "Overfished Mortality Misspecified Scenario" = "3",
+                                                                            "Overfished Recruitment Misspecified Scenario" = "4",
+                                                                            "Overfished Mortality and Recruitment Misspecified Scenario" = "5",
+                                                                            "Not Overfished Catchability Misspecified Scenario" = "6")), 
+                                                              style = "font-size:100%"),
+                                                     tags$div(checkboxGroupInput("rho4", "Rho-adjustment Scenario:",
+                                                                          c("No rho-adjustment" = "2",
+                                                                            "Rho-adjustment" = "1")),
+                                                              style = "font-size:100%"), 
+                                                     tags$div(checkboxGroupInput("freq4", "Stock assessment frequency:",
+                                                                          c("Two year updates" = "1",
+                                                                            "Annual updates" = "2")),
+                                                              style = "font-size:100%"),
+                                                     tags$div(checkboxGroupInput("hcr", "Harvest Control Rule:",
+                                                                                 c("Ramp" = "1",
+                                                                                   "Pstar" = "2",
+                                                                                   "F-step"="3",
+                                                                                   "Contrained ramp"="4")),
+                                                              style = "font-size:100%"),
+                                                     actionButton("do4", "Compare!")),
+                                       mainPanel("Hello"
+                                        ))# close main panel
                                       ) #close tab panel
                              )))# close navbar
 
