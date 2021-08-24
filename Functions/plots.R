@@ -19,6 +19,10 @@ plot2<-ggplot(df)+geom_line(aes(x=Year,y=Catchest,color=HCR))+geom_point(aes(x=Y
   theme_classic()+theme(text=element_text(size=18),legend.position='right')+
   ylab('Catch (mt)')+geom_vline(xintercept=2019, linetype='dotted')+
   scale_color_colorblind()
+plot3<-ggplot(df)+geom_line(aes(x=Year,y=Fest,color=HCR))+geom_point(aes(x=Year,y=F_full,color=HCR))+
+  theme_classic()+theme(text=element_text(size=18),legend.position='right')+
+  ylab('F')+geom_vline(xintercept=2019, linetype='dotted')+
+  scale_color_colorblind()
 require(gridExtra)
-grid.arrange(plot1, plot2, ncol=1)
+grid.arrange(plot1, plot2, plot3, ncol=1)
 }
