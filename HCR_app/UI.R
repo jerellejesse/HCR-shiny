@@ -12,12 +12,12 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                              # Enter specifications
                              tabPanel("Home",
                                       mainPanel(
-                                         fluidRow(column(12,"About",
+                                         fluidRow(column(12,"About:","will have info about project and links to reports",
                                          fluidRow(column(12,
                                           tabsetPanel(
-                                            tabPanel("Harvest Control Rules"),
-                                           tabPanel("Operating Models"),
-                                           tabPanel("Performance Metrics")
+                                            tabPanel("Harvest Control Rules","descriptions and figures of HCRs"),
+                                           tabPanel("Operating Models","info on OMs and table of scenarios"),
+                                           tabPanel("Performance Metrics", "table of what results to expect")
                                          )#close tabset
                                          ))))# close rows
                                          ) # close main panel
@@ -37,7 +37,7 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                               style = "font-size:100%"),
                                                      tags$div(uiOutput("dynamicRho")), tags$div(uiOutput("dynamicFreq"))),
                                         mainPanel(
-                                          fluidRow(column(12,"Reading Plots",
+                                          fluidRow(column(12,"Reading Plots- will add info about how to read plots",
                                          fluidRow(column(12, actionButton("do", "Create plots"),
                                           tabsetPanel(
                                             tabPanel("Estimated/ True", 
@@ -76,7 +76,7 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                                                      "Annual updates" = "2")),
                                                                        style = "font-size:100%")),
                                                  mainPanel(
-                                                   fluidRow(column(12, "Reading Plots",
+                                                   fluidRow(column(12, "Reading Plots- will add info about how to read plots",
                                                    fluidRow(column(12,
                                                    actionButton("do2", "Create plots"),
                                                    tabsetPanel(
@@ -115,7 +115,7 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                                             "Annual updates" = "2")),
                                                               style = "font-size:100%")),
                                         mainPanel(
-                                          fluidRow(column(12,"Reading Plots",
+                                          fluidRow(column(12,"Reading Plots- will add info about how to read plots",
                                           fluidRow(column(12,
                                           actionButton("do3", "Create plots"),
                                                   tabsetPanel(
@@ -157,7 +157,7 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                                                    "Contrained ramp"="4")),
                                                               style = "font-size:100%"),
                                                      actionButton("do4", "Compare!")),
-                                       mainPanel("Hello"
+                                       mainPanel("Figuring out how to compare scenarios with the most flexibility"
                                         ))# close main panel
                                       ) #close tab panel
                              )))# close navbar
