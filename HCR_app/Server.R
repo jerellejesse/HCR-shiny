@@ -20,27 +20,27 @@ shinyServer(function(input, output, session) {
   data<-read.csv(here("Data/shiny_data_jj.csv"))
 
   output$dynamicRho<-renderUI({
-    selectInput("rho", "Rho-adjustment scenario:", data$Rho[data$OM %in% input$om])
+    selectInput("rho", "Rho-adjustment scenario:", unique(data$Rho[data$OM %in% input$om]), selected = "No rho-adjustment")
     })
   
   output$dynamicFreq<-renderUI({
-    selectInput("freq", "Stock assessment frequency:", data$Frequency[data$OM %in% input$om & data$Rho %in% input$rho])
+    selectInput("freq", "Stock assessment frequency:", unique(data$Frequency[data$OM %in% input$om & data$Rho %in% input$rho]), selected ="Two year updates")
   })
   
   output$dynamicRho2<-renderUI({
-    selectInput("rho2", "Rho-adjustment scenario:", data$Rho[data$OM %in% input$om2])
+    selectInput("rho2", "Rho-adjustment scenario:", unique(data$Rho[data$OM %in% input$om2]), selected = "No rho-adjustment")
   })
   
   output$dynamicFreq2<-renderUI({
-    selectInput("freq2", "Stock assessment frequency:", data$Frequency[data$OM %in% input$om2 & data$Rho %in% input$rho2])
+    selectInput("freq2", "Stock assessment frequency:", unique(data$Frequency[data$OM %in% input$om2 & data$Rho %in% input$rho2]), selected = "Two year updates")
   })
   
   output$dynamicRho3<-renderUI({
-    selectInput("rho3", "Rho-adjustment scenario:", data$Rho[data$OM %in% input$om3])
+    selectInput("rho3", "Rho-adjustment scenario:", unique(data$Rho[data$OM %in% input$om3]), selected = "No rho-adjustment")
   })
   
   output$dynamicFreq3<-renderUI({
-    selectInput("freq3", "Stock assessment frequency:", data$Frequency[data$OM %in% input$om3 & data$Rho %in% input$rho3])
+    selectInput("freq3", "Stock assessment frequency:", unique(data$Frequency[data$OM %in% input$om3 & data$Rho %in% input$rho3]), selected = "Two year updates")
   })
   
 output$metrics<- renderDataTable(metrics())
