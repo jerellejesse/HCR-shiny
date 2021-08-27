@@ -261,6 +261,6 @@ Table<-read.csv(here("Data/Table.csv"))[-1]
 Table$Rho[Table$Rho==2]<-"No rho-adjustment"
 Table$Rho[Table$Rho==1]<-"Rho-adjustment"
 Table$Frequency[Table$Frequency==1]<-"Two year updates"
-Table$Frequency[Table$Frequency==2]<-"Annaul updates"
+Table$Frequency[Table$Frequency==2]<-"Annual updates"
 
 write.csv(Table, "Table.csv")
