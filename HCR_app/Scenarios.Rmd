@@ -1,0 +1,30 @@
+---
+title: " "
+
+output: html_document
+---
+
+<br>
+
+### Scenarios Include  
+
+- **Overfished**: emulates a groundfish stock in poor status (Gulf of Maine cod) <br>
+
+- **Not Overfished**: emulates a groundfish stock in good status with large recruitment event (Geroges Bank Haddock) <br>
+
+- **Mortality Misspecified**: natural mortality misspecification in stock assessment <br>
+
+- **Recruitment Misspecified**: recruitment misspecification in stock assessment <br>
+
+- **Catchability Misspecified**: survey catchability misspecification in stock assessment <br>
+
+- **Rho-adjusted**: <br>
+
+- **Not rho-adjusted**: <br>
+
+- **Two year updates**: <br>
+
+- **One year updates**: <br>
+
+<br>
+

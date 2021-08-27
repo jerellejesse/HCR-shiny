@@ -1,0 +1,25 @@
+---
+title: "About"
+output: 
+  html_document
+---
+
+## Evaluation of Alternative Harvest Control Rules for New England Groundfish
+
+> The goal of this analysis was to evaluate the performance of alternative HCRs for New England groundfish stocks using management strategy evaluation (MSE). We structured scenarios to address a series of research questions:
+
+<style>
+div.blue{background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class="blue">
+
+1. How do alternative HCRs perform when a stock is overfished? <br>
+2. How do alternative HCRs perform when a stock is not overfished? <br>
+3. How do alternative HCRs perform when there is a stock assessment misspecification and retrospective patterns? <br>
+4. When retrospective patterns exist, do retrospective adjustments result in better performance than no retrospective adjustments?
+
+</div>
+
+
+<br>
+
