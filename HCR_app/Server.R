@@ -7,20 +7,46 @@ library(ggplot2)
 library(ggthemes)
 library(here)
 library(gridExtra)
+library(tidyverse)
+library(rmarkdown)
+library(knitr)
+library(DT)
+
 ffiles <- list.files(path='Functions/', pattern="^.*\\.R$",full.names=TRUE, recursive=TRUE)
 invisible(sapply(ffiles, source))
 shinyServer(function(input, output, session) {
   
   print("launching app...")
   data<-read.csv(here("Data/shiny_data_jj.csv"))
+
   output$dynamicRho<-renderUI({
     selectInput("rho", "Rho-adjustment scenario:", data$Rho[data$OM %in% input$om])
-  })
+    })
   
   output$dynamicFreq<-renderUI({
-    selectInput("freq", "Stock assessment frequency:", data$Frequency[data$OM %in% input$om])
+    selectInput("freq", "Stock assessment frequency:", data$Frequency[data$OM %in% input$om & data$Rho %in% input$rho])
   })
   
+  output$dynamicRho2<-renderUI({
+    selectInput("rho2", "Rho-adjustment scenario:", data$Rho[data$OM %in% input$om2])
+  })
+  
+  output$dynamicFreq2<-renderUI({
+    selectInput("freq2", "Stock assessment frequency:", data$Frequency[data$OM %in% input$om2 & data$Rho %in% input$rho2])
+  })
+  
+  output$dynamicRho3<-renderUI({
+    selectInput("rho3", "Rho-adjustment scenario:", data$Rho[data$OM %in% input$om3])
+  })
+  
+  output$dynamicFreq3<-renderUI({
+    selectInput("freq3", "Stock assessment frequency:", data$Frequency[data$OM %in% input$om3 & data$Rho %in% input$rho3])
+  })
+  
+output$metrics<- renderDataTable(metrics())
+output$scenarios<-renderDataTable(scenarios())
+output$glossary<-renderDataTable(Glossary())
+
   # Do a control rule 
   observeEvent(input$do,{
     output$SSBplot<-renderPlot(plotSSB(input$om,input$rho,input$freq))

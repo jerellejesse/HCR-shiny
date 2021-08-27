@@ -12,12 +12,13 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                              # Enter specifications
                              tabPanel("Home",
                                       mainPanel(
-                                         fluidRow(column(12,"About:","will have info about project and links to reports",
+                                         fluidRow(column(12,includeMarkdown("About.Rmd"),
                                          fluidRow(column(12,
                                           tabsetPanel(
-                                            tabPanel("Harvest Control Rules","descriptions and figures of HCRs"),
-                                           tabPanel("Operating Models","info on OMs and table of scenarios"),
-                                           tabPanel("Performance Metrics", "table of what results to expect")
+                                           tabPanel("Harvest Control Rules",includeMarkdown("HCR.Rmd"),img(src="HCR.png")),
+                                           tabPanel("Scenarios",includeMarkdown("Scenarios.Rmd"),dataTableOutput("scenarios")),
+                                           tabPanel("Performance Metrics", dataTableOutput("metrics")),
+                                           tabPanel("Glossary", dataTableOutput("glossary"))
                                          )#close tabset
                                          ))))# close rows
                                          ) # close main panel
@@ -67,14 +68,7 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                                                      "Overfished Mortality and Recruitment Misspecified Scenario" = "5",
                                                                                      "Not Overfished Catchability Misspecified Scenario" = "6")), 
                                                                        style = "font-size:100%"),
-                                                              tags$div(selectInput("rho2", "Rho-adjustment Scenario:",
-                                                                                   c("No rho-adjustment" = "2",
-                                                                                     "Rho-adjustment" = "1")),
-                                                                       style = "font-size:100%"), 
-                                                              tags$div(selectInput("freq2", "Stock assessment frequency:",
-                                                                                   c("Two year updates" = "1",
-                                                                                     "Annual updates" = "2")),
-                                                                       style = "font-size:100%")),
+                                                              tags$div(uiOutput("dynamicRho2")), tags$div(uiOutput("dynamicFreq2"))),
                                                  mainPanel(
                                                    fluidRow(column(12, "Reading Plots- will add info about how to read plots",
                                                    fluidRow(column(12,
@@ -82,13 +76,13 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                    tabsetPanel(
                                                      tabPanel("REE",
                                                               fluidRow(
-                                                                splitLayout(plotOutput("REESSB"), plotOutput("REEF")))),
+                                                                splitLayout(plotOutput("REESSB", width="90%"), plotOutput("REEF", width="90%")))),
                                                      tabPanel("Mohns Rho",
                                                               fluidRow(
-                                                                splitLayout(plotOutput("rhoSSB"), plotOutput("rhoF")))),
+                                                                splitLayout(plotOutput("rhoSSB", width="90%"), plotOutput("rhoF", width="90%")))),
                                                      tabPanel("Reference Point Error",
                                                               fluidRow(
-                                                                splitLayout(plotOutput("SSBerror"), plotOutput("Ferror"))))
+                                                                splitLayout(plotOutput("SSBerror", width="90%"), plotOutput("Ferror", width="90%"))))
                                                      
                                                    )#close tabset
                                                    ))))#close rows
@@ -106,14 +100,7 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                                             "Overfished Mortality and Recruitment Misspecified Scenario" = "5",
                                                                             "Not Overfished Catchability Misspecified Scenario" = "6")), 
                                                               style = "font-size:100%"),
-                                                     tags$div(selectInput("rho3", "Rho-adjustment Scenario:",
-                                                                          c("No rho-adjustment" = "2",
-                                                                            "Rho-adjustment" = "1")),
-                                                              style = "font-size:100%"), 
-                                                     tags$div(selectInput("freq3", "Stock assessment frequency:",
-                                                                          c("Two year updates" = "1",
-                                                                            "Annual updates" = "2")),
-                                                              style = "font-size:100%")),
+                                                     tags$div(uiOutput("dynamicRho3")), tags$div(uiOutput("dynamicFreq3"))),
                                         mainPanel(
                                           fluidRow(column(12,"Reading Plots- will add info about how to read plots",
                                           fluidRow(column(12,
@@ -160,5 +147,8 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                        mainPanel("Figuring out how to compare scenarios with the most flexibility"
                                         ))# close main panel
                                       ) #close tab panel
-                             )))# close navbar
+                             ),
+                  hr(),
+                  img(src="gmri.jpg"), img(src="smast.jpg"), img(src="noaa.jpg"), img(src="nefmc.jpg")
+                         ))# close navbar
 
