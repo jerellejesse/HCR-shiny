@@ -245,5 +245,22 @@ plot(data$Year[data$Scenario==4], data$F_full[data$Scenario==4])
 data<-read.csv(here("Data/shiny_data.csv"))[-1]
 scenarios<-read.csv(here("Data/scenarios.csv"))
 
+#change rho and frequency inputs to make coding shiny easier
+scenarios$Rho[scenarios$Rho==2]<-"No rho-adjustment"
+scenarios$Rho[scenarios$Rho==1]<-"Rho-adjustment"
+scenarios$Frequency[scenarios$Frequency==1]<-"Two year updates"
+scenarios$Frequency[scenarios$Frequency==2]<-"Annaul updates"
+
 full_data<-full_join(data,scenarios, by=c("Scenario"))[, c(1,2,15:18,3:14)]
 write.csv(full_data, here("Data/shiny_data_jj.csv"))
+
+#Change inputs in datatable from Mackenzie
+Table<-read.csv(here("Data/Table.csv"))[-1]
+
+#rename
+Table$Rho[Table$Rho==2]<-"No rho-adjustment"
+Table$Rho[Table$Rho==1]<-"Rho-adjustment"
+Table$Frequency[Table$Frequency==1]<-"Two year updates"
+Table$Frequency[Table$Frequency==2]<-"Annaul updates"
+
+write.csv(Table, "Table.csv")
