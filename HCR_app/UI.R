@@ -7,12 +7,19 @@ library(here)
 # ----------------------------------------#
 
 defaultVals<-c(0.1,.1,.3,.5,.5)
-data<-read.csv(here('Data/shiny_data_jj.csv'))
+data<-read.csv(here('Data/shiny_data_jj_update.csv'))
 shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                              # Enter specifications
                              tabPanel("Home",
                                       mainPanel(
                                          fluidRow(column(12,includeMarkdown("About.Rmd"),
+                                         fluidRow(column(2, tags$a(href="https://s3.amazonaws.com/nefmc.org/1aii_Summary_HCR_Evaluation_Report.pdf",
+                                                              target="_blank", "Full Report", icon("fas fa-link"), style="font-size:125%;")),
+                                                  column(3, tags$a(href="https://s3.amazonaws.com/nefmc.org/1aii_Summary_HCR_Evaluation_Report.pdf",
+                                                                   target="_blank", "Executive Summary", icon("fas fa-link"), style="font-size:125%;")),
+                                                  column(2, tags$a(href="https://www.gmri.org/projects/evaluating-alternative-harvest-control-rules-new-england-groundfish/",
+                                                                   target="_blank", "Project site", icon("fas fa-link"), style="font-size:125%;")),
+                                          fluidRow(tags$div(style="margin-bottom:50px;")),
                                          fluidRow(column(12,
                                           tabsetPanel(
                                            tabPanel("Harvest Control Rules",includeMarkdown("HCR.Rmd"),img(src="HCR.png")),
@@ -20,7 +27,7 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                            tabPanel("Performance Metrics", dataTableOutput("metrics")),
                                            tabPanel("Glossary", dataTableOutput("glossary"))
                                          )#close tabset
-                                         ))))# close rows
+                                         )))))# close rows
                                          ) # close main panel
                                       ), #close tab panel
                              
@@ -41,12 +48,12 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                           fluidRow(column(12,"Reading Plots- will add info about how to read plots",
                                          fluidRow(column(12, actionButton("do", "Create plots"),
                                           tabsetPanel(
-                                            tabPanel("Estimated/ True", 
+                                            tabPanel("Trajectories", 
                                                      fluidRow(
                                                        splitLayout(plotOutput("SSBplot"), plotOutput("Fplot"))),
                                                      fluidRow(
                                                        splitLayout(plotOutput("Catchplot"), plotOutput("Rplot")))),
-                                            tabPanel("True 95% confidence interval",
+                                            tabPanel(" 95% Trajectories",
                                                      fluidRow(
                                                        splitLayout(plotOutput("SSBCI"), plotOutput("FCI"))),
                                                      fluidRow(
@@ -74,13 +81,13 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                    fluidRow(column(12,
                                                    actionButton("do2", "Create plots"),
                                                    tabsetPanel(
-                                                     tabPanel("REE",
+                                                     tabPanel("Relative Error",
                                                               fluidRow(
                                                                 splitLayout(plotOutput("REESSB", width="90%"), plotOutput("REEF", width="90%")))),
-                                                     tabPanel("Mohns Rho",
+                                                     tabPanel("Retrospective Patterns",
                                                               fluidRow(
                                                                 splitLayout(plotOutput("rhoSSB", width="90%"), plotOutput("rhoF", width="90%")))),
-                                                     tabPanel("Reference Point Error",
+                                                     tabPanel("Reference Point Accuracy",
                                                               fluidRow(
                                                                 splitLayout(plotOutput("SSBerror", width="90%"), plotOutput("Ferror", width="90%"))))
                                                      
@@ -106,11 +113,11 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                           fluidRow(column(12,
                                           actionButton("do3", "Create plots"),
                                                   tabsetPanel(
-                                                    tabPanel("Stock Trajectory", plotOutput("kobe")),
-                                                    tabPanel("Ratio",
+                                                    tabPanel("Stock Status Trajectory", plotOutput("kobe")),
+                                                    tabPanel("Stock Status Ratio",
                                                              fluidRow(
                                                                splitLayout(plotOutput("SSBratio"), plotOutput("Fratio")))),
-                                                    tabPanel("Spider",
+                                                    tabPanel("Radar",
                                                              fluidRow(
                                                                splitLayout(plotOutput("short"), plotOutput("medium"), plotOutput("long"))))
                                          )#close tabset

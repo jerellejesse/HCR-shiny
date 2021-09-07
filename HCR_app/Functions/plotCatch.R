@@ -1,11 +1,11 @@
 plotCatch <- function(om,rho,freq)
 {
-  df<-read.csv(here('Data/shiny_data_jj.csv'))
+  df<-read.csv(here('Data/shiny_data_jj_update.csv'))
   df<-df[df$OM==om,]
   df<-df[df$Rho==rho,]
   df<-df[df$Frequency==freq,]
   df$HCR[df$HCR==1]<-'Ramp'
-  df$HCR[df$HCR==2]<-'Feco'
+  df$HCR[df$HCR==2]<-'P*'
   df$HCR[df$HCR==3]<-'F-step'
   df$HCR[df$HCR==4]<-'Constrained ramp'
   df$HCR<-as.factor(df$HCR)

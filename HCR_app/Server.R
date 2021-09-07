@@ -17,7 +17,7 @@ invisible(sapply(ffiles, source))
 shinyServer(function(input, output, session) {
   
   print("launching app...")
-  data<-read.csv(here("Data/shiny_data_jj.csv"))
+  data<-read.csv(here("Data/shiny_data_jj_update.csv"))
 
   output$dynamicRho<-renderUI({
     selectInput("rho", "Rho-adjustment scenario:", unique(data$Rho[data$OM %in% input$om]), selected = "No rho-adjustment")
