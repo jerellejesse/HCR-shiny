@@ -18,13 +18,13 @@ output: html_document
 
 - **Catchability Misspecified**: survey catchability misspecification in stock assessment <br>
 
-- **Rho-adjusted**: <br>
+- **Rho-adjusted**: apply retrospective adjustments <br>
 
-- **Not rho-adjusted**: <br>
+- **Not rho-adjusted**: no retrospective adjustments <br>
 
-- **Two year updates**: <br>
+- **Two year updates**:2-year projections  <br>
 
-- **Annual updates**: <br>
+- **Annual updates**: 1-year projections <br>
 
 <br>
 

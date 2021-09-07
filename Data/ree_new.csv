@@ -419,255 +419,245 @@
 "418",-16.1513275546878,2037,20,10.9197810797648,5,"Rho-adjustment","Two year updates",4
 "419",NA,2038,20,NA,5,"Rho-adjustment","Two year updates",4
 "420",24.4228332193495,2039,20,-12.7481725986361,5,"Rho-adjustment","Two year updates",4
-"421",108.585728516442,2019,21,8.2241123703032,5,"No rho-adjustment","Annual updates",1
-"422",-38.2600196529482,2020,21,12.7334406827623,5,"No rho-adjustment","Annual updates",1
-"423",-45.4365184106473,2021,21,17.215169246135,5,"No rho-adjustment","Annual updates",1
-"424",-51.2362212971676,2022,21,23.8041703269404,5,"No rho-adjustment","Annual updates",1
-"425",-49.2345217340569,2023,21,27.1782446778919,5,"No rho-adjustment","Annual updates",1
-"426",-48.3840984245364,2024,21,25.1072349475541,5,"No rho-adjustment","Annual updates",1
-"427",-35.1423991221269,2025,21,19.9036698942167,5,"No rho-adjustment","Annual updates",1
-"428",-24.8803188334298,2026,21,9.49904194800213,5,"No rho-adjustment","Annual updates",1
-"429",-12.8080326544198,2027,21,3.26208064301475,5,"No rho-adjustment","Annual updates",1
-"430",-13.5417829205667,2028,21,-0.589520551446929,5,"No rho-adjustment","Annual updates",1
-"431",-8.43057850985427,2029,21,-4.03471988302777,5,"No rho-adjustment","Annual updates",1
-"432",-9.79611074569593,2030,21,-5.37448981116732,5,"No rho-adjustment","Annual updates",1
-"433",-6.0069766403045,2031,21,-6.47144309475705,5,"No rho-adjustment","Annual updates",1
-"434",-7.9356865283643,2032,21,-6.90575542336587,5,"No rho-adjustment","Annual updates",1
-"435",-7.76366354508145,2033,21,-7.43915008629665,5,"No rho-adjustment","Annual updates",1
-"436",-5.26242076093674,2034,21,-8.69250786993413,5,"No rho-adjustment","Annual updates",1
-"437",-4.68697555299706,2035,21,-10.7365158202355,5,"No rho-adjustment","Annual updates",1
-"438",-1.24853129548014,2036,21,-9.7798256262519,5,"No rho-adjustment","Annual updates",1
-"439",-2.92029841862982,2037,21,-11.0854004470005,5,"No rho-adjustment","Annual updates",1
-"440",2.23897251182155,2038,21,-12.2234877306557,5,"No rho-adjustment","Annual updates",1
-"441",2.59110900153773,2039,21,-13.2385968431161,5,"No rho-adjustment","Annual updates",1
-"442",58.90366125,2019,22,10.3193029210006,5,"No rho-adjustment","Annual updates",2
-"443",NA,2020,22,NA,5,"No rho-adjustment","Annual updates",2
-"444",-40.78110884,2021,22,17.2050179602189,5,"No rho-adjustment","Annual updates",2
-"445",NA,2022,22,NA,5,"No rho-adjustment","Annual updates",2
-"446",-44.07621552,2023,22,22.6816393408539,5,"No rho-adjustment","Annual updates",2
-"447",NA,2024,22,NA,5,"No rho-adjustment","Annual updates",2
-"448",-27.80317419,2025,22,13.3563050674091,5,"No rho-adjustment","Annual updates",2
-"449",NA,2026,22,NA,5,"No rho-adjustment","Annual updates",2
-"450",-10.1375191,2027,22,-1.85651350063096,5,"No rho-adjustment","Annual updates",2
-"451",NA,2028,22,NA,5,"No rho-adjustment","Annual updates",2
-"452",-7.326173983,2029,22,-8.17215323561089,5,"No rho-adjustment","Annual updates",2
-"453",NA,2030,22,NA,5,"No rho-adjustment","Annual updates",2
-"454",-3.966793884,2031,22,-10.1287406076064,5,"No rho-adjustment","Annual updates",2
-"455",NA,2032,22,NA,5,"No rho-adjustment","Annual updates",2
-"456",-0.445405544,2033,22,-12.416221402794,5,"No rho-adjustment","Annual updates",2
-"457",NA,2034,22,NA,5,"No rho-adjustment","Annual updates",2
-"458",-1.139726038,2035,22,-13.1510019528394,5,"No rho-adjustment","Annual updates",2
-"459",NA,2036,22,NA,5,"No rho-adjustment","Annual updates",2
-"460",2.939165218,2037,22,-14.6530600276378,5,"No rho-adjustment","Annual updates",2
-"461",NA,2038,22,NA,5,"No rho-adjustment","Annual updates",2
-"462",8.29122945,2039,22,-17.8419116313836,5,"No rho-adjustment","Annual updates",2
-"463",-16.74070015,2019,23,7.75785876429362,5,"No rho-adjustment","Annual updates",3
-"464",NA,2020,23,NA,5,"No rho-adjustment","Annual updates",3
-"465",-23.60347669,2021,23,11.2986368389921,5,"No rho-adjustment","Annual updates",3
-"466",NA,2022,23,NA,5,"No rho-adjustment","Annual updates",3
-"467",-23.0750557,2023,23,7.87530984722824,5,"No rho-adjustment","Annual updates",3
-"468",NA,2024,23,NA,5,"No rho-adjustment","Annual updates",3
-"469",-13.0429101,2025,23,2.2041213379185,5,"No rho-adjustment","Annual updates",3
-"470",NA,2026,23,NA,5,"No rho-adjustment","Annual updates",3
-"471",-10.40166037,2027,23,-1.39362392307072,5,"No rho-adjustment","Annual updates",3
-"472",NA,2028,23,NA,5,"No rho-adjustment","Annual updates",3
-"473",-12.38192391,2029,23,-2.1410400174705,5,"No rho-adjustment","Annual updates",3
-"474",NA,2030,23,NA,5,"No rho-adjustment","Annual updates",3
-"475",-9.493996159,2031,23,-4.55832851054856,5,"No rho-adjustment","Annual updates",3
-"476",NA,2032,23,NA,5,"No rho-adjustment","Annual updates",3
-"477",-6.453008778,2033,23,-5.8925613126332,5,"No rho-adjustment","Annual updates",3
-"478",NA,2034,23,NA,5,"No rho-adjustment","Annual updates",3
-"479",-4.327779511,2035,23,-9.92420872514393,5,"No rho-adjustment","Annual updates",3
-"480",NA,2036,23,NA,5,"No rho-adjustment","Annual updates",3
-"481",1.949541059,2037,23,-12.1468192230971,5,"No rho-adjustment","Annual updates",3
-"482",NA,2038,23,NA,5,"No rho-adjustment","Annual updates",3
-"483",2.951592995,2039,23,-13.8693398297488,5,"No rho-adjustment","Annual updates",3
-"484",10.94097992,2019,24,6.82036169564231,5,"No rho-adjustment","Annual updates",4
-"485",NA,2020,24,NA,5,"No rho-adjustment","Annual updates",4
-"486",-20.78473476,2021,24,15.4934957739249,5,"No rho-adjustment","Annual updates",4
-"487",NA,2022,24,NA,5,"No rho-adjustment","Annual updates",4
-"488",-35.79204052,2023,24,23.5271707724632,5,"No rho-adjustment","Annual updates",4
-"489",NA,2024,24,NA,5,"No rho-adjustment","Annual updates",4
-"490",-36.73465317,2025,24,29.4407619971519,5,"No rho-adjustment","Annual updates",4
-"491",NA,2026,24,NA,5,"No rho-adjustment","Annual updates",4
-"492",-40.30106925,2027,24,29.6389518853968,5,"No rho-adjustment","Annual updates",4
-"493",NA,2028,24,NA,5,"No rho-adjustment","Annual updates",4
-"494",-43.08672758,2029,24,28.0517389893307,5,"No rho-adjustment","Annual updates",4
-"495",NA,2030,24,NA,5,"No rho-adjustment","Annual updates",4
-"496",-39.37929278,2031,24,18.1100176509826,5,"No rho-adjustment","Annual updates",4
-"497",NA,2032,24,NA,5,"No rho-adjustment","Annual updates",4
-"498",-19.5140377,2033,24,2.14060335662973,5,"No rho-adjustment","Annual updates",4
-"499",NA,2034,24,NA,5,"No rho-adjustment","Annual updates",4
-"500",8.703923558,2035,24,-12.4774724955146,5,"No rho-adjustment","Annual updates",4
-"501",NA,2036,24,NA,5,"No rho-adjustment","Annual updates",4
-"502",19.20444863,2037,24,-18.2412149138497,5,"No rho-adjustment","Annual updates",4
-"503",NA,2038,24,NA,5,"No rho-adjustment","Annual updates",4
-"504",9.983514052,2039,24,-17.8661241008733,5,"No rho-adjustment","Annual updates",4
-"505",-83.96792033,2019,25,-1.95641809838916,2,"No rho-adjustment","Two year updates",1
-"506",NA,2020,25,NA,2,"No rho-adjustment","Two year updates",1
-"507",-6.815832795,2021,25,25.7417089926721,2,"No rho-adjustment","Two year updates",1
-"508",NA,2022,25,NA,2,"No rho-adjustment","Two year updates",1
-"509",23.21074064,2023,25,11.9079824855385,2,"No rho-adjustment","Two year updates",1
-"510",NA,2024,25,NA,2,"No rho-adjustment","Two year updates",1
-"511",1.388327326,2025,25,3.40965277690178,2,"No rho-adjustment","Two year updates",1
-"512",NA,2026,25,NA,2,"No rho-adjustment","Two year updates",1
-"513",-1.078431524,2027,25,1.66573381251356,2,"No rho-adjustment","Two year updates",1
-"514",NA,2028,25,NA,2,"No rho-adjustment","Two year updates",1
-"515",-1.589215445,2029,25,1.55479780925988,2,"No rho-adjustment","Two year updates",1
-"516",NA,2030,25,NA,2,"No rho-adjustment","Two year updates",1
-"517",-3.421518936,2031,25,2.00118833254153,2,"No rho-adjustment","Two year updates",1
-"518",NA,2032,25,NA,2,"No rho-adjustment","Two year updates",1
-"519",-3.218232168,2033,25,3.63001460283477,2,"No rho-adjustment","Two year updates",1
-"520",NA,2034,25,NA,2,"No rho-adjustment","Two year updates",1
-"521",-4.954402071,2035,25,3.22755681873721,2,"No rho-adjustment","Two year updates",1
-"522",NA,2036,25,NA,2,"No rho-adjustment","Two year updates",1
-"523",-3.486559108,2037,25,3.97741875717368,2,"No rho-adjustment","Two year updates",1
-"524",NA,2038,25,NA,2,"No rho-adjustment","Two year updates",1
-"525",-3.979949503,2039,25,4.1407283041198,2,"No rho-adjustment","Two year updates",1
-"526",-83.85284469,2019,26,-2.02908839182665,2,"No rho-adjustment","Two year updates",2
-"527",NA,2020,26,NA,2,"No rho-adjustment","Two year updates",2
-"528",-7.555352869,2021,26,25.9964530392623,2,"No rho-adjustment","Two year updates",2
-"529",NA,2022,26,NA,2,"No rho-adjustment","Two year updates",2
-"530",29.99219648,2023,26,10.3303664250638,2,"No rho-adjustment","Two year updates",2
-"531",NA,2024,26,NA,2,"No rho-adjustment","Two year updates",2
-"532",2.44122529,2025,26,3.97372943475139,2,"No rho-adjustment","Two year updates",2
-"533",NA,2026,26,NA,2,"No rho-adjustment","Two year updates",2
-"534",-1.204018458,2027,26,1.87146687586799,2,"No rho-adjustment","Two year updates",2
-"535",NA,2028,26,NA,2,"No rho-adjustment","Two year updates",2
-"536",-0.789893306,2029,26,4.63943713699938,2,"No rho-adjustment","Two year updates",2
-"537",NA,2030,26,NA,2,"No rho-adjustment","Two year updates",2
-"538",-1.696597207,2031,26,2.00895413204551,2,"No rho-adjustment","Two year updates",2
-"539",NA,2032,26,NA,2,"No rho-adjustment","Two year updates",2
-"540",-3.473716381,2033,26,4.24359056978527,2,"No rho-adjustment","Two year updates",2
-"541",NA,2034,26,NA,2,"No rho-adjustment","Two year updates",2
-"542",-3.338945169,2035,26,3.71673245208642,2,"No rho-adjustment","Two year updates",2
-"543",NA,2036,26,NA,2,"No rho-adjustment","Two year updates",2
-"544",-0.721681461,2037,26,2.35351596053417,2,"No rho-adjustment","Two year updates",2
-"545",NA,2038,26,NA,2,"No rho-adjustment","Two year updates",2
-"546",-3.970427699,2039,26,1.47401470707355,2,"No rho-adjustment","Two year updates",2
-"547",-83.77398298,2019,27,-2.17671181514469,2,"No rho-adjustment","Two year updates",3
-"548",NA,2020,27,NA,2,"No rho-adjustment","Two year updates",3
-"549",-6.264962754,2021,27,25.3400894487607,2,"No rho-adjustment","Two year updates",3
-"550",NA,2022,27,NA,2,"No rho-adjustment","Two year updates",3
-"551",25.74834493,2023,27,10.0456711463142,2,"No rho-adjustment","Two year updates",3
-"552",NA,2024,27,NA,2,"No rho-adjustment","Two year updates",3
-"553",2.824456952,2025,27,3.44993138834713,2,"No rho-adjustment","Two year updates",3
-"554",NA,2026,27,NA,2,"No rho-adjustment","Two year updates",3
-"555",-4.175511946,2027,27,1.99510824463662,2,"No rho-adjustment","Two year updates",3
-"556",NA,2028,27,NA,2,"No rho-adjustment","Two year updates",3
-"557",-2.676898875,2029,27,2.67201603515908,2,"No rho-adjustment","Two year updates",3
-"558",NA,2030,27,NA,2,"No rho-adjustment","Two year updates",3
-"559",-2.662038479,2031,27,4.66342384077404,2,"No rho-adjustment","Two year updates",3
-"560",NA,2032,27,NA,2,"No rho-adjustment","Two year updates",3
-"561",-3.445798277,2033,27,5.53878717053675,2,"No rho-adjustment","Two year updates",3
-"562",NA,2034,27,NA,2,"No rho-adjustment","Two year updates",3
-"563",-4.048284373,2035,27,4.77714550047821,2,"No rho-adjustment","Two year updates",3
-"564",NA,2036,27,NA,2,"No rho-adjustment","Two year updates",3
-"565",-3.551862296,2037,27,4.45835645455028,2,"No rho-adjustment","Two year updates",3
-"566",NA,2038,27,NA,2,"No rho-adjustment","Two year updates",3
-"567",-2.791891681,2039,27,2.44015534328519,2,"No rho-adjustment","Two year updates",3
-"568",307.4467862,2019,28,-2.01669132169835,2,"No rho-adjustment","Two year updates",4
-"569",NA,2020,28,NA,2,"No rho-adjustment","Two year updates",4
-"570",13.52437972,2021,28,-3.00184286047222,2,"No rho-adjustment","Two year updates",4
-"571",NA,2022,28,NA,2,"No rho-adjustment","Two year updates",4
-"572",-45.13122997,2023,28,-5.02069642349188,2,"No rho-adjustment","Two year updates",4
-"573",NA,2024,28,NA,2,"No rho-adjustment","Two year updates",4
-"574",-36.95418366,2025,28,-0.957382582116407,2,"No rho-adjustment","Two year updates",4
-"575",NA,2026,28,NA,2,"No rho-adjustment","Two year updates",4
-"576",-30.32249263,2027,28,0.282602312968291,2,"No rho-adjustment","Two year updates",4
-"577",NA,2028,28,NA,2,"No rho-adjustment","Two year updates",4
-"578",-34.89673779,2029,28,-0.0706166974378664,2,"No rho-adjustment","Two year updates",4
-"579",NA,2030,28,NA,2,"No rho-adjustment","Two year updates",4
-"580",-34.46141447,2031,28,1.94293824358427,2,"No rho-adjustment","Two year updates",4
-"581",NA,2032,28,NA,2,"No rho-adjustment","Two year updates",4
-"582",-33.93324656,2033,28,4.13019196051532,2,"No rho-adjustment","Two year updates",4
-"583",NA,2034,28,NA,2,"No rho-adjustment","Two year updates",4
-"584",-30.75745764,2035,28,5.66582837751662,2,"No rho-adjustment","Two year updates",4
-"585",NA,2036,28,NA,2,"No rho-adjustment","Two year updates",4
-"586",-17.04582307,2037,28,6.48856470654252,2,"No rho-adjustment","Two year updates",4
-"587",NA,2038,28,NA,2,"No rho-adjustment","Two year updates",4
-"588",-9.35694487,2039,28,6.91875179935467,2,"No rho-adjustment","Two year updates",4
-"589",-84.0505612,2019,29,-2.15019497886857,6,"No rho-adjustment","Two year updates",1
-"590",NA,2020,29,NA,6,"No rho-adjustment","Two year updates",1
-"591",-7.182203774,2021,29,26.1373649825922,6,"No rho-adjustment","Two year updates",1
-"592",NA,2022,29,NA,6,"No rho-adjustment","Two year updates",1
-"593",31.01449362,2023,29,9.04847663475463,6,"No rho-adjustment","Two year updates",1
-"594",NA,2024,29,NA,6,"No rho-adjustment","Two year updates",1
-"595",14.88485819,2025,29,-2.33969889005051,6,"No rho-adjustment","Two year updates",1
-"596",NA,2026,29,NA,6,"No rho-adjustment","Two year updates",1
-"597",9.92159528,2027,29,-6.17304582221442,6,"No rho-adjustment","Two year updates",1
-"598",NA,2028,29,NA,6,"No rho-adjustment","Two year updates",1
-"599",11.78346905,2029,29,-5.80084264093734,6,"No rho-adjustment","Two year updates",1
-"600",NA,2030,29,NA,6,"No rho-adjustment","Two year updates",1
-"601",9.704864572,2031,29,-7.01524311168734,6,"No rho-adjustment","Two year updates",1
-"602",NA,2032,29,NA,6,"No rho-adjustment","Two year updates",1
-"603",15.18213752,2033,29,-9.17341607267222,6,"No rho-adjustment","Two year updates",1
-"604",NA,2034,29,NA,6,"No rho-adjustment","Two year updates",1
-"605",17.59095361,2035,29,-9.84106296796996,6,"No rho-adjustment","Two year updates",1
-"606",NA,2036,29,NA,6,"No rho-adjustment","Two year updates",1
-"607",15.97285099,2037,29,-9.06768064580114,6,"No rho-adjustment","Two year updates",1
-"608",NA,2038,29,NA,6,"No rho-adjustment","Two year updates",1
-"609",11.21489864,2039,29,-10.9841527440118,6,"No rho-adjustment","Two year updates",1
-"610",-83.50430427,2019,30,-2.84991077038533,6,"No rho-adjustment","Two year updates",2
-"611",NA,2020,30,NA,6,"No rho-adjustment","Two year updates",2
-"612",-6.075968774,2021,30,23.9824232243447,6,"No rho-adjustment","Two year updates",2
-"613",NA,2022,30,NA,6,"No rho-adjustment","Two year updates",2
-"614",40.0775431,2023,30,4.90816814663129,6,"No rho-adjustment","Two year updates",2
-"615",NA,2024,30,NA,6,"No rho-adjustment","Two year updates",2
-"616",14.45425318,2025,30,-3.79618898086523,6,"No rho-adjustment","Two year updates",2
-"617",NA,2026,30,NA,6,"No rho-adjustment","Two year updates",2
-"618",10.69712909,2027,30,-5.10875314826825,6,"No rho-adjustment","Two year updates",2
-"619",NA,2028,30,NA,6,"No rho-adjustment","Two year updates",2
-"620",12.68941997,2029,30,-6.26813514306909,6,"No rho-adjustment","Two year updates",2
-"621",NA,2030,30,NA,6,"No rho-adjustment","Two year updates",2
-"622",13.10550136,2031,30,-8.08265081588954,6,"No rho-adjustment","Two year updates",2
-"623",NA,2032,30,NA,6,"No rho-adjustment","Two year updates",2
-"624",15.91709486,2033,30,-8.518996925635,6,"No rho-adjustment","Two year updates",2
-"625",NA,2034,30,NA,6,"No rho-adjustment","Two year updates",2
-"626",18.50509361,2035,30,-11.5650728789179,6,"No rho-adjustment","Two year updates",2
-"627",NA,2036,30,NA,6,"No rho-adjustment","Two year updates",2
-"628",17.27376776,2037,30,-10.6740205311671,6,"No rho-adjustment","Two year updates",2
-"629",NA,2038,30,NA,6,"No rho-adjustment","Two year updates",2
-"630",11.81899833,2039,30,-11.2572619826412,6,"No rho-adjustment","Two year updates",2
-"631",-83.81973176,2019,31,-2.47255579260964,6,"No rho-adjustment","Two year updates",3
-"632",NA,2020,31,NA,6,"No rho-adjustment","Two year updates",3
-"633",-6.490350945,2021,31,24.775981706692,6,"No rho-adjustment","Two year updates",3
-"634",NA,2022,31,NA,6,"No rho-adjustment","Two year updates",3
-"635",30.17342631,2023,31,5.34086120197492,6,"No rho-adjustment","Two year updates",3
-"636",NA,2024,31,NA,6,"No rho-adjustment","Two year updates",3
-"637",18.19317843,2025,31,-1.94886683302643,6,"No rho-adjustment","Two year updates",3
-"638",NA,2026,31,NA,6,"No rho-adjustment","Two year updates",3
-"639",11.34761644,2027,31,-5.39843132034496,6,"No rho-adjustment","Two year updates",3
-"640",NA,2028,31,NA,6,"No rho-adjustment","Two year updates",3
-"641",10.45756463,2029,31,-7.4383181135646,6,"No rho-adjustment","Two year updates",3
-"642",NA,2030,31,NA,6,"No rho-adjustment","Two year updates",3
-"643",11.54607781,2031,31,-9.39766150196102,6,"No rho-adjustment","Two year updates",3
-"644",NA,2032,31,NA,6,"No rho-adjustment","Two year updates",3
-"645",14.78413,2033,31,-7.67416094308349,6,"No rho-adjustment","Two year updates",3
-"646",NA,2034,31,NA,6,"No rho-adjustment","Two year updates",3
-"647",18.48171393,2035,31,-10.8340731225609,6,"No rho-adjustment","Two year updates",3
-"648",NA,2036,31,NA,6,"No rho-adjustment","Two year updates",3
-"649",15.30790734,2037,31,-11.2322547039362,6,"No rho-adjustment","Two year updates",3
-"650",NA,2038,31,NA,6,"No rho-adjustment","Two year updates",3
-"651",11.8792031,2039,31,-10.4802641184691,6,"No rho-adjustment","Two year updates",3
-"652",308.5150213,2019,32,-2.33774161822212,6,"No rho-adjustment","Two year updates",4
-"653",NA,2020,32,NA,6,"No rho-adjustment","Two year updates",4
-"654",14.06810831,2021,32,-2.91727966750102,6,"No rho-adjustment","Two year updates",4
-"655",NA,2022,32,NA,6,"No rho-adjustment","Two year updates",4
-"656",-42.75826405,2023,32,-7.65695307702211,6,"No rho-adjustment","Two year updates",4
-"657",NA,2024,32,NA,6,"No rho-adjustment","Two year updates",4
-"658",-33.9044414,2025,32,-5.75647072270552,6,"No rho-adjustment","Two year updates",4
-"659",NA,2026,32,NA,6,"No rho-adjustment","Two year updates",4
-"660",-26.07517288,2027,32,-6.09069929620123,6,"No rho-adjustment","Two year updates",4
-"661",NA,2028,32,NA,6,"No rho-adjustment","Two year updates",4
-"662",-30.15237888,2029,32,-8.52827973814561,6,"No rho-adjustment","Two year updates",4
-"663",NA,2030,32,NA,6,"No rho-adjustment","Two year updates",4
-"664",-26.04623475,2031,32,-9.96049181371739,6,"No rho-adjustment","Two year updates",4
-"665",NA,2032,32,NA,6,"No rho-adjustment","Two year updates",4
-"666",-17.84664803,2033,32,-12.52720926181,6,"No rho-adjustment","Two year updates",4
-"667",NA,2034,32,NA,6,"No rho-adjustment","Two year updates",4
-"668",-3.969886456,2035,32,-13.8475432628024,6,"No rho-adjustment","Two year updates",4
-"669",NA,2036,32,NA,6,"No rho-adjustment","Two year updates",4
-"670",10.65374562,2037,32,-11.9142347928429,6,"No rho-adjustment","Two year updates",4
-"671",NA,2038,32,NA,6,"No rho-adjustment","Two year updates",4
-"672",14.65487728,2039,32,-12.2176472626824,6,"No rho-adjustment","Two year updates",4
+"421",108.585728516442,2019,22,8.2241123703032,5,"No rho-adjustment","Annual updates",2
+"422",108.585728516442,2019,22,10.3193029210006,5,"No rho-adjustment","Annual updates",2
+"423",NA,2020,22,NA,5,"No rho-adjustment","Annual updates",2
+"424",-45.4365184106473,2021,22,17.215169246135,5,"No rho-adjustment","Annual updates",2
+"425",-45.4365184106473,2021,22,17.2050179602189,5,"No rho-adjustment","Annual updates",2
+"426",NA,2022,22,NA,5,"No rho-adjustment","Annual updates",2
+"427",-49.2345217340569,2023,22,27.1782446778919,5,"No rho-adjustment","Annual updates",2
+"428",-49.2345217340569,2023,22,22.6816393408539,5,"No rho-adjustment","Annual updates",2
+"429",NA,2024,22,NA,5,"No rho-adjustment","Annual updates",2
+"430",-35.1423991221269,2025,22,19.9036698942167,5,"No rho-adjustment","Annual updates",2
+"431",-35.1423991221269,2025,22,13.3563050674091,5,"No rho-adjustment","Annual updates",2
+"432",NA,2026,22,NA,5,"No rho-adjustment","Annual updates",2
+"433",-12.8080326544198,2027,22,3.26208064301475,5,"No rho-adjustment","Annual updates",2
+"434",-12.8080326544198,2027,22,-1.85651350063096,5,"No rho-adjustment","Annual updates",2
+"435",NA,2028,22,NA,5,"No rho-adjustment","Annual updates",2
+"436",-8.43057850985427,2029,22,-4.03471988302777,5,"No rho-adjustment","Annual updates",2
+"437",-8.43057850985427,2029,22,-8.17215323561089,5,"No rho-adjustment","Annual updates",2
+"438",NA,2030,22,NA,5,"No rho-adjustment","Annual updates",2
+"439",-6.0069766403045,2031,22,-6.47144309475705,5,"No rho-adjustment","Annual updates",2
+"440",-6.0069766403045,2031,22,-10.1287406076064,5,"No rho-adjustment","Annual updates",2
+"441",NA,2032,22,NA,5,"No rho-adjustment","Annual updates",2
+"442",-7.76366354508145,2033,22,-7.43915008629665,5,"No rho-adjustment","Annual updates",2
+"443",-7.76366354508145,2033,22,-12.416221402794,5,"No rho-adjustment","Annual updates",2
+"444",NA,2034,22,NA,5,"No rho-adjustment","Annual updates",2
+"445",-4.68697555299706,2035,22,-10.7365158202355,5,"No rho-adjustment","Annual updates",2
+"446",-4.68697555299706,2035,22,-13.1510019528394,5,"No rho-adjustment","Annual updates",2
+"447",NA,2036,22,NA,5,"No rho-adjustment","Annual updates",2
+"448",-2.92029841862982,2037,22,-11.0854004470005,5,"No rho-adjustment","Annual updates",2
+"449",-2.92029841862982,2037,22,-14.6530600276378,5,"No rho-adjustment","Annual updates",2
+"450",NA,2038,22,NA,5,"No rho-adjustment","Annual updates",2
+"451",2.59110900153773,2039,22,-13.2385968431161,5,"No rho-adjustment","Annual updates",2
+"452",2.59110900153773,2039,22,-17.8419116313836,5,"No rho-adjustment","Annual updates",2
+"453",108.585728516442,2019,24,6.82036169564231,5,"No rho-adjustment","Annual updates",4
+"454",NA,2020,24,NA,5,"No rho-adjustment","Annual updates",4
+"455",-45.4365184106473,2021,24,15.4934957739249,5,"No rho-adjustment","Annual updates",4
+"456",NA,2022,24,NA,5,"No rho-adjustment","Annual updates",4
+"457",-49.2345217340569,2023,24,23.5271707724632,5,"No rho-adjustment","Annual updates",4
+"458",NA,2024,24,NA,5,"No rho-adjustment","Annual updates",4
+"459",-35.1423991221269,2025,24,29.4407619971519,5,"No rho-adjustment","Annual updates",4
+"460",NA,2026,24,NA,5,"No rho-adjustment","Annual updates",4
+"461",-12.8080326544198,2027,24,29.6389518853968,5,"No rho-adjustment","Annual updates",4
+"462",NA,2028,24,NA,5,"No rho-adjustment","Annual updates",4
+"463",-8.43057850985427,2029,24,28.0517389893307,5,"No rho-adjustment","Annual updates",4
+"464",NA,2030,24,NA,5,"No rho-adjustment","Annual updates",4
+"465",-6.0069766403045,2031,24,18.1100176509826,5,"No rho-adjustment","Annual updates",4
+"466",NA,2032,24,NA,5,"No rho-adjustment","Annual updates",4
+"467",-7.76366354508145,2033,24,2.14060335662973,5,"No rho-adjustment","Annual updates",4
+"468",NA,2034,24,NA,5,"No rho-adjustment","Annual updates",4
+"469",-4.68697555299706,2035,24,-12.4774724955146,5,"No rho-adjustment","Annual updates",4
+"470",NA,2036,24,NA,5,"No rho-adjustment","Annual updates",4
+"471",-2.92029841862982,2037,24,-18.2412149138497,5,"No rho-adjustment","Annual updates",4
+"472",NA,2038,24,NA,5,"No rho-adjustment","Annual updates",4
+"473",2.59110900153773,2039,24,-17.8661241008733,5,"No rho-adjustment","Annual updates",4
+"474",-83.96792033,2019,25,-1.956418098,2,"No rho-adjustment","Two year updates",1
+"475",NA,2020,25,NA,2,"No rho-adjustment","Two year updates",1
+"476",-6.815832795,2021,25,25.74170899,2,"No rho-adjustment","Two year updates",1
+"477",NA,2022,25,NA,2,"No rho-adjustment","Two year updates",1
+"478",23.21074064,2023,25,11.90798249,2,"No rho-adjustment","Two year updates",1
+"479",NA,2024,25,NA,2,"No rho-adjustment","Two year updates",1
+"480",1.388327326,2025,25,3.409652777,2,"No rho-adjustment","Two year updates",1
+"481",NA,2026,25,NA,2,"No rho-adjustment","Two year updates",1
+"482",-1.078431524,2027,25,1.665733813,2,"No rho-adjustment","Two year updates",1
+"483",NA,2028,25,NA,2,"No rho-adjustment","Two year updates",1
+"484",-1.589215445,2029,25,1.554797809,2,"No rho-adjustment","Two year updates",1
+"485",NA,2030,25,NA,2,"No rho-adjustment","Two year updates",1
+"486",-3.421518936,2031,25,2.001188333,2,"No rho-adjustment","Two year updates",1
+"487",NA,2032,25,NA,2,"No rho-adjustment","Two year updates",1
+"488",-3.218232168,2033,25,3.630014603,2,"No rho-adjustment","Two year updates",1
+"489",NA,2034,25,NA,2,"No rho-adjustment","Two year updates",1
+"490",-4.954402071,2035,25,3.227556819,2,"No rho-adjustment","Two year updates",1
+"491",NA,2036,25,NA,2,"No rho-adjustment","Two year updates",1
+"492",-3.486559108,2037,25,3.977418757,2,"No rho-adjustment","Two year updates",1
+"493",NA,2038,25,NA,2,"No rho-adjustment","Two year updates",1
+"494",-3.979949503,2039,25,4.140728304,2,"No rho-adjustment","Two year updates",1
+"495",-83.85284469,2019,26,-2.029088392,2,"No rho-adjustment","Two year updates",2
+"496",NA,2020,26,NA,2,"No rho-adjustment","Two year updates",2
+"497",-7.555352869,2021,26,25.99645304,2,"No rho-adjustment","Two year updates",2
+"498",NA,2022,26,NA,2,"No rho-adjustment","Two year updates",2
+"499",29.99219648,2023,26,10.33036643,2,"No rho-adjustment","Two year updates",2
+"500",NA,2024,26,NA,2,"No rho-adjustment","Two year updates",2
+"501",2.44122529,2025,26,3.973729435,2,"No rho-adjustment","Two year updates",2
+"502",NA,2026,26,NA,2,"No rho-adjustment","Two year updates",2
+"503",-1.204018458,2027,26,1.871466876,2,"No rho-adjustment","Two year updates",2
+"504",NA,2028,26,NA,2,"No rho-adjustment","Two year updates",2
+"505",-0.789893306,2029,26,4.639437137,2,"No rho-adjustment","Two year updates",2
+"506",NA,2030,26,NA,2,"No rho-adjustment","Two year updates",2
+"507",-1.696597207,2031,26,2.008954132,2,"No rho-adjustment","Two year updates",2
+"508",NA,2032,26,NA,2,"No rho-adjustment","Two year updates",2
+"509",-3.473716381,2033,26,4.24359057,2,"No rho-adjustment","Two year updates",2
+"510",NA,2034,26,NA,2,"No rho-adjustment","Two year updates",2
+"511",-3.338945169,2035,26,3.716732452,2,"No rho-adjustment","Two year updates",2
+"512",NA,2036,26,NA,2,"No rho-adjustment","Two year updates",2
+"513",-0.721681461,2037,26,2.353515961,2,"No rho-adjustment","Two year updates",2
+"514",NA,2038,26,NA,2,"No rho-adjustment","Two year updates",2
+"515",-3.970427699,2039,26,1.474014707,2,"No rho-adjustment","Two year updates",2
+"516",-83.77398298,2019,27,-2.176711815,2,"No rho-adjustment","Two year updates",3
+"517",NA,2020,27,NA,2,"No rho-adjustment","Two year updates",3
+"518",-6.264962754,2021,27,25.34008945,2,"No rho-adjustment","Two year updates",3
+"519",NA,2022,27,NA,2,"No rho-adjustment","Two year updates",3
+"520",25.74834493,2023,27,10.04567115,2,"No rho-adjustment","Two year updates",3
+"521",NA,2024,27,NA,2,"No rho-adjustment","Two year updates",3
+"522",2.824456952,2025,27,3.449931388,2,"No rho-adjustment","Two year updates",3
+"523",NA,2026,27,NA,2,"No rho-adjustment","Two year updates",3
+"524",-4.175511946,2027,27,1.995108245,2,"No rho-adjustment","Two year updates",3
+"525",NA,2028,27,NA,2,"No rho-adjustment","Two year updates",3
+"526",-2.676898875,2029,27,2.672016035,2,"No rho-adjustment","Two year updates",3
+"527",NA,2030,27,NA,2,"No rho-adjustment","Two year updates",3
+"528",-2.662038479,2031,27,4.663423841,2,"No rho-adjustment","Two year updates",3
+"529",NA,2032,27,NA,2,"No rho-adjustment","Two year updates",3
+"530",-3.445798277,2033,27,5.538787171,2,"No rho-adjustment","Two year updates",3
+"531",NA,2034,27,NA,2,"No rho-adjustment","Two year updates",3
+"532",-4.048284373,2035,27,4.7771455,2,"No rho-adjustment","Two year updates",3
+"533",NA,2036,27,NA,2,"No rho-adjustment","Two year updates",3
+"534",-3.551862296,2037,27,4.458356455,2,"No rho-adjustment","Two year updates",3
+"535",NA,2038,27,NA,2,"No rho-adjustment","Two year updates",3
+"536",-2.791891681,2039,27,2.440155343,2,"No rho-adjustment","Two year updates",3
+"537",307.4467862,2019,28,-2.016691322,2,"No rho-adjustment","Two year updates",4
+"538",NA,2020,28,NA,2,"No rho-adjustment","Two year updates",4
+"539",13.52437972,2021,28,-3.00184286,2,"No rho-adjustment","Two year updates",4
+"540",NA,2022,28,NA,2,"No rho-adjustment","Two year updates",4
+"541",-45.13122997,2023,28,-5.020696423,2,"No rho-adjustment","Two year updates",4
+"542",NA,2024,28,NA,2,"No rho-adjustment","Two year updates",4
+"543",-36.95418366,2025,28,-0.957382582,2,"No rho-adjustment","Two year updates",4
+"544",NA,2026,28,NA,2,"No rho-adjustment","Two year updates",4
+"545",-30.32249263,2027,28,0.282602313,2,"No rho-adjustment","Two year updates",4
+"546",NA,2028,28,NA,2,"No rho-adjustment","Two year updates",4
+"547",-34.89673779,2029,28,-0.070616697,2,"No rho-adjustment","Two year updates",4
+"548",NA,2030,28,NA,2,"No rho-adjustment","Two year updates",4
+"549",-34.46141447,2031,28,1.942938244,2,"No rho-adjustment","Two year updates",4
+"550",NA,2032,28,NA,2,"No rho-adjustment","Two year updates",4
+"551",-33.93324656,2033,28,4.130191961,2,"No rho-adjustment","Two year updates",4
+"552",NA,2034,28,NA,2,"No rho-adjustment","Two year updates",4
+"553",-30.75745764,2035,28,5.665828378,2,"No rho-adjustment","Two year updates",4
+"554",NA,2036,28,NA,2,"No rho-adjustment","Two year updates",4
+"555",-17.04582307,2037,28,6.488564707,2,"No rho-adjustment","Two year updates",4
+"556",NA,2038,28,NA,2,"No rho-adjustment","Two year updates",4
+"557",-9.35694487,2039,28,6.918751799,2,"No rho-adjustment","Two year updates",4
+"558",-84.0505612,2019,29,-2.150194979,6,"No rho-adjustment","Two year updates",1
+"559",NA,2020,29,NA,6,"No rho-adjustment","Two year updates",1
+"560",-7.182203774,2021,29,26.13736498,6,"No rho-adjustment","Two year updates",1
+"561",NA,2022,29,NA,6,"No rho-adjustment","Two year updates",1
+"562",31.01449362,2023,29,9.048476635,6,"No rho-adjustment","Two year updates",1
+"563",NA,2024,29,NA,6,"No rho-adjustment","Two year updates",1
+"564",14.88485819,2025,29,-2.33969889,6,"No rho-adjustment","Two year updates",1
+"565",NA,2026,29,NA,6,"No rho-adjustment","Two year updates",1
+"566",9.92159528,2027,29,-6.173045822,6,"No rho-adjustment","Two year updates",1
+"567",NA,2028,29,NA,6,"No rho-adjustment","Two year updates",1
+"568",11.78346905,2029,29,-5.800842641,6,"No rho-adjustment","Two year updates",1
+"569",NA,2030,29,NA,6,"No rho-adjustment","Two year updates",1
+"570",9.704864572,2031,29,-7.015243112,6,"No rho-adjustment","Two year updates",1
+"571",NA,2032,29,NA,6,"No rho-adjustment","Two year updates",1
+"572",15.18213752,2033,29,-9.173416073,6,"No rho-adjustment","Two year updates",1
+"573",NA,2034,29,NA,6,"No rho-adjustment","Two year updates",1
+"574",17.59095361,2035,29,-9.841062968,6,"No rho-adjustment","Two year updates",1
+"575",NA,2036,29,NA,6,"No rho-adjustment","Two year updates",1
+"576",15.97285099,2037,29,-9.067680646,6,"No rho-adjustment","Two year updates",1
+"577",NA,2038,29,NA,6,"No rho-adjustment","Two year updates",1
+"578",11.21489864,2039,29,-10.98415274,6,"No rho-adjustment","Two year updates",1
+"579",-83.50430427,2019,30,-2.84991077,6,"No rho-adjustment","Two year updates",2
+"580",NA,2020,30,NA,6,"No rho-adjustment","Two year updates",2
+"581",-6.075968774,2021,30,23.98242322,6,"No rho-adjustment","Two year updates",2
+"582",NA,2022,30,NA,6,"No rho-adjustment","Two year updates",2
+"583",40.0775431,2023,30,4.908168147,6,"No rho-adjustment","Two year updates",2
+"584",NA,2024,30,NA,6,"No rho-adjustment","Two year updates",2
+"585",14.45425318,2025,30,-3.796188981,6,"No rho-adjustment","Two year updates",2
+"586",NA,2026,30,NA,6,"No rho-adjustment","Two year updates",2
+"587",10.69712909,2027,30,-5.108753148,6,"No rho-adjustment","Two year updates",2
+"588",NA,2028,30,NA,6,"No rho-adjustment","Two year updates",2
+"589",12.68941997,2029,30,-6.268135143,6,"No rho-adjustment","Two year updates",2
+"590",NA,2030,30,NA,6,"No rho-adjustment","Two year updates",2
+"591",13.10550136,2031,30,-8.082650816,6,"No rho-adjustment","Two year updates",2
+"592",NA,2032,30,NA,6,"No rho-adjustment","Two year updates",2
+"593",15.91709486,2033,30,-8.518996926,6,"No rho-adjustment","Two year updates",2
+"594",NA,2034,30,NA,6,"No rho-adjustment","Two year updates",2
+"595",18.50509361,2035,30,-11.56507288,6,"No rho-adjustment","Two year updates",2
+"596",NA,2036,30,NA,6,"No rho-adjustment","Two year updates",2
+"597",17.27376776,2037,30,-10.67402053,6,"No rho-adjustment","Two year updates",2
+"598",NA,2038,30,NA,6,"No rho-adjustment","Two year updates",2
+"599",11.81899833,2039,30,-11.25726198,6,"No rho-adjustment","Two year updates",2
+"600",-83.81973176,2019,31,-2.472555793,6,"No rho-adjustment","Two year updates",3
+"601",NA,2020,31,NA,6,"No rho-adjustment","Two year updates",3
+"602",-6.490350945,2021,31,24.77598171,6,"No rho-adjustment","Two year updates",3
+"603",NA,2022,31,NA,6,"No rho-adjustment","Two year updates",3
+"604",30.17342631,2023,31,5.340861202,6,"No rho-adjustment","Two year updates",3
+"605",NA,2024,31,NA,6,"No rho-adjustment","Two year updates",3
+"606",18.19317843,2025,31,-1.948866833,6,"No rho-adjustment","Two year updates",3
+"607",NA,2026,31,NA,6,"No rho-adjustment","Two year updates",3
+"608",11.34761644,2027,31,-5.39843132,6,"No rho-adjustment","Two year updates",3
+"609",NA,2028,31,NA,6,"No rho-adjustment","Two year updates",3
+"610",10.45756463,2029,31,-7.438318114,6,"No rho-adjustment","Two year updates",3
+"611",NA,2030,31,NA,6,"No rho-adjustment","Two year updates",3
+"612",11.54607781,2031,31,-9.397661502,6,"No rho-adjustment","Two year updates",3
+"613",NA,2032,31,NA,6,"No rho-adjustment","Two year updates",3
+"614",14.78413,2033,31,-7.674160943,6,"No rho-adjustment","Two year updates",3
+"615",NA,2034,31,NA,6,"No rho-adjustment","Two year updates",3
+"616",18.48171393,2035,31,-10.83407312,6,"No rho-adjustment","Two year updates",3
+"617",NA,2036,31,NA,6,"No rho-adjustment","Two year updates",3
+"618",15.30790734,2037,31,-11.2322547,6,"No rho-adjustment","Two year updates",3
+"619",NA,2038,31,NA,6,"No rho-adjustment","Two year updates",3
+"620",11.8792031,2039,31,-10.48026412,6,"No rho-adjustment","Two year updates",3
+"621",308.5150213,2019,32,-2.337741618,6,"No rho-adjustment","Two year updates",4
+"622",NA,2020,32,NA,6,"No rho-adjustment","Two year updates",4
+"623",14.06810831,2021,32,-2.917279668,6,"No rho-adjustment","Two year updates",4
+"624",NA,2022,32,NA,6,"No rho-adjustment","Two year updates",4
+"625",-42.75826405,2023,32,-7.656953077,6,"No rho-adjustment","Two year updates",4
+"626",NA,2024,32,NA,6,"No rho-adjustment","Two year updates",4
+"627",-33.9044414,2025,32,-5.756470723,6,"No rho-adjustment","Two year updates",4
+"628",NA,2026,32,NA,6,"No rho-adjustment","Two year updates",4
+"629",-26.07517288,2027,32,-6.090699296,6,"No rho-adjustment","Two year updates",4
+"630",NA,2028,32,NA,6,"No rho-adjustment","Two year updates",4
+"631",-30.15237888,2029,32,-8.528279738,6,"No rho-adjustment","Two year updates",4
+"632",NA,2030,32,NA,6,"No rho-adjustment","Two year updates",4
+"633",-26.04623475,2031,32,-9.960491814,6,"No rho-adjustment","Two year updates",4
+"634",NA,2032,32,NA,6,"No rho-adjustment","Two year updates",4
+"635",-17.84664803,2033,32,-12.52720926,6,"No rho-adjustment","Two year updates",4
+"636",NA,2034,32,NA,6,"No rho-adjustment","Two year updates",4
+"637",-3.969886456,2035,32,-13.84754326,6,"No rho-adjustment","Two year updates",4
+"638",NA,2036,32,NA,6,"No rho-adjustment","Two year updates",4
+"639",10.65374562,2037,32,-11.91423479,6,"No rho-adjustment","Two year updates",4
+"640",NA,2038,32,NA,6,"No rho-adjustment","Two year updates",4
+"641",14.65487728,2039,32,-12.21764726,6,"No rho-adjustment","Two year updates",4
+"642",NA,2019,23,7.75785876429362,5,"No rho-adjustment","Annual updates",3
+"643",NA,2020,23,NA,5,"No rho-adjustment","Annual updates",3
+"644",NA,2021,23,11.2986368389921,5,"No rho-adjustment","Annual updates",3
+"645",NA,2022,23,NA,5,"No rho-adjustment","Annual updates",3
+"646",NA,2023,23,7.87530984722824,5,"No rho-adjustment","Annual updates",3
+"647",NA,2024,23,NA,5,"No rho-adjustment","Annual updates",3
+"648",NA,2025,23,2.2041213379185,5,"No rho-adjustment","Annual updates",3
+"649",NA,2026,23,NA,5,"No rho-adjustment","Annual updates",3
+"650",NA,2027,23,-1.39362392307072,5,"No rho-adjustment","Annual updates",3
+"651",NA,2028,23,NA,5,"No rho-adjustment","Annual updates",3
+"652",NA,2029,23,-2.1410400174705,5,"No rho-adjustment","Annual updates",3
+"653",NA,2030,23,NA,5,"No rho-adjustment","Annual updates",3
+"654",NA,2031,23,-4.55832851054856,5,"No rho-adjustment","Annual updates",3
+"655",NA,2032,23,NA,5,"No rho-adjustment","Annual updates",3
+"656",NA,2033,23,-5.8925613126332,5,"No rho-adjustment","Annual updates",3
+"657",NA,2034,23,NA,5,"No rho-adjustment","Annual updates",3
+"658",NA,2035,23,-9.92420872514393,5,"No rho-adjustment","Annual updates",3
+"659",NA,2036,23,NA,5,"No rho-adjustment","Annual updates",3
+"660",NA,2037,23,-12.1468192230971,5,"No rho-adjustment","Annual updates",3
+"661",NA,2038,23,NA,5,"No rho-adjustment","Annual updates",3
+"662",NA,2039,23,-13.8693398297488,5,"No rho-adjustment","Annual updates",3
