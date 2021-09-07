@@ -2,7 +2,7 @@ library(matrixStats)
 library(dplyr)
 library(here)
 
-setwd("C:/Users/jjesse/Box/HCR_Sims")
+setwd("C:/Users/mmazur/Box/HCR_Sims")
 wd<-getwd()
 
 setwd(paste(wd,"/Sim_1/sim",sep=""))
@@ -80,15 +80,15 @@ df<-full_join(df,df2)
 df<-rename(df, Catchsim=Catchsim)%>%
  rename(Catchest=Catchest)
 
-setwd("C:/Users/jjesse/Box/Jerelle Jesse/MSE/shiny")
+setwd("C:/Users/mmazur/Box/Jerelle Jesse/MSE/shiny")
 write.csv(df,here("Data/Catch.csv"))
 
 
 #REE calculations--------------------------------------------
-setwd("C:/Users/jjesse/Box/HCR_Sims")
+setwd("C:/Users/mmazur/Box/Mackenzie_Mazur/HCR_Sims")
 wd<-getwd()
 
-setwd(paste(wd,"/Sim_22/sim",sep=""))
+setwd(paste(wd,"/Sim_1/sim",sep=""))
 sims <- list.files()
 
 for (k in 1:length(sims)){
@@ -97,26 +97,25 @@ for (k in 1:length(sims)){
 }
 sims<-na.omit(sims)
 
-Catchsim<-matrix(NA,nrow=21,ncol=length(sims))
+Catchsim<-matrix(NA,nrow=11,ncol=length(sims))
 
 for (k in 1:length(sims)){
   load(sims[k])
-  Ftrue<-omvalGlobal[[1]]$SSB[169:190]
+  SSBtrue<-omvalGlobal[[1]]$SSB[168:188]
   for (i in seq(170,190,2)){
-    Fest<-omvalGlobal[[1]]$SSBest[i,]
-    Fest<-na.omit(Fest)
-    Fest<-tail(Fest,1)
-    Catchsim[(i-169),k]<-((Fest-Ftrue[i-169])/Ftrue[i-169])*100
+    SSBest<-omvalGlobal[[1]]$SSBest[i,]
+    SSBest<-na.omit(SSBest)
+    SSBest<-tail(SSBest,1)
+    Catchsim[((i-168)/2),k]<-((SSBest-SSBtrue[i-169])/SSBtrue[i-169])*100
   }
 }
-
 Catchsim<-rowMedians(Catchsim,na.rm=T)
-Year<-seq(2019,2039,1)
+Year<-seq(2019,2039,2)
 df<-as.data.frame(cbind(Catchsim,Year))
-df$Scenario<-22
+df$Scenario<-1
 
 
-for (j in 23:32){
+for (j in 2:20){
   setwd(paste(wd,"/Sim_",j,"/sim",sep=""))
 
   sims <- list.files()
@@ -127,35 +126,98 @@ for (j in 23:32){
   }
   sims<-na.omit(sims)
 
-  Catchsim<-matrix(NA,nrow=21,ncol=length(sims))
+  Catchsim<-matrix(NA,nrow=11,ncol=length(sims))
 
   for (k in 1:length(sims)){
-  load(sims[k])
-  Ftrue<-omvalGlobal[[1]]$SSB[169:190]
-  for (i in seq(170,190,2)){
-    Fest<-omvalGlobal[[1]]$SSBest[i,]
-    Fest<-na.omit(Fest)
-    Fest<-tail(Fest,1)
-    Catchsim[(i-169),k]<-((Fest-Ftrue[i-169])/Ftrue[i-169])*100
+    load(sims[k])
+    SSBtrue<-omvalGlobal[[1]]$SSB[168:188]
+    for (i in seq(170,190,2)){
+      SSBest<-omvalGlobal[[1]]$SSBest[i,]
+      SSBest<-na.omit(SSBest)
+      SSBest<-tail(SSBest,1)
+      Catchsim[((i-168)/2),k]<-((SSBest-SSBtrue[i-169])/SSBtrue[i-169])*100
     }
   }
 
   Catchsim<-rowMedians(Catchsim,na.rm=T)
-  Year<-2019:2039
+  Year<-seq(2019,2039,2)
   df2<-as.data.frame(cbind(Catchsim,Year))
   df2$Scenario<-j
 
   df<-dplyr::full_join(df,df2)
 }
 
+for (j in 21:24){
+  setwd(paste(wd,"/Sim_",j,"/sim",sep=""))
   
+  sims <- list.files()
+  
+  for (k in 1:length(sims)){
+    if (file.size(sims[k])==0){
+      sims[k]<-NA}
+  }
+  sims<-na.omit(sims)
+  
+  Catchsim<-matrix(NA,nrow=21,ncol=length(sims))
+  
+  for (k in 1:length(sims)){
+    load(sims[k])
+    SSBtrue<-omvalGlobal[[1]]$SSB[169:190]
+    for (i in seq(170,190,1)){
+      SSBest<-omvalGlobal[[1]]$SSBest[i,]
+      SSBest<-na.omit(SSBest)
+      SSBest<-tail(SSBest,1)
+      Catchsim[(i-169),k]<-((SSBest-SSBtrue[i-169])/SSBtrue[i-169])*100
+    }
+  }
+  
+  Catchsim<-rowMedians(Catchsim,na.rm=T)
+  Year<-2019:2039
+  df2<-as.data.frame(cbind(Catchsim,Year))
+  df2$Scenario<-j
+  
+  df<-dplyr::full_join(df,df2)
+}
+
+for (j in 25:32){
+  setwd(paste(wd,"/Sim_",j,"/sim",sep=""))
+  
+  sims <- list.files()
+  
+  for (k in 1:length(sims)){
+    if (file.size(sims[k])==0){
+      sims[k]<-NA}
+  }
+  sims<-na.omit(sims)
+  
+  Catchsim<-matrix(NA,nrow=11,ncol=length(sims))
+  
+  for (k in 1:length(sims)){
+    load(sims[k])
+    SSBtrue<-omvalGlobal[[1]]$SSB[168:188]
+    for (i in seq(170,190,2)){
+      SSBest<-omvalGlobal[[1]]$SSBest[i,]
+      SSBest<-na.omit(SSBest)
+      SSBest<-tail(SSBest,1)
+      Catchsim[((i-168)/2),k]<-((SSBest-SSBtrue[i-169])/SSBtrue[i-169])*100
+    }
+  }
+  
+  Catchsim<-rowMedians(Catchsim,na.rm=T)
+  Year<-seq(2019,2039,2)
+  df2<-as.data.frame(cbind(Catchsim,Year))
+  df2$Scenario<-j
+  
+  df<-dplyr::full_join(df,df2)
+}
+
 df<-rename(df, REESSB=Catchsim)
 
-setwd("C:/Users/jjesse/Box/Jerelle Jesse/MSE/shiny")
+setwd("C:/Users/mmazur/Box/Jerelle Jesse/MSE/shiny")
 write.csv(df,here("Data/REE_SSB22_32.csv"))
 
 # Mohn's rho----------------------------
-setwd("C:/Users/jjesse/Box/HCR_Sims")
+setwd("C:/Users/mmazur/Box/HCR_Sims")
 wd<-getwd()
 
 setwd(paste(wd,"/Sim_1/sim",sep=""))
