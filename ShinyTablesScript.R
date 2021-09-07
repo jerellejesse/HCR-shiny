@@ -80,24 +80,20 @@ df<-full_join(df,df2)
 df<-rename(df, Catchsim=Catchsim)%>%
  rename(Catchest=Catchest)
 
-<<<<<<< HEAD
+
 setwd("C:/Users/jjesse/Box/Jerelle Jesse/MSE/shiny")
-write.csv(df,here("Data/Catch_2040.csv"))
-=======
+
 setwd("C:/Users/mmazur/Box/Jerelle Jesse/MSE/shiny")
 write.csv(df,here("Data/Catch.csv"))
->>>>>>> 8fe72d14c18393e41d4ae91313a18bab8a6bbf75
+
 
 
 #REE calculations--------------------------------------------
 setwd("C:/Users/mmazur/Box/Mackenzie_Mazur/HCR_Sims")
 wd<-getwd()
 
-<<<<<<< HEAD
-setwd(paste(wd,"/Sim_21/sim",sep=""))
-=======
 setwd(paste(wd,"/Sim_1/sim",sep=""))
->>>>>>> 8fe72d14c18393e41d4ae91313a18bab8a6bbf75
+
 sims <- list.files()
 
 for (k in 1:length(sims)){
@@ -110,37 +106,27 @@ Catchsim<-matrix(NA,nrow=11,ncol=length(sims))
 
 for (k in 1:length(sims)){
   load(sims[k])
-<<<<<<< HEAD
-  Ftrue<-omvalGlobal[[1]]$F_full[169:190]
-  for (i in seq(170,190,1)){
-    Fest<-omvalGlobal[[1]]$Fest[i,]
-    Fest<-na.omit(Fest)
-    Fest<-tail(Fest,1)
-    Catchsim[(i-169),k]<-((Fest-Ftrue[i-169])/Ftrue[i-169])*100
-=======
+
   SSBtrue<-omvalGlobal[[1]]$SSB[168:188]
   for (i in seq(170,190,2)){
     SSBest<-omvalGlobal[[1]]$SSBest[i,]
     SSBest<-na.omit(SSBest)
     SSBest<-tail(SSBest,1)
     Catchsim[((i-168)/2),k]<-((SSBest-SSBtrue[i-169])/SSBtrue[i-169])*100
->>>>>>> 8fe72d14c18393e41d4ae91313a18bab8a6bbf75
+
   }
 }
 Catchsim<-rowMedians(Catchsim,na.rm=T)
 Year<-seq(2019,2039,2)
 df<-as.data.frame(cbind(Catchsim,Year))
-<<<<<<< HEAD
-df$Scenario<-21
 
-
-for (j in 23:24){
-=======
 df$Scenario<-1
 
 
+
+
 for (j in 2:20){
->>>>>>> 8fe72d14c18393e41d4ae91313a18bab8a6bbf75
+
   setwd(paste(wd,"/Sim_",j,"/sim",sep=""))
 
   sims <- list.files()
@@ -154,23 +140,15 @@ for (j in 2:20){
   Catchsim<-matrix(NA,nrow=11,ncol=length(sims))
 
   for (k in 1:length(sims)){
-<<<<<<< HEAD
-  load(sims[k])
-  Ftrue<-omvalGlobal[[1]]$F_full[169:190]
-  for (i in seq(170,190,1)){
-    Fest<-omvalGlobal[[1]]Fest[i,]
-    Fest<-na.omit(Fest)
-    Fest<-tail(Fest,1)
-    Catchsim[(i-169),k]<-((Fest-Ftrue[i-169])/Ftrue[i-169])*100
-=======
-    load(sims[k])
+
+     load(sims[k])
     SSBtrue<-omvalGlobal[[1]]$SSB[168:188]
     for (i in seq(170,190,2)){
       SSBest<-omvalGlobal[[1]]$SSBest[i,]
       SSBest<-na.omit(SSBest)
       SSBest<-tail(SSBest,1)
       Catchsim[((i-168)/2),k]<-((SSBest-SSBtrue[i-169])/SSBtrue[i-169])*100
->>>>>>> 8fe72d14c18393e41d4ae91313a18bab8a6bbf75
+
     }
   }
 
@@ -205,12 +183,8 @@ for (j in 21:24){
     }
   }
   
-<<<<<<< HEAD
-df<-rename(df, REEF=Catchsim)
 
-setwd("C:/Users/jjesse/Box/Jerelle Jesse/MSE/shiny")
-write.csv(df,here("Data/REE_F21_24.csv"))
-=======
+
   Catchsim<-rowMedians(Catchsim,na.rm=T)
   Year<-2019:2039
   df2<-as.data.frame(cbind(Catchsim,Year))
@@ -255,7 +229,6 @@ df<-rename(df, REESSB=Catchsim)
 
 setwd("C:/Users/mmazur/Box/Jerelle Jesse/MSE/shiny")
 write.csv(df,here("Data/REE_SSB22_32.csv"))
->>>>>>> 8fe72d14c18393e41d4ae91313a18bab8a6bbf75
 
 # Mohn's rho----------------------------
 setwd("C:/Users/mmazur/Box/HCR_Sims")
