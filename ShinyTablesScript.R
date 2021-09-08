@@ -2,7 +2,7 @@ library(matrixStats)
 library(dplyr)
 library(here)
 
-setwd("C:/Users/mmazur/Box/HCR_Sims")
+setwd("C:/Users/jjesse/Box/HCR_Sims")
 wd<-getwd()
 
 setwd(paste(wd,"/Sim_1/sim",sep=""))
@@ -19,7 +19,7 @@ Catchsim<-matrix(NA,nrow=3,ncol=length(sims))
 
 for (k in 1:length(sims)){
   load(sims[k])
-  Catchsim[,k]<-omvalGlobal[[1]]$sumCW[188:190]
+  Catchsim[,k]<-omvalGlobal[[1]]$F_full[188:190]
 }
 
 Catchsim<-rowMedians(Catchsim,na.rm=T)
@@ -30,7 +30,7 @@ Catchest<-matrix(NA,nrow=3,ncol=length(sims))
 
 for (k in 1:length(sims)){
   load(sims[k])
-  Catchest[,k]<-omvalGlobal[[1]]$Catchest[190,1:3]
+  Catchest[,k]<-omvalGlobal[[1]]$Fest[190,1:3]
 }
 
 Catchest<-rowMedians(Catchest,na.rm=T)
@@ -55,7 +55,7 @@ for (i in 2:32){
 
   for (k in 1:length(sims)){
     load(sims[k])
-    Catchsim[,k]<-omvalGlobal[[1]]$sumCW[188:190]
+    Catchsim[,k]<-omvalGlobal[[1]]$F_full[188:190]
   }
 
 Catchsim<-rowMedians(Catchsim,na.rm=T)
@@ -66,7 +66,7 @@ Catchest<-matrix(NA,nrow=3,ncol=length(sims))
 
 for (k in 1:length(sims)){
   load(sims[k])
-  Catchest[,k]<-omvalGlobal[[1]]$Catchest[190,1:3]
+  Catchest[,k]<-omvalGlobal[[1]]$Fest[190,1:3]
 }
 
 Catchest<-rowMedians(Catchest,na.rm=T)
@@ -77,11 +77,11 @@ df2$Scenario<-i
 df<-full_join(df,df2)
 }
 
-df<-rename(df, Catchsim=Catchsim)%>%
- rename(Catchest=Catchest)
+df<-rename(df, F_full=Catchsim)%>%
+ rename(Fest=Catchest)
 
 
-write.csv(df,here("Data/Catch.csv"))
+write.csv(df,here("Data/F_2039.csv"))
 
 
 
@@ -484,7 +484,7 @@ write.csv(Table, "Table.csv")
 
 
 
-##### Update Scenario 1 and %REE #####
+##### Update Scenario 1 and extended time series and %REE #####
 data_old<-read.csv(here("Data/shiny_data_jj.csv"))[-1]
 #take out old scenario 1
 data_update<-filter(data_old, Scenario !=1)
@@ -515,6 +515,30 @@ update_data<-left_join(scenario1,scenarios, by=c("Scenario"))[,c(2,4,15:18,1,3,5
 #add to old data
 data_new<-bind_rows(update_data, data_update)
 write.csv(data_new, here("Data/shiny_data_jj_update.csv"))
+
+#####extended time series for confidence interval plots
+data<-read.csv(here("Data/Table.csv"))
+
+extend<-read.csv(here("Data/SSB_2040.csv"))[-1]%>%
+  full_join(read.csv(here("Data/F_2040.csv"))[-1])%>%
+  full_join(read.csv(here("Data/Catch_2040.csv"))[-1])%>%
+  full_join(read.csv(here("Data/R_2040.csv"))[-1])
+
+#Add scenario info
+scenarios<-read.csv(here("Data/scenarios.csv"))
+
+#change rho and frequency inputs to make coding shiny easier
+scenarios$Rho[scenarios$Rho==2]<-"No rho-adjustment"
+scenarios$Rho[scenarios$Rho==1]<-"Rho-adjustment"
+scenarios$Frequency[scenarios$Frequency==1]<-"Two year updates"
+scenarios$Frequency[scenarios$Frequency==2]<-"Annual updates"
+
+update_data<-left_join(extend,scenarios, by=c("Scenario"))[,c(2,4,11:14,1,3,5:10)]
+
+#merge in extended data
+data_new<-bind_rows(update_data, data)
+write.csv(data_new, here("Data/Table_update.csv"))
+
 
 
 

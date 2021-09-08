@@ -1,6 +1,6 @@
 plotRCI <- function(om,rho,freq)
 {
-  df<-read.csv(here('Data/Table.csv'))
+  df<-read.csv(here('Data/Table_update.csv'))
   df<-df[df$OM==om,]
   df<-df[df$Rho==rho,]
   df<-df[df$Frequency==freq,]
@@ -10,7 +10,7 @@ plotRCI <- function(om,rho,freq)
   df$HCR[df$HCR==4]<-'Constrained ramp'
   df$HCR<-as.factor(df$HCR)
   df<-df[df$Year>2019,]
-  ggplot(df)+geom_line(aes(x=Year,y=R,color=HCR))+
+  ggplot(na.omit(df))+geom_line(aes(x=Year,y=R,color=HCR))+
     geom_ribbon(aes(y=R,x=Year,ymin=RCI_Lower,ymax=RCI_Upper,fill=HCR),alpha=0.2)+
     theme_classic()+theme(text=element_text(size=18),legend.position='none')+
     ylab('Recruitment')+
