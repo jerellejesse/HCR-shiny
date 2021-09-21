@@ -25,7 +25,8 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                            tabPanel("Harvest Control Rules",includeMarkdown("HCR.Rmd"),img(src="HCR.png")),
                                            tabPanel("Scenarios",includeMarkdown("Scenarios.Rmd"),dataTableOutput("scenarios")),
                                            tabPanel("Performance Metrics", dataTableOutput("metrics")),
-                                           tabPanel("Glossary", dataTableOutput("glossary"))
+                                           tabPanel("Glossary", dataTableOutput("glossary")),
+                                           tabPanel("Acknowledgments", includeMarkdown("Acknowledgments.Rmd"))
                                          )#close tabset
                                          )))))# close rows
                                          ) # close main panel
@@ -45,7 +46,9 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                               style = "font-size:100%"),
                                                      tags$div(uiOutput("dynamicRho")), tags$div(uiOutput("dynamicFreq"))),
                                         mainPanel(
-                                          fluidRow(column(12,"Reading Plots- will add info about how to read plots",
+                                          fluidRow(column(4,img(src="trajectory.png")), 
+                                                   column(4,img(src="boxplots.png")),
+                                                   column(4,img(src="boxplot.png")),
                                          fluidRow(column(12, actionButton("do", "Create plots"),
                                           tabsetPanel(
                                             tabPanel("Trajectories", 
@@ -60,7 +63,7 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                        splitLayout(plotOutput("CatchCI"), plotOutput("RCI")))),
                                             tabPanel("Catch", plotOutput("CatchBox"))
                                           )#close tabset
-                                          ))))#close rows
+                                          )))#close rows
                                          )#close main panel
                                         )), #close tab panel
                                         tabPanel("Assessment Performance",
@@ -77,7 +80,8 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                                        style = "font-size:100%"),
                                                               tags$div(uiOutput("dynamicRho2")), tags$div(uiOutput("dynamicFreq2"))),
                                                  mainPanel(
-                                                   fluidRow(column(12, "Reading Plots- will add info about how to read plots",
+                                                   fluidRow(column(4,img(src="trajectory.png")),
+                                                            column(4, img(src="boxplots.png")),
                                                    fluidRow(column(12,
                                                    actionButton("do2", "Create plots"),
                                                    tabsetPanel(
@@ -92,7 +96,7 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                                 splitLayout(plotOutput("SSBerror", width="90%"), plotOutput("Ferror", width="90%"))))
                                                      
                                                    )#close tabset
-                                                   ))))#close rows
+                                                   )))#close rows
                                                    )# close main panel
                              )), #close tab panel
                              tabPanel("Management Performance",
@@ -109,7 +113,9 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                               style = "font-size:100%"),
                                                      tags$div(uiOutput("dynamicRho3")), tags$div(uiOutput("dynamicFreq3"))),
                                         mainPanel(
-                                          fluidRow(column(12,"Reading Plots- will add info about how to read plots",
+                                          fluidRow(column(4,img(src="kobe2.png")),
+                                                   column(4, img(src="boxplots.png")),
+                                                   column(4, img(src="radar.png")),
                                           fluidRow(column(12,
                                           actionButton("do3", "Create plots"),
                                                   tabsetPanel(
@@ -121,7 +127,7 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                              fluidRow(
                                                                splitLayout(plotOutput("short"), plotOutput("medium"), plotOutput("long"))))
                                          )#close tabset
-                                         ))))#close rows
+                                         )))#close rows
                                          )# close main panel
                                       )), #close tab panel
                              tabPanel("Compare Scenarios",

@@ -1,0 +1,31 @@
+---
+title: "Acknowledgments"
+output: html_document
+---
+### Acknowledgments
+
+* Funding support for this research is provided by the New England Fishery Management Council (NEFMC)
+
+<br>
+
+* Technical support:
+  + NEFMC Groundfish Plan Development Team (PDT)
+  + Groundfish PDT HCR Working Group: **Jamie Cournane, Robin Frede, Paul Nitschke**
+  
+  <br>
+  
+* Input and Feedback:
+  + NEFMC Science and Statistical Committee
+  + NEFSC MSE leads: **John Deroba, Sarah Gaichas**
+  + NEFMC Executive Director **Tom Nies**
+  + Groundfish Advisory Panel
+  + Recreational Groundfish Advisory Panel
+  + Groundfish Committee
+  
+<br>
+
+* Development of the MSE modeling architecture by **Samuel Truesdell, Mackenzie Mazur, Lisa Kerr, Andrew Pershing, Ashley Weston, Steve Cadrin, Gavin Fay, Jonathan Cummings, Sarah Gaichas, Min-Yang Lee, and Anna Birkenbach**. This work was supported by NOAA COCA program and NOAA SK Program.
+
+<br>
+
+* Please cite full report linked above
