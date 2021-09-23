@@ -1,6 +1,8 @@
 library(matrixStats)
 library(dplyr)
 library(here)
+library(plyr)
+library(DescTools)
 
 setwd("C:/Users/jjesse/Box/HCR_Sims")
 wd<-getwd()
@@ -15,22 +17,22 @@ for (k in 1:length(sims)){
 }
 sims<-na.omit(sims)
 
-Catchsim<-matrix(NA,nrow=3,ncol=length(sims))
+Catchsim<-matrix(NA,nrow=52,ncol=length(sims))
 
 for (k in 1:length(sims)){
   load(sims[k])
-  Catchsim[,k]<-omvalGlobal[[1]]$F_full[188:190]
+  Catchsim[,k]<-omvalGlobal[[1]]$R[136:187]
 }
 
 Catchsim<-rowMedians(Catchsim,na.rm=T)
-Year<-2038:2040
+Year<-1986:2037
 df<-as.data.frame(cbind(Catchsim,Year))
 
-Catchest<-matrix(NA,nrow=3,ncol=length(sims))
+Catchest<-matrix(NA,nrow=52,ncol=length(sims))
 
 for (k in 1:length(sims)){
   load(sims[k])
-  Catchest[,k]<-omvalGlobal[[1]]$Fest[190,1:3]
+  Catchest[,k]<-omvalGlobal[[1]]$Rest[190,1:52]
 }
 
 Catchest<-rowMedians(Catchest,na.rm=T)
@@ -40,48 +42,48 @@ df$Catchest<-Catchest
 
 df$Scenario<-1
 
-for (i in 2:32){
-  setwd(paste(wd,"/Sim_",i,"/sim",sep=""))
+# for (i in 2:32){
+#   setwd(paste(wd,"/Sim_",i,"/sim",sep=""))
+# 
+#   sims <- list.files()
+# 
+#   for (k in 1:length(sims)){
+#     if (file.size(sims[k])==0){
+#       sims[k]<-NA}
+#   }
+#   sims<-na.omit(sims)
+# 
+#   Catchsim<-matrix(NA,nrow=3,ncol=length(sims))
+# 
+#   for (k in 1:length(sims)){
+#     load(sims[k])
+#     Catchsim[,k]<-omvalGlobal[[1]]$F_full[188:190]
+#   }
+# 
+# Catchsim<-rowMedians(Catchsim,na.rm=T)
+# Year<-2038:2040
+# df2<-as.data.frame(cbind(Catchsim,Year))
+# 
+# Catchest<-matrix(NA,nrow=3,ncol=length(sims))
+# 
+# for (k in 1:length(sims)){
+#   load(sims[k])
+#   Catchest[,k]<-omvalGlobal[[1]]$Fest[190,1:3]
+# }
+# 
+# Catchest<-rowMedians(Catchest,na.rm=T)
+# Catchest<-na.omit(Catchest)
+# 
+# df2$Catchest<-Catchest
+# df2$Scenario<-i
+# df<-full_join(df,df2)
+# }
 
-  sims <- list.files()
-
-  for (k in 1:length(sims)){
-    if (file.size(sims[k])==0){
-      sims[k]<-NA}
-  }
-  sims<-na.omit(sims)
-
-  Catchsim<-matrix(NA,nrow=3,ncol=length(sims))
-
-  for (k in 1:length(sims)){
-    load(sims[k])
-    Catchsim[,k]<-omvalGlobal[[1]]$F_full[188:190]
-  }
-
-Catchsim<-rowMedians(Catchsim,na.rm=T)
-Year<-2038:2040
-df2<-as.data.frame(cbind(Catchsim,Year))
-
-Catchest<-matrix(NA,nrow=3,ncol=length(sims))
-
-for (k in 1:length(sims)){
-  load(sims[k])
-  Catchest[,k]<-omvalGlobal[[1]]$Fest[190,1:3]
-}
-
-Catchest<-rowMedians(Catchest,na.rm=T)
-Catchest<-na.omit(Catchest)
-
-df2$Catchest<-Catchest
-df2$Scenario<-i
-df<-full_join(df,df2)
-}
-
-df<-rename(df, F_full=Catchsim)%>%
- rename(Fest=Catchest)
+df<-rename(df, R=Catchsim)%>%
+ rename(Rest=Catchest)
 
 
-write.csv(df,here("Data/F_2039.csv"))
+write.csv(df,here("Data/R1.csv"))
 
 
 
@@ -159,17 +161,17 @@ for (j in 2:20){
 
 for (j in 21:24){
   setwd(paste(wd,"/Sim_",j,"/sim",sep=""))
-  
+
   sims <- list.files()
-  
+
   for (k in 1:length(sims)){
     if (file.size(sims[k])==0){
       sims[k]<-NA}
   }
   sims<-na.omit(sims)
-  
+
   Catchsim<-matrix(NA,nrow=21,ncol=length(sims))
-  
+
   for (k in 1:length(sims)){
     load(sims[k])
     SSBtrue<-omvalGlobal[[1]]$SSB[169:190]
@@ -180,30 +182,30 @@ for (j in 21:24){
       Catchsim[(i-169),k]<-((SSBest-SSBtrue[i-169])/SSBtrue[i-169])*100
     }
   }
-  
+
 
 
   Catchsim<-rowMedians(Catchsim,na.rm=T)
   Year<-2019:2039
   df2<-as.data.frame(cbind(Catchsim,Year))
   df2$Scenario<-j
-  
+
   df<-dplyr::full_join(df,df2)
 }
 
 for (j in 25:32){
   setwd(paste(wd,"/Sim_",j,"/sim",sep=""))
-  
+
   sims <- list.files()
-  
+
   for (k in 1:length(sims)){
     if (file.size(sims[k])==0){
       sims[k]<-NA}
   }
   sims<-na.omit(sims)
-  
+
   Catchsim<-matrix(NA,nrow=11,ncol=length(sims))
-  
+
   for (k in 1:length(sims)){
     load(sims[k])
     SSBtrue<-omvalGlobal[[1]]$SSB[168:188]
@@ -214,12 +216,12 @@ for (j in 25:32){
       Catchsim[((i-168)/2),k]<-((SSBest-SSBtrue[i-169])/SSBtrue[i-169])*100
     }
   }
-  
+
   Catchsim<-rowMedians(Catchsim,na.rm=T)
   Year<-seq(2019,2039,2)
   df2<-as.data.frame(cbind(Catchsim,Year))
   df2$Scenario<-j
-  
+
   df<-dplyr::full_join(df,df2)
 }
 
@@ -388,7 +390,7 @@ Catchsim<-matrix(NA,nrow=56,ncol=length(sims))
 
 for (k in 1:length(sims)){
   load(sims[k])
-  Catchsim[,k]<-omvalGlobal[[1]]$Mohns_Rho_SSB[134:189]
+  Catchsim[,k]<-omvalGlobal[[1]]$Mohns_Rho_F[134:189]
 }
 
 Catchsim<-rowMedians(Catchsim,na.rm=T)
@@ -424,11 +426,44 @@ df$Scenario<-1
 #   df<-full_join(df,df2)
 # }
 
-df<-rename(df, rhoSSB=Catchsim)
+df<-rename(df, rhoF=Catchsim)
 
-write.csv(df,here("Data/RhoSSB1.csv"))
+write.csv(df,here("Data/RhoF1.csv"))
 
 
+#####Confidence interval plots ####
+setwd("C:/Users/jjesse/Box/HCR_Sims")
+wd<-getwd()
+
+setwd(paste(wd,"/Sim_1/sim",sep=""))
+sims <- list.files()
+
+for (k in 1:length(sims)){
+  if (file.size(sims[k])==0){
+    sims[k]<-NA}
+}
+
+sims<-na.omit(sims)
+
+SSBratiots<-matrix(NA,nrow=22,ncol=length(sims))
+
+for (k in 1:length(sims)){
+  load(sims[k])
+  SSBratiots[,k]<-omvalGlobal[[1]]$R[169:190]
+}
+
+Df<-as.data.frame(SSBratiots)
+Df$Year<-2019:2040
+Df<- Df %>% gather(Year, R, 1:(length(Df)-1))
+Df$Year<-rep(2019:2040,(length(Df)-1))
+Df <- ddply(Df, "Year", summarise, median = MedianCI(R)[1], CI_lower=MedianCI(R)[2], CI_upper=MedianCI(R)[3])
+Df$Scenario<-1
+
+df<-dplyr::rename(Df, RCI_Upper=CI_upper)%>%
+  dplyr::rename(RCI_Lower=CI_lower)%>%
+  select(-median)
+
+write.csv(df, here::here("Data/RCI1.csv"))
 
 ##### merge together #####
 library(here)
@@ -487,15 +522,15 @@ write.csv(Table, "Table.csv")
 ##### Update Scenario 1 and extended time series and %REE #####
 data_old<-read.csv(here("Data/shiny_data_jj.csv"))[-1]
 #take out old scenario 1
-data_update<-filter(data_old, Scenario !=1)
+data_remove<-filter(data_old, Scenario !=1)
 
 #merge scenario 1 metrics
 scenario1<-read.csv(here("Data/SSB1.csv"))[-1]%>%
   full_join(read.csv(here("Data/F1.csv"))[-1])%>%
   full_join(read.csv(here("Data/Catch1.csv"))[-1])%>%
   full_join(read.csv(here("Data/R1.csv"))[-1])%>%
-  full_join(read.csv(here("Data/REESSB1.csv"))[-1])%>%
-  full_join(read.csv(here("Data/REEF1.csv"))[-1])%>%
+  full_join(read.csv(here("Data/REE_SSB1.csv"))[-1])%>%
+  full_join(read.csv(here("Data/REE_F1.csv"))[-1])%>%
   full_join(read.csv(here("Data/RhoF1.csv"))[-1])%>%
   full_join(read.csv(here("Data/RhoSSB1.csv"))[-1])
 
@@ -513,10 +548,10 @@ scenarios$Frequency[scenarios$Frequency==2]<-"Annual updates"
 update_data<-left_join(scenario1,scenarios, by=c("Scenario"))[,c(2,4,15:18,1,3,5:12,14,13)]
 
 #add to old data
-data_new<-bind_rows(update_data, data_update)
+data_new<-bind_rows(update_data, data_remove)
 write.csv(data_new, here("Data/shiny_data_jj_update.csv"))
 
-#####extended time series for confidence interval plots
+#####extended time series for confidence interval plots 
 data<-read.csv(here("Data/Table.csv"))
 
 extend<-read.csv(here("Data/SSB_2040.csv"))[-1]%>%
@@ -542,6 +577,47 @@ write.csv(data_new, here("Data/Table_update.csv"))
 
 
 
+
+##### update scenario 1 CI data #####
+data_old<-read.csv(here::here("Data/Table_update.csv"))[-1]
+data_left<-data_old[,1:17, 26:28]
+
+#take out old scenario 1
+data_remove<-select(data_old,Year, Scenario, SSBCI_Lower, SSBCI_Upper, FCI_Lower, FCI_Upper, CatchCI_Lower, CatchCI_Upper, RCI_Lower, RCI_Upper)%>%
+  filter(Scenario !=1)
+
+#merge scenario 1 metrics
+scenario1_CI<-read.csv(here::here("Data/SSBCI1.csv"))[-1]%>%
+  full_join(read.csv(here::here("Data/FCI1.csv"))[-1])%>%
+  full_join(read.csv(here::here("Data/CatchCI1.csv"))[-1])%>%
+  full_join(read.csv(here::here("Data/RCI1.csv"))[-1])
+
+write.csv(scenario1,here::here("Data/scenario1_CI.csv"))
+
+
+#add to old data
+data_merge<-full_join(scenario1_CI, data_remove)
+data_new<-full_join( data_left, data_merge, by=c("Year", "Scenario"))
+
+
+#need the new medians in the table_update file
+scenario1<-read.csv(here("Data/scenario1.csv"))%>%
+  select(Year, Scenario,SSB, F_full, Catchsim, R)
+
+data_new_remove<-select(data_new, Year, Scenario, SSB, F_full, Catchsim, R)%>%
+  filter(Scenario!= 1)
+data_new_replace<-full_join(scenario1, data_new_remove)
+
+data_new_left<-data_new[, c(1:6,8,10,12,14:25)]
+
+data_new2<-full_join(data_new_left, data_new_replace, by=c("Year", "Scenario"))
+  
+write.csv(data_new2, here::here("Data/Table_update.csv"))
+
+
+
+
+
 ##### New REE data #####
 # f<-read.csv(here("Data/REE rerun/REE_F1_19.csv"))[-1]%>%
 #   bind_rows(read.csv(here("Data/REE rerun/REE_F20.csv"))[-1])%>%
@@ -557,6 +633,12 @@ f<-read.csv(here("Data/REE_F.csv"))[-1]
 ssb<-read.csv(here("Data/REE_SSB.csv"))[-1]
 
 ree_new<-full_join(f, ssb, by=c("Year", "Scenario"))
+ree_new_remove<-filter(ree_new, Scenario !=1)
+
+scenario1_ree<-read.csv(here("Data/REE_SSB1.csv"))[-1]%>%
+  full_join(read.csv(here("Data/REE_F1.csv"))[-1])
+  
+ree_new<-bind_rows(scenario1_ree, ree_new_remove)
 
 scenarios<-read.csv(here("Data/scenarios.csv"))
 scenarios$Rho[scenarios$Rho==2]<-"No rho-adjustment"

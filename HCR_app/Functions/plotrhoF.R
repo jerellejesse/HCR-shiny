@@ -13,6 +13,6 @@ plotrhoF <- function(om,rho,freq)
   ggplot(df)+geom_line(aes(x=Year,y=rhoF,color=HCR),size=1)+
     theme_classic()+theme(text=element_text(size=18),legend.position='top')+
     ylab('Monhs Rho for F')+
-    scale_y_continuous(limits = c(-0.50, 1))+
+    scale_y_continuous(limits = c(-0.50, 0.5))+
     scale_color_colorblind()
 }

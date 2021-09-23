@@ -9,7 +9,7 @@ plotFCI <- function(om,rho,freq)
   df$HCR[df$HCR==3]<-'F-step'
   df$HCR[df$HCR==4]<-'Constrained ramp'
   df$HCR<-as.factor(df$HCR)
-  df<-df[df$Year>2019,]
+  df<-df[df$Year>2018,]
   ggplot(na.omit(df))+geom_line(aes(x=Year,y=F_full,color=HCR))+
     geom_ribbon(aes(y=F_full,x=Year,ymin=FCI_Lower,ymax=FCI_Upper,fill=HCR),alpha=0.2)+
     theme_classic()+theme(text=element_text(size=18),legend.position='none')+

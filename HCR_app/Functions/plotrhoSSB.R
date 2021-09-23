@@ -1,6 +1,6 @@
 plotrhoSSB <- function(om,rho,freq)
 {
-  df<-read.csv(here('Data/Table.csv'))
+  df<-read.csv(here('Data/shiny_data_jj_update.csv'))
   df<-df[df$OM==om,]
   df<-df[df$Rho==rho,]
   df<-df[df$Frequency==freq,]
@@ -13,6 +13,6 @@ plotrhoSSB <- function(om,rho,freq)
   ggplot(df)+geom_line(aes(x=Year,y=rhoSSB,color=HCR),size=1)+
     theme_classic()+theme(text=element_text(size=18),legend.position='top')+
     ylab('Monhs Rho for SSB')+
-    scale_y_continuous(limits = c(-0.50, 1))+
+    scale_y_continuous(limits = c(-0.50, 1.0))+
     scale_color_colorblind()
 }
