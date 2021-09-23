@@ -1,0 +1,12 @@
+---
+title: " "
+
+output: html_document
+---
+
+#### Trajectory Plots
+
+<br>
+
+* performance metric through time
+* each HCR as a different colored line 

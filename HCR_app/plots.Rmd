@@ -1,0 +1,14 @@
+---
+title: " "
+
+output: html_document
+---
+
+<br>
+
+### How to read plots?
+
+Click **Animate** to see an example of each plot type!
+<br>
+
+

@@ -1,0 +1,14 @@
+---
+title: " "
+
+output: html_document
+---
+
+#### Boxplots
+
+<br>
+
+* performance metric in short (1-5 years), medium (6-10 years), and long-term (11-21 years) 
+* each HCR is a different colored boxplot
+* box is constructed with the interquartile range: 25th percentile, median, and 75th percentile
+* whiskers represent the smallest and largest values within 1.5 times the interquartile range

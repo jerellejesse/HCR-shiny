@@ -1,0 +1,17 @@
+---
+title: " "
+
+output: html_document
+---
+
+#### Radar Chart
+
+<br>
+
+* also known as a spider chart
+* each point represents a different performance metric
+* the center is the minimum of each metric and the outer edge is the maximum of the metric
+* metrics are standardized to the maximum value for each metric and equally weighted
+* each HCR is a different color shaded area
+* the more space the HCR takes up on the chart means it does better at achieving those metrics
+

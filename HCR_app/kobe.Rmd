@@ -1,0 +1,17 @@
+---
+title: " "
+
+output: html_document
+---
+
+#### Kobe Plots
+
+<br>
+
+* tracks stock status through time
+* red box represents a stock that is overfished and experiencing overfishing
+* yellow boxes represent either overfishing occurring, but not overfished or overfished, but overfishing not occurring
+* green box represents a stock neither overfished or experiencing overfishing
+* each HCR is a different colored line that moves between the colored boxes based on stock status through time
+* overfishing status based on the ratio of F to F<sub>MSY</sub>
+* overfished status based on the ratio of SSB to SSB<sub>MSY</sub>
