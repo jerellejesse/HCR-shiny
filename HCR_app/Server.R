@@ -47,6 +47,28 @@ output$metrics<- renderDataTable(metrics())
 output$scenarios<-renderDataTable(scenarios())
 output$glossary<-renderDataTable(Glossary())
 
+#render gifs
+observeEvent(input$do3, {
+output$trajectorygif<- renderImage(
+  list(src=here("HCR_app/www/trajectory.gif"), align="left", height="300px", width="600px"), deleteFile = FALSE)
+   })
+
+observeEvent(input$do4,{
+output$boxplotsgif<- renderImage(
+  list(src=here("HCR_app/www/boxplots.gif"), align="left", height="300px", width="600px"), deleteFile = FALSE)
+  })
+
+observeEvent(input$do5,{
+output$kobegif<- renderImage(
+  list(src=here("HCR_app/www/kobe.gif"), align="left", height="300px", width="500px"), deleteFile = FALSE)
+  })
+
+observeEvent(input$do6,{
+output$radargif<- renderImage(
+  list(src=here("HCR_app/www/radar.gif"), align="left", height="300px", width="300px"), deleteFile = FALSE)
+  })
+   
+
   # Do a control rule 
   observeEvent(input$do,{
     output$SSBplot<-renderPlot(plotSSB(input$om,input$rho,input$freq))

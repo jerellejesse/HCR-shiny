@@ -6,7 +6,7 @@ output: html_document
 
 <br>
 
-### Scenarios Include  
+### Scenario Options Include:  
 
 - **Overfished**: emulates a groundfish stock in poor status (Gulf of Maine cod) <br>
 

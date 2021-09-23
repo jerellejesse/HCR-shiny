@@ -8,7 +8,7 @@ output: html_document
 ### Alternative Harvest Control Rules (HCRs)
 1. **Ramp**: emulates the basic structure of the current ABC control rule and promotes rebuilding and optimal yield by decreasing F gradually with SSB if SSB iss below the overfished threshold (50% SSB<sub>MSY</sub>) <br>
 
-2. **P***: emulates the P method, which also ramps down F as SSB decreases below the overfished threshold but avoids overfishing by accounting for uncertainty with a probabilistic approach <br>
+2. __P*__: emulates the P* method, which also ramps down F as SSB decreases below the overfished threshold but avoids overfishing by accounting for uncertainty with a probabilistic approach <br>
 
 3. **F-step**: emulates a step decrease in F from 75% F<sub>MSY</sub> to 70% F<sub>MSY</sub>  <br>
 
