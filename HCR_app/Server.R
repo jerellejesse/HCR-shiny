@@ -80,6 +80,7 @@ output$radargif<- renderImage(
     output$SSBCI<-renderPlot(plotSSBCI(input$om, input$rho, input$freq))
     output$CatchCI<-renderPlot(plotCatchCI(input$om, input$rho, input$freq))
     output$RCI<-renderPlot(plotRCI(input$om, input$rho, input$freq))
+    output$CatchBox<-renderPlot(plotCatchBox(input$om, input$rho, input$freq))
     
     })
   
@@ -88,8 +89,19 @@ output$radargif<- renderImage(
     output$REEF<-renderPlot(plotREEF(input$om2, input$rho2, input$freq2))
     output$rhoSSB<-renderPlot(plotrhoSSB(input$om2, input$rho2, input$freq2))
     output$rhoF<-renderPlot(plotrhoF(input$om2, input$rho2, input$freq2))
+    output$SSBerror<-renderPlot(plotSSBerror(input$om2, input$rho2, input$freq2))
+    output$Ferror<-renderPlot(plotFerror(input$om2, input$rho2, input$freq2))
   })
+  
+
+ observeEvent(input$do7, {
+     output$CompareMis<- renderPlot(plotCompareMis(input$comp, input$miss, input$hcr))
+     
+       })
+ 
+
 })  # End of ShinyServer
+
 ## ------------------------------------------------------------------------------------ ##
 
 

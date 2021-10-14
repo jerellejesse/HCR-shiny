@@ -42,42 +42,42 @@ df$Catchest<-Catchest
 
 df$Scenario<-1
 
-# for (i in 2:32){
-#   setwd(paste(wd,"/Sim_",i,"/sim",sep=""))
-# 
-#   sims <- list.files()
-# 
-#   for (k in 1:length(sims)){
-#     if (file.size(sims[k])==0){
-#       sims[k]<-NA}
-#   }
-#   sims<-na.omit(sims)
-# 
-#   Catchsim<-matrix(NA,nrow=3,ncol=length(sims))
-# 
-#   for (k in 1:length(sims)){
-#     load(sims[k])
-#     Catchsim[,k]<-omvalGlobal[[1]]$F_full[188:190]
-#   }
-# 
-# Catchsim<-rowMedians(Catchsim,na.rm=T)
-# Year<-2038:2040
-# df2<-as.data.frame(cbind(Catchsim,Year))
-# 
-# Catchest<-matrix(NA,nrow=3,ncol=length(sims))
-# 
-# for (k in 1:length(sims)){
-#   load(sims[k])
-#   Catchest[,k]<-omvalGlobal[[1]]$Fest[190,1:3]
-# }
-# 
-# Catchest<-rowMedians(Catchest,na.rm=T)
-# Catchest<-na.omit(Catchest)
-# 
-# df2$Catchest<-Catchest
-# df2$Scenario<-i
-# df<-full_join(df,df2)
-# }
+for (i in 2:32){
+  setwd(paste(wd,"/Sim_",i,"/sim",sep=""))
+
+  sims <- list.files()
+
+  for (k in 1:length(sims)){
+    if (file.size(sims[k])==0){
+      sims[k]<-NA}
+  }
+  sims<-na.omit(sims)
+
+  Catchsim<-matrix(NA,nrow=3,ncol=length(sims))
+
+  for (k in 1:length(sims)){
+    load(sims[k])
+    Catchsim[,k]<-omvalGlobal[[1]]$F_full[188:190]
+  }
+
+Catchsim<-rowMedians(Catchsim,na.rm=T)
+Year<-2038:2040
+df2<-as.data.frame(cbind(Catchsim,Year))
+
+Catchest<-matrix(NA,nrow=3,ncol=length(sims))
+
+for (k in 1:length(sims)){
+  load(sims[k])
+  Catchest[,k]<-omvalGlobal[[1]]$Fest[190,1:3]
+}
+
+Catchest<-rowMedians(Catchest,na.rm=T)
+Catchest<-na.omit(Catchest)
+
+df2$Catchest<-Catchest
+df2$Scenario<-i
+df<-full_join(df,df2)
+}
 
 df<-rename(df, R=Catchsim)%>%
  rename(Rest=Catchest)
@@ -651,4 +651,19 @@ update_ree<-left_join(ree_new,scenarios, by=c("Scenario"))
 write.csv(update_ree, here("Data/ree_new.csv"))  
   
   
-  
+##### add columns for comparison tab #####
+data<-read.csv(here::here("Data/shiny_data_jj_update_4.csv"))
+scenarios<-read.csv(here::here("Data/scenarios.csv"))
+
+data$Misspecification[data$Scenario %in% c(5,6,7,8)]<-1 #cod M
+data$Misspecification[data$Scenario %in% c(9, 10,11,12)]<-2 #cod R
+data$Misspecification[data$Scenario %in% c(13,14,15,16)]<-3 #cod M + R
+data$Misspecification[data$Scenario %in% c(29,30,31,32)]<-4 #haddock catchability
+
+data$Compare_Mis[data$Scenario %in% c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,25,26,27,28,29,30,31,32)]<-"Misspecified and correctly specified stock assessment"
+data$Compare_Rho[data$Scenario %in% c(17,18,19,20)]<-"Rho-adjusted and not rho-adjusted"
+data$Compare_Freq[data$Scenario %in% c(21,22,23,24)]<-"Two-year and annual stock assessment updates"
+
+write.csv(data, here::here("Data/shiny_data_jj_update.csv"))
+
+

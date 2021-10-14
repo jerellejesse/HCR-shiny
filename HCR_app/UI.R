@@ -135,39 +135,27 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                       sidebarLayout(
                                         sidebarPanel(width=5,
                                                      div(helpText("Specifications"), style = "font-size:100%"),
-                                                     tags$div(selectInput("Scenario","Compare:",
-                                                                          c("Different misspecifications",
-                                                                            "Misspecified and correctly specified stock assessment",
-                                                                            "Annual updates and two year stock assessment updates",
-                                                                            "rho-adjusted and not rho-adjusted")),
+                                                     tags$div(selectInput("comp","Compare:",c("Misspecified and correctly specified stock assessment", "Rho-adjusted and not rho-adjusted", "Two-year and annual stock assessment updates")),
                                                               conditionalPanel(
-                                                                condition="input.Scenario =='Different misspecifications'",
-                                                                checkboxGroupInput("misspecification", "Misspecification",
-                                                                            c("Natural mortality (GoM cod)", "Recruitment (GoM cod)", "Mortality & Recruitment (GoM cod)"))),
-                                                              conditionalPanel(
-                                                                condition="input.Scenario =='Misspecified and correctly specified stock assessment'",
-                                                                selectInput("misspecification", "Misspecification",
-                                                                            c("Natural mortality (GoM cod)", "Recruitment (GoM cod)", "Mortality & Recruitment (GoM cod)", "Catchability (GB haddock)"))),
-                                                              style="font-size:100%" ),  
+                                                                condition="input.comp =='Misspecified and correctly specified stock assessment'",
+                                                                selectInput("miss", "Misspecification",
+                                                                            c("Natural mortality (GoM cod)"="1", "Recruitment (GoM cod)"="2", "Mortality & Recruitment (GoM cod)"="3", "Catchability (GB haddock)"="4"))),
+                                                                    style="font-size:100%" ),  
                                                      tags$div(checkboxGroupInput("hcr", "Harvest Control Rule:",
-                                                                                 c("Ramp" = "1",
-                                                                                   "Pstar" = "2",
+                                                                                 c("Ramp"="1" ,
+                                                                                   "P*"="2" ,
                                                                                    "F-step"="3",
                                                                                    "Contrained ramp"="4"), inline=TRUE)),
-                                                    tags$div(fluidRow(
-                                                      column(4, checkboxGroupInput("metric","Stock Performance",c("SSB trajectory","F trajectory","Catch trajectory","R trajectory", "SSB 95% trajectory", "F 95% trajectory","Catch 95% trajectory","R 95% trajectory", "catch boxplot"))),
-                                                      column(4, checkboxGroupInput("metric", "Assessment Performance", c("SSB relative error","F relative error", "SSB retrospective patterns","F retrospective patterns", "SSB reference point accuracy","F reference point accuracy"))),
-                                                      column(4, checkboxGroupInput("metric", "Management Performance",  c("stock status trajectory", "SSB stock status ratio","F stock status ratio")),
-                                                              style = "font-size:100%"))),
-                                                     tags$div(fluidRow(
-                                                       column(3,actionButton("do4", "Compare!"))))),
+
+                                                     tags$div(actionButton("do7", "Compare!"))),
                                        mainPanel(
-                                        ))# close main panel
-                                      )), #close tab panel
-                             
+                                         plotOutput("CompareMis", width="80%")
+                                      )  # close main panel 
+                                      )) # close tab panel
+                                ),#close navbar
                   hr(),
                   img(src="gmri.jpg"), img(src="smast.jpg"), img(src="noaa.jpg"), img(src="nefmc.jpg")
-                         ))# close navbar
+                         ))# close fluidpage and shiny ui
                         
 
 
