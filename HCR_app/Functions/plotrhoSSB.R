@@ -1,9 +1,9 @@
-plotrhoSSB <- function(om,rho,freq)
+plotrhoSSB <- function(om2,rho2,freq2)
 {
   df<-read.csv(here('Data/shiny_data_jj_update.csv'))
-  df<-df[df$OM==om,]
-  df<-df[df$Rho==rho,]
-  df<-df[df$Frequency==freq,]
+  df<-df[df$OM==om2,]
+  df<-df[df$Rho==rho2,]
+  df<-df[df$Frequency==freq2,]
   df$HCR[df$HCR==1]<-'Ramp'
   df$HCR[df$HCR==2]<-'P*'
   df$HCR[df$HCR==3]<-'F-step'
