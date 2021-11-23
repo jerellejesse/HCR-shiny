@@ -109,7 +109,7 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                       sidebarLayout(
                                         sidebarPanel(width=3,
                                                      div(helpText("Specifications"), style = "font-size:100%"),
-                                                     tags$div(selectInput("om3", "Operating Model and Stock Assessment Misspecification Scenario:",
+                                                     tags$div(selectInput("om7", "Operating Model and Stock Assessment Misspecification Scenario:",
                                                                           c("Base Case Overfished Scenario" = "1",
                                                                             "Base Case Not Overfished Scenario" = "2",
                                                                             "Overfished Mortality Misspecified Scenario" = "3",
@@ -117,8 +117,8 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                                             "Overfished Mortality and Recruitment Misspecified Scenario" = "5",
                                                                             "Not Overfished Catchability Misspecified Scenario" = "6")), 
                                                               style = "font-size:100%"),
-                                                     tags$div(uiOutput("dynamicRho3")), tags$div(uiOutput("dynamicFreq3")),
-                                                     tags$div(actionButton("do3", "Create plots"))),
+                                                     tags$div(uiOutput("dynamicRho7")), tags$div(uiOutput("dynamicFreq7")),
+                                                     tags$div(actionButton("do7", "Create plots"))),
                                         mainPanel(
                                                 tabsetPanel(
                                                     tabPanel("Stock Status Trajectory", plotOutput("kobe")),
@@ -147,7 +147,7 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                                                    "F-step"="3",
                                                                                    "Contrained ramp"="4"), inline=TRUE)),
 
-                                                     tags$div(actionButton("do7", "Compare!"))),
+                                                     tags$div(actionButton("do8", "Compare!"))),
                                        mainPanel(
                                          plotOutput("CompareMis", width="80%")
                                       )  # close main panel 

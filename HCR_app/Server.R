@@ -14,7 +14,8 @@ library(DT)
 
 ffiles <- list.files(path='Functions/', pattern="^.*\\.R$",full.names=TRUE, recursive=TRUE)
 invisible(sapply(ffiles, source))
-shinyServer(function(input, output, session) {
+
+shinyServer(function(input, output, session){
   
   print("launching app...")
   data<-read.csv(here("Data/shiny_data_jj_update.csv"))
@@ -35,12 +36,12 @@ shinyServer(function(input, output, session) {
     selectInput("freq2", "Stock assessment frequency:", unique(data$Frequency[data$OM %in% input$om2 & data$Rho %in% input$rho2]), selected = "Two year updates")
   })
   
-  output$dynamicRho3<-renderUI({
-    selectInput("rho3", "Rho-adjustment scenario:", unique(data$Rho[data$OM %in% input$om3]), selected = "No rho-adjustment")
+  output$dynamicRho7<-renderUI({
+    selectInput("rho7", "Rho-adjustment scenario:", unique(data$Rho[data$OM %in% input$om7]), selected = "No rho-adjustment")
   })
   
-  output$dynamicFreq3<-renderUI({
-    selectInput("freq3", "Stock assessment frequency:", unique(data$Frequency[data$OM %in% input$om3 & data$Rho %in% input$rho3]), selected = "Two year updates")
+  output$dynamicFreq7<-renderUI({
+    selectInput("freq7", "Stock assessment frequency:", unique(data$Frequency[data$OM %in% input$om7 & data$Rho %in% input$rho7]), selected = "Two year updates")
   })
   
 output$metrics<- renderDataTable(metrics())
@@ -93,8 +94,13 @@ output$radargif<- renderImage(
     output$Ferror<-renderPlot(plotFerror(input$om2, input$rho2, input$freq2))
   })
   
+  observeEvent(input$do7, {
+    output$SSBratio<- renderPlot(plotSSBratioBox(input$om7, input$rho7, input$freq7))
+    output$Fratio<- renderPlot(plotFratioBox(input$om7, input$rho7, input$freq7))
+    
+  })
 
- observeEvent(input$do7, {
+ observeEvent(input$do8, {
      output$CompareMis<- renderPlot(plotCompareMis(input$comp, input$miss, input$hcr))
      
        })
