@@ -40,7 +40,8 @@ plotCompareMis <- function(comp,miss,hcr)
     geom_vline(xintercept=2019, linetype='dotted')+
     scale_alpha_manual("Estimated or True", values=c(0.3, 1))+
     scale_color_colorblind()+
-    theme_classic()+theme(text=element_text(size=18),legend.position='right')
+    theme_classic()+theme(text=element_text(size=18),legend.position='right')+
+    guides(alpha = guide_legend(override.aes = list(size = 2)), color=guide_legend(override.aes = list(size = 2)))
   
   } else {
     data<-read.csv(here::here('Data/shiny_data_jj_update.csv'))
@@ -63,7 +64,9 @@ plotCompareMis <- function(comp,miss,hcr)
       geom_vline(xintercept=2019, linetype='dotted')+
       scale_alpha_manual("Estimated or True", values=c(0.3, 1))+
       scale_color_colorblind()+
-      theme_classic()+theme(text=element_text(size=18),legend.position='right')
+      theme_classic()+theme(text=element_text(size=18),legend.position='right')+
+      guides(alpha = guide_legend(override.aes = list(size = 2)), color=guide_legend(override.aes = list(size = 2)))
+    
   }
   }else if (comp== "Rho-adjusted and not rho-adjusted"){
     df<-read.csv(here::here('Data/shiny_data_jj_update.csv'))
@@ -94,7 +97,9 @@ plotCompareMis <- function(comp,miss,hcr)
       geom_vline(xintercept=2019, linetype='dotted')+
       scale_alpha_manual("Estimated or True", values=c(0.3, 1))+
       scale_color_colorblind()+
-      theme_classic()+theme(text=element_text(size=18),legend.position='right')
+      theme_classic()+theme(text=element_text(size=18),legend.position='right')+
+      guides(alpha = guide_legend(override.aes = list(size = 2)), color=guide_legend(override.aes = list(size = 2)))
+    
       
     
   }else {
@@ -126,7 +131,9 @@ plotCompareMis <- function(comp,miss,hcr)
       geom_vline(xintercept=2019, linetype='dotted')+
       scale_alpha_manual("Estimated or True", values=c(0.3, 1))+
       scale_color_colorblind()+
-      theme_classic()+theme(text=element_text(size=18),legend.position='right')
+      theme_classic()+theme(text=element_text(size=18),legend.position='right')+
+      guides(alpha = guide_legend(override.aes = list(size = 2)), color=guide_legend(override.aes = list(size = 2)))
+    
     
   }
     

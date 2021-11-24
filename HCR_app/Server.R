@@ -11,6 +11,7 @@ library(tidyverse)
 library(rmarkdown)
 library(knitr)
 library(DT)
+library(ggrepel)
 
 ffiles <- list.files(path='Functions/', pattern="^.*\\.R$",full.names=TRUE, recursive=TRUE)
 invisible(sapply(ffiles, source))
@@ -97,7 +98,7 @@ output$radargif<- renderImage(
   observeEvent(input$do7, {
     output$SSBratio<- renderPlot(plotSSBratioBox(input$om7, input$rho7, input$freq7))
     output$Fratio<- renderPlot(plotFratioBox(input$om7, input$rho7, input$freq7))
-    
+    output$kobe<-renderPlot(plotkobe(input$om7,input$rho7, input$freq7))
   })
 
  observeEvent(input$do8, {
