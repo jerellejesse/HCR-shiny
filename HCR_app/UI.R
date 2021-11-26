@@ -127,7 +127,7 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                                splitLayout(plotOutput("SSBratio"), plotOutput("Fratio")))),
                                                     tabPanel("Radar",
                                                              fluidRow(
-                                                               splitLayout(plotOutput("short"), plotOutput("medium"), plotOutput("long"))))
+                                                               plotOutput("shortradar"), plotOutput("mediumradar"), plotOutput("longradar")))
                                          )#close tabset
                                        )# close main panel
                                       )), #close tab panel

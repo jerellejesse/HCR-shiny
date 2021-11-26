@@ -12,6 +12,7 @@ library(rmarkdown)
 library(knitr)
 library(DT)
 library(ggrepel)
+library(ggradar)
 
 ffiles <- list.files(path='Functions/', pattern="^.*\\.R$",full.names=TRUE, recursive=TRUE)
 invisible(sapply(ffiles, source))
@@ -99,6 +100,10 @@ output$radargif<- renderImage(
     output$SSBratio<- renderPlot(plotSSBratioBox(input$om7, input$rho7, input$freq7))
     output$Fratio<- renderPlot(plotFratioBox(input$om7, input$rho7, input$freq7))
     output$kobe<-renderPlot(plotkobe(input$om7,input$rho7, input$freq7))
+    output$shortradar<-renderPlot(plotshortradar(input$om7, input$rho7, input$freq7))
+    output$mediumradar<-renderPlot(plotmediumradar(input$om7, input$rho7, input$freq7))
+    output$longradar<-renderPlot(plotlongradar(input$om7, input$rho7, input$freq7))
+    
   })
 
  observeEvent(input$do8, {
