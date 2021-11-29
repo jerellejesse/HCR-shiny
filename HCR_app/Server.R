@@ -103,8 +103,10 @@ output$radargif<- renderImage(
     output$shortradar<-renderPlot(plotshortradar(input$om7, input$rho7, input$freq7))
     output$mediumradar<-renderPlot(plotmediumradar(input$om7, input$rho7, input$freq7))
     output$longradar<-renderPlot(plotlongradar(input$om7, input$rho7, input$freq7))
+    output$estimatedkobe<-renderPlot(plotestimatedkobe(input$om7, input$rho7, input$freq7))
+    output$terminalkobe<-renderPlot(plotterminalkobe(input$om7, input$rho7, input$freq7))
     
-  })
+      })
 
  observeEvent(input$do8, {
      output$CompareMis<- renderPlot(plotCompareMis(input$comp, input$miss, input$hcr))

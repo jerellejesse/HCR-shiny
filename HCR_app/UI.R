@@ -121,7 +121,9 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                      tags$div(actionButton("do7", "Create plots"))),
                                         mainPanel(
                                                 tabsetPanel(
-                                                    tabPanel("Stock Status Trajectory", plotOutput("kobe")),
+                                                    tabPanel("Stock Status Trajectory",
+                                                             fluidRow(
+                                                               splitLayout(plotOutput("estimatedkobe"), plotOutput("terminalkobe")))),
                                                     tabPanel("Stock Status Ratio",
                                                              fluidRow(
                                                                splitLayout(plotOutput("SSBratio"), plotOutput("Fratio")))),
