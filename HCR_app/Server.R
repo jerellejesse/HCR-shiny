@@ -13,6 +13,7 @@ library(knitr)
 library(DT)
 library(ggrepel)
 library(ggradar)
+library(grid)
 
 ffiles <- list.files(path='Functions/', pattern="^.*\\.R$",full.names=TRUE, recursive=TRUE)
 invisible(sapply(ffiles, source))

@@ -135,7 +135,7 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                       )), #close tab panel
                              tabPanel("Compare Scenarios",
                                       sidebarLayout(
-                                        sidebarPanel(width=5,
+                                        sidebarPanel(width=4,
                                                      div(helpText("Specifications"), style = "font-size:100%"),
                                                      tags$div(selectInput("comp","Compare:",c("Misspecified and correctly specified stock assessment", "Rho-adjusted and not rho-adjusted", "Two-year and annual stock assessment updates")),
                                                               conditionalPanel(
@@ -148,11 +148,15 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                                                    "P*"="2" ,
                                                                                    "F-step"="3",
                                                                                    "Contrained ramp"="4"), inline=TRUE)),
-                                                     tags$div(checkboxGroupInput("plottype", "Stock Performance", 
-                                                                                 c("SSB", "F"))),
+                                                     tags$div(radioButtons("plottype", "Stock Performance", 
+                                                                                 c("SSB", "F", "Catch", "R")),
+                                                              radioButtons("plottype2", "Assessment Performance",
+                                                                           c("% relative error", "Retrospective pattern","Reference point accuracy")),
+                                                              radioButtons("plottype3","Management Performance",
+                                                                           c("Kobe","stock status ratio","radar"))),
 
                                                      tags$div(actionButton("do8", "Compare!"))),
-                                       mainPanel(width = 7,
+                                       mainPanel(width = 8,
                                          plotOutput("CompareMis", width="80%")
                                       )  # close main panel 
                                       )) # close tab panel
