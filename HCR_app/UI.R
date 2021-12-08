@@ -148,9 +148,11 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                                                    "P*"="2" ,
                                                                                    "F-step"="3",
                                                                                    "Contrained ramp"="4"), inline=TRUE)),
+                                                     tags$div(checkboxGroupInput("plottype", "Stock Performance", 
+                                                                                 c("SSB", "F"))),
 
                                                      tags$div(actionButton("do8", "Compare!"))),
-                                       mainPanel(
+                                       mainPanel(width = 7,
                                          plotOutput("CompareMis", width="80%")
                                       )  # close main panel 
                                       )) # close tab panel

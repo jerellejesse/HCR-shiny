@@ -46,6 +46,8 @@ shinyServer(function(input, output, session){
     selectInput("freq7", "Stock assessment frequency:", unique(data$Frequency[data$OM %in% input$om7 & data$Rho %in% input$rho7]), selected = "Two year updates")
   })
   
+
+  
 output$metrics<- renderDataTable(metrics())
 output$scenarios<-renderDataTable(scenarios())
 output$glossary<-renderDataTable(Glossary())
@@ -109,7 +111,7 @@ output$radargif<- renderImage(
       })
 
  observeEvent(input$do8, {
-     output$CompareMis<- renderPlot(plotCompareMis(input$comp, input$miss, input$hcr))
+     output$CompareMis<- renderPlot(plotCompareMis(input$comp, input$miss, input$hcr, input$plottype))
      
        })
  
