@@ -10,7 +10,7 @@ plotshortradar <- function(om7,rho7,freq7)
   df$HCR[df$HCR==4]<-'Constrained ramp'
   df$HCR<-as.factor(df$HCR)
   
-  short<-select(df,c(21,3:7))
+  short<-select(df,c(HCR,ShorttermSSB, ShorttermCatch,Catchstab, Ffreq, Bfreq))
 
 
  ggradar(short,

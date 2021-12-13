@@ -10,7 +10,7 @@ plotmediumradar <- function(om7,rho7,freq7)
   df$HCR[df$HCR==4]<-'Constrained ramp'
   df$HCR<-as.factor(df$HCR)
   
-medium<-select(df,21, 8:12)
+medium<-select(df,HCR, MediumtermSSB, MediumtermCatch, MediumCatchstab, MediumFfreq, MediumBfreq)
 
  ggradar(medium,
                        values.radar=c("0", "0.5", "1"),

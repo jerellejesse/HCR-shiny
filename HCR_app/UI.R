@@ -147,17 +147,18 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                                                  c("Ramp"="1" ,
                                                                                    "P*"="2" ,
                                                                                    "F-step"="3",
-                                                                                   "Contrained ramp"="4"), inline=TRUE)),
+                                                                                   "Contrained ramp"="4"), inline=TRUE, selected = '"Ramp"="1"')),
                                                      tags$div(radioButtons("plottype", "Stock Performance", 
                                                                                  c("SSB", "F", "Catch", "R")),
                                                               radioButtons("plottype2", "Assessment Performance",
                                                                            c("% relative error", "Retrospective pattern","Reference point accuracy")),
                                                               radioButtons("plottype3","Management Performance",
-                                                                           c("Kobe","stock status ratio","radar"))),
+                                                                           c("Kobe","stock status ratio"))),
 
                                                      tags$div(actionButton("do8", "Compare!"))),
                                        mainPanel(width = 8,
-                                         plotOutput("CompareMis", width="80%")
+                                                 fluidRow(
+                                                   plotOutput("CompareMis", width="80%"), plotOutput("CompareAssess"), plotOutput("CompareManage"))
                                       )  # close main panel 
                                       )) # close tab panel
                                 ),#close navbar

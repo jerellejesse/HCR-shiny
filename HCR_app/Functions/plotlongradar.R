@@ -10,7 +10,7 @@ plotlongradar <- function(om7,rho7,freq7)
   df$HCR[df$HCR==4]<-'Constrained ramp'
   df$HCR<-as.factor(df$HCR)
   
-long<-select(df,21 , 13:17)
+long<-select(df,HCR, LongtermSSB, LongtermCatch, LongCatchstab, LongFfreq, LongBfreq)
 
  ggradar(long,
                      values.radar=c("0", "0.5", "1"),

@@ -67,6 +67,18 @@ plotCompareMis <- function(comp,miss,hcr, plottype)
     theme_classic()+theme(text=element_text(size=18),legend.position='right')+
     guides(alpha = guide_legend(override.aes = list(size = 2)), color=guide_legend(override.aes = list(size = 2)))
   
+ 
+  r<-ggplot()+geom_line(data=df,aes(x=Year,y=Rest, color=HCR,linetype=Misspecification, alpha="Estimated"), size=1)+
+    geom_line(data=df,aes(x=Year,y=R, color=HCR, linetype=Misspecification, alpha="True"), size=1)+
+    geom_line(data=Df,aes(x=Year,y=Rest, color=HCR,linetype=Misspecification, alpha="Estimated"), size=1)+
+    geom_line(data=Df,aes(x=Year,y=R, color=HCR, linetype=Misspecification, alpha="True"), size=1)+
+    ylab('Recruitment')+
+    geom_vline(xintercept=2019, linetype='dotted')+
+    scale_alpha_manual("Estimated or True", values=c(0.3, 1))+
+    scale_color_colorblind()+
+    theme_classic()+theme(text=element_text(size=18),legend.position='right')+
+    guides(alpha = guide_legend(override.aes = list(size = 2)), color=guide_legend(override.aes = list(size = 2)))
+  
     } else {
     data<-read.csv(here::here('Data/shiny_data_jj_update.csv'))
     Df<-filter(data, Scenario %in% c(1,2,3,4))
@@ -80,7 +92,8 @@ plotCompareMis <- function(comp,miss,hcr, plottype)
     Df$Misspecification[is.na(Df$Misspecification)]<-"Not misspecified"
     Df<-Df[Df$Year>1987,]
     
-    ssb<-ggplot()+geom_line(data=df,aes(x=Year,y=SSBest, color=HCR,linetype=Misspecification, alpha="Estimated"), size=1)+
+    ssb<-ggplot()+
+      geom_line(data=df,aes(x=Year,y=SSBest, color=HCR,linetype=Misspecification, alpha="Estimated"), size=1)+
       geom_line(data=df,aes(x=Year,y=SSB, color=HCR, linetype=Misspecification, alpha="True"), size=1)+
       geom_line(data=Df,aes(x=Year,y=SSBest, color=HCR,linetype=Misspecification, alpha="Estimated"), size=1)+
       geom_line(data=Df,aes(x=Year,y=SSB, color=HCR, linetype=Misspecification, alpha="True"), size=1)+

@@ -652,7 +652,7 @@ write.csv(update_ree, here("Data/ree_new.csv"))
   
   
 ##### add columns for comparison tab #####
-data<-read.csv(here::here("Data/shiny_data_jj_update_4.csv"))
+data<-read.csv(here::here("Data/radar_data_jj.csv"))
 scenarios<-read.csv(here::here("Data/scenarios.csv"))
 
 data$Misspecification[data$Scenario %in% c(5,6,7,8)]<-1 #cod M
@@ -664,6 +664,6 @@ data$Compare_Mis[data$Scenario %in% c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,25,
 data$Compare_Rho[data$Scenario %in% c(17,18,19,20)]<-"Rho-adjusted and not rho-adjusted"
 data$Compare_Freq[data$Scenario %in% c(21,22,23,24)]<-"Two-year and annual stock assessment updates"
 
-write.csv(data, here::here("Data/shiny_data_jj_update.csv"))
+write.csv(data, here::here("Data/radar_data_jj.csv"))
 
 

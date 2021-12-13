@@ -113,6 +113,8 @@ output$radargif<- renderImage(
 
  observeEvent(input$do8, {
      output$CompareMis<- renderPlot(plotCompareMis(input$comp, input$miss, input$hcr, input$plottype))
+     output$CompareAssess<-renderPlot(plotCompareAssess(input$comp, input$miss, input$hcr, input$plottype2))
+     output$CompareManage<-renderPlot(plotCompareManage(input$comp, input$miss, input$hcr, input$plottype3))
      
        })
  
