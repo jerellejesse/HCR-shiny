@@ -1,6 +1,6 @@
-plotkobe <- function(om7,rho7,freq7)
+plotestimatedkobe <- function(om7,rho7,freq7)
 {
-  df<-read.csv(here('Data/boxdata2_jj.csv'))
+  df<-read.csv(here('Data/kobeestimated_data_jj.csv'))
   df<-df[df$OM==om7,]
   df<-df[df$Rho==rho7,]
   df<-df[df$Frequency==freq7,]
@@ -10,10 +10,10 @@ plotkobe <- function(om7,rho7,freq7)
   df$HCR[df$HCR==4]<-'Constrained ramp'
   df$HCR<-as.factor(df$HCR)
 
-  maxSSB<-max(1.1,max(df$SSBratio))
-  maxF<-max(1.1,max(df$Fratio))
+  maxSSB<-max(1.1,max(df$SSBestratioreal))
+  maxF<-max(1.1,max(df$Fratioreal))
   
-kobe <- ggplot(df, aes(x = SSBratio, y = Fratio)) +
+kobe <- ggplot(df, aes(x = SSBestratioreal, y = Fratioreal)) +
   theme_bw() 
 kobe <- kobe + annotate(geom = "rect", xmin = 1, xmax = maxSSB, ymin = 0, ymax = 1, fill = "green", colour = "green", alpha = 0.5) +
   annotate(geom = "rect", xmin = 0, xmax = 1, ymin = 1, ymax = maxF, fill = "red", colour = "red", alpha = 0.5) +
@@ -28,6 +28,8 @@ kobe <- kobe + annotate(geom = "rect", xmin = 1, xmax = maxSSB, ymin = 0, ymax =
   scale_color_colorblind()+
   geom_vline(xintercept=0.5, linetype='dotted')+
   theme(text=element_text(size=16),legend.position='bottom')+
-  geom_text_repel(data=subset(df, Year > 2037 | Year < 2020),aes(x = SSBratio, y = Fratio, label = Year))
+  ggtitle("Estimated")+
+  geom_text_repel(data=subset(df, Year > 2037 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year))
 
+kobe
 }

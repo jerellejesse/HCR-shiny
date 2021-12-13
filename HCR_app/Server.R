@@ -12,6 +12,8 @@ library(rmarkdown)
 library(knitr)
 library(DT)
 library(ggrepel)
+library(ggradar)
+library(grid)
 
 ffiles <- list.files(path='Functions/', pattern="^.*\\.R$",full.names=TRUE, recursive=TRUE)
 invisible(sapply(ffiles, source))
@@ -44,6 +46,8 @@ shinyServer(function(input, output, session){
   output$dynamicFreq7<-renderUI({
     selectInput("freq7", "Stock assessment frequency:", unique(data$Frequency[data$OM %in% input$om7 & data$Rho %in% input$rho7]), selected = "Two year updates")
   })
+  
+
   
 output$metrics<- renderDataTable(metrics())
 output$scenarios<-renderDataTable(scenarios())
@@ -99,10 +103,16 @@ output$radargif<- renderImage(
     output$SSBratio<- renderPlot(plotSSBratioBox(input$om7, input$rho7, input$freq7))
     output$Fratio<- renderPlot(plotFratioBox(input$om7, input$rho7, input$freq7))
     output$kobe<-renderPlot(plotkobe(input$om7,input$rho7, input$freq7))
-  })
+    output$shortradar<-renderPlot(plotshortradar(input$om7, input$rho7, input$freq7))
+    output$mediumradar<-renderPlot(plotmediumradar(input$om7, input$rho7, input$freq7))
+    output$longradar<-renderPlot(plotlongradar(input$om7, input$rho7, input$freq7))
+    output$estimatedkobe<-renderPlot(plotestimatedkobe(input$om7, input$rho7, input$freq7))
+    output$terminalkobe<-renderPlot(plotterminalkobe(input$om7, input$rho7, input$freq7))
+    
+      })
 
  observeEvent(input$do8, {
-     output$CompareMis<- renderPlot(plotCompareMis(input$comp, input$miss, input$hcr))
+     output$CompareMis<- renderPlot(plotCompareMis(input$comp, input$miss, input$hcr, input$plottype))
      
        })
  
