@@ -1,5 +1,5 @@
 #kobe data pull
-setwd("C:/Users/jjesse/Box/HCR_Sims")#change this accordingly 
+setwd("C:/Users/mmazur/Box/Mackenzie_Mazur/HCR_Sims")#change this accordingly 
 wd<-getwd()
 
 ####Set up files####
@@ -40,6 +40,7 @@ SSBestratioreal<-SSBestreal/SSBestproxy
 Year<-2019:((length(omvalGlobal[[1]]$sumCW)-169)+2017)
 Dftrue<-as.data.frame(cbind(SSBestratioreal,Fratioreal,Year))
 Dftrue$Scenario<-1
+df<-Dftrue
 
 for (m in 2:32){
   setwd(paste(wd,"/Sim_",m,"/sim",sep=""))
@@ -51,18 +52,40 @@ for (m in 2:32){
   SSBestreal<-matrix(NA,ncol=length(sims),nrow=20)
   SSBestproxy<-matrix(NA,ncol=length(sims),nrow=20)
   
+  if (m>20 & m<25){
+    Freal<-matrix(NA,ncol=length(sims),nrow=21)
+    Fproxy<-matrix(NA,ncol=length(sims),nrow=21)
+    SSBestreal<-matrix(NA,ncol=length(sims),nrow=21)
+    SSBestproxy<-matrix(NA,ncol=length(sims),nrow=21)
+  }
+  
   for (k in 1:length(sims)){
     if (file.size(sims[k])==0){
       sims[k]<-NA}
   }
   sims<-na.omit(sims)
   
-  for (k in 1:length(sims)){
-    load(sims[k])
-    Freal[,k]<-na.omit(tail(omvalGlobal[[1]]$Fest[length(omvalGlobal[[1]]$sumCW),],22))
-    SSBestreal[,k]<-na.omit(tail(omvalGlobal[[1]]$SSBest[length(omvalGlobal[[1]]$sumCW),],22))
-    Fproxy[,k]<-omvalGlobal[[1]]$FPROXY[169:(length(omvalGlobal[[1]]$sumCW)-2)]
-    SSBestproxy[,k]<-omvalGlobal[[1]]$SSBPROXY[169:(length(omvalGlobal[[1]]$sumCW)-2)]
+  if (m>20 & m<25){
+    for (k in 1:length(sims)){
+      tryCatch({
+        load(sims[k])
+        Freal[,k]<-na.omit(tail(omvalGlobal[[1]]$Fest[length(omvalGlobal[[1]]$sumCW),],22))
+        SSBestreal[,k]<-na.omit(tail(omvalGlobal[[1]]$SSBest[length(omvalGlobal[[1]]$sumCW),],22))
+        Fproxy[,k]<-omvalGlobal[[1]]$FPROXY[169:(length(omvalGlobal[[1]]$sumCW)-1)]
+        SSBestproxy[,k]<-omvalGlobal[[1]]$SSBPROXY[169:(length(omvalGlobal[[1]]$sumCW)-1)]
+      },error=function(e){})
+    }
+  }
+  else {
+    for (k in 1:length(sims)){
+      tryCatch({
+        load(sims[k])
+        Freal[,k]<-na.omit(tail(omvalGlobal[[1]]$Fest[length(omvalGlobal[[1]]$sumCW),],22))
+        SSBestreal[,k]<-na.omit(tail(omvalGlobal[[1]]$SSBest[length(omvalGlobal[[1]]$sumCW),],22))
+        Fproxy[,k]<-omvalGlobal[[1]]$FPROXY[169:(length(omvalGlobal[[1]]$sumCW)-2)]
+        SSBestproxy[,k]<-omvalGlobal[[1]]$SSBPROXY[169:(length(omvalGlobal[[1]]$sumCW)-2)]
+      },error=function(e){})
+    }
   }
   
   Freal<-rowMedians(Freal,na.rm=T)
