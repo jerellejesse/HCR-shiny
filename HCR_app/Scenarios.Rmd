@@ -10,7 +10,7 @@ output: html_document
 
 - **Overfished**: emulates a groundfish stock in poor status (Gulf of Maine cod) <br>
 
-- **Not Overfished**: emulates a groundfish stock in good status with large recruitment event (Geroges Bank Haddock) <br>
+- **Not Overfished**: emulates a groundfish stock in good status with random large recruitment events (Georges Bank Haddock) <br>
 
 - **Mortality Misspecified**: natural mortality misspecification in stock assessment <br>
 

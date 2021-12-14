@@ -20,7 +20,7 @@ Introduction:
 
 Management of New England groundfish fisheries has been challenging due to the multispecies nature of the fishery and the varied status of stocks that ranges from historic low to record high biomasses. Additionally, most groundfish stock assessments exhibit inconsistencies among recent stock assessment estimates (a.k.a. retrospective patterns), which can present
 challenges for sustainable management of fisheries. Accordingly, the New England Fishery Management Council (NEFMC) initiated a review of groundfish harvest control rules (HCRs) to improve the performance of fisheries management.
-**The goal of this analysis was to evaluate the performance of alternative HCRs for New England groundfish stocks using management strategy evaluation (MSE)**
+**The goal of this analysis was to evaluate the performance of alternative HCRs for New England groundfish stocks using management strategy evaluation (MSE).**
 
 
 
@@ -35,7 +35,7 @@ Approach:
 
 </div>
 
-This project focused on testing alternative HCRs performance under a range of current groundfish conditions and stock assessment issues.<br>
+This project focused on testing alternative HCR performance under a range of current groundfish conditions and stock assessment issues.<br>
   * **It did not test:**
       + all potential conditions and stock assessment issues contributing to the current state of groundfish stocks
       + determine optimal HCRs based on fishery goals because management goals need to be defined and prioritized first before optimal HCRs can be determined
@@ -60,7 +60,7 @@ How to use this tool:
 There are five tabs across the top of the page designed to walk users through the results from the MSE. 
 <br>
 
-1. **Home:** Introduces the rationale, goals, approach of the project. This page also links to the full report, executive summary, and GRMI project site. Further down the page there are also tabs that explain the alternate HCRs, scenarios, and performance metrics in more detail. There is also glossary and acknowledgment tabs included here. <br>
+1. **Home:** Introduces the rationale, goals, approach of the project. This page also links to the full report, executive summary, and GMRI project site. Further down the page there are also tabs that explain the alternative HCRs, scenarios, and performance metrics in more detail. There are also glossary and acknowledgment tabs included here. <br>
 
 2. **Stock Performance:** Results from the MSE pertaining to the stock are displayed here by choosing model specifications, clicking "create plots" and moving across the tabs to see different performance metrics. <br>
 
@@ -69,7 +69,7 @@ There are five tabs across the top of the page designed to walk users through th
 4. **Management Performance:** Results from the MSE pertaining to the stock management are displayed here by choosing model specifications, clicking "create plots" and moving across the tabs to see different performance metrics. <br>
     * **User specifies:** 
        + operating model (OM) and misspecification scenario 
-       + rho-adjustment 
+       + rho-adjustment option
        + stock assessment frequency <br>
 <br>
 
