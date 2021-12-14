@@ -646,13 +646,13 @@ scenarios$Rho[scenarios$Rho==1]<-"Rho-adjustment"
 scenarios$Frequency[scenarios$Frequency==1]<-"Two year updates"
 scenarios$Frequency[scenarios$Frequency==2]<-"Annual updates"
 
-update_ree<-left_join(ree_new,scenarios, by=c("Scenario"))
+update_ree<-left_join(data,scenarios, by=c("Scenario"))
 
 write.csv(update_ree, here("Data/ree_new.csv"))  
   
   
 ##### add columns for comparison tab #####
-data<-read.csv(here::here("Data/radar_data_jj.csv"))
+data<-read.csv(here::here("Data/Table_update.csv"))
 scenarios<-read.csv(here::here("Data/scenarios.csv"))
 
 data$Misspecification[data$Scenario %in% c(5,6,7,8)]<-1 #cod M
@@ -664,6 +664,10 @@ data$Compare_Mis[data$Scenario %in% c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,25,
 data$Compare_Rho[data$Scenario %in% c(17,18,19,20)]<-"Rho-adjusted and not rho-adjusted"
 data$Compare_Freq[data$Scenario %in% c(21,22,23,24)]<-"Two-year and annual stock assessment updates"
 
-write.csv(data, here::here("Data/radar_data_jj.csv"))
+write.csv(data, here::here("Data/Table_update.csv"))
 
 
+data$Rho[data$Rho==2]<-"No rho-adjustment"
+data$Rho[data$Rho==1]<-"Rho-adjustment"
+data$Frequency[data$Frequency==1]<-"Two year updates"
+data$Frequency[data$Frequency==2]<-"Annual updates"

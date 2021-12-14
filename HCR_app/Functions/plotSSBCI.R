@@ -10,7 +10,7 @@ plotSSBCI <- function(om,rho,freq)
   df$HCR[df$HCR==4]<-'Constrained ramp'
   df$HCR<-as.factor(df$HCR)
   df<-df[df$Year>2019,]
-  ggplot(na.omit(df))+geom_line(aes(x=Year,y=SSB,color=HCR))+
+  ggplot(df)+geom_line(aes(x=Year,y=SSB,color=HCR))+
     geom_ribbon(aes(y=SSB,x=Year,ymin=SSBCI_Lower,ymax=SSBCI_Upper,fill=HCR),alpha=0.2)+
     theme_classic()+theme(text=element_text(size=18),legend.position='top')+
     ylab('SSB (mt)')+

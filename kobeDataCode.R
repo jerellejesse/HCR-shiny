@@ -1,5 +1,5 @@
 #kobe data pull
-setwd("C:/Users/mmazur/Box/Mackenzie_Mazur/HCR_Sims")#change this accordingly 
+setwd("C:/Users/jjesse/Box/HCR_Sims")#change this accordingly 
 wd<-getwd()
 
 ####Set up files####
@@ -102,5 +102,5 @@ for (m in 2:32){
 }
 
 
-
+write.csv(df,here("Data/kobeestimated_data_jj.csv"))
 

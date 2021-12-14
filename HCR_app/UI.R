@@ -158,7 +158,7 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                      tags$div(actionButton("do8", "Compare!"))),
                                        mainPanel(width = 8,
                                                  fluidRow(
-                                                   plotOutput("CompareMis", width="80%"), plotOutput("CompareAssess"), plotOutput("CompareManage"))
+                                                   plotOutput("CompareMis"), plotOutput("CompareAssess"), plotOutput("CompareManage"))
                                       )  # close main panel 
                                       )) # close tab panel
                                 ),#close navbar

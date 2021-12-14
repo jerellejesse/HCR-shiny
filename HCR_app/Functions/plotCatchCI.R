@@ -10,7 +10,7 @@ plotCatchCI <- function(om,rho,freq)
   df$HCR[df$HCR==4]<-'Constrained ramp'
   df$HCR<-as.factor(df$HCR)
   df<-df[df$Year>2019,]
-  ggplot(na.omit(df))+geom_line(aes(x=Year,y=Catchsim,color=HCR))+
+  ggplot(df)+geom_line(aes(x=Year,y=Catchsim,color=HCR))+
     geom_ribbon(aes(y=Catchsim,x=Year,ymin=CatchCI_Lower,ymax=CatchCI_Upper,fill=HCR),alpha=0.2)+
     theme_classic()+theme(text=element_text(size=18),legend.position='none')+
     ylab('Catch (mt)')+
