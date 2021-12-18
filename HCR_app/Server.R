@@ -14,6 +14,7 @@ library(DT)
 library(ggrepel)
 library(ggradar)
 library(grid)
+library(plotly)
 
 ffiles <- list.files(path='Functions/', pattern="^.*\\.R$",full.names=TRUE, recursive=TRUE)
 invisible(sapply(ffiles, source))
@@ -112,9 +113,9 @@ output$radargif<- renderImage(
       })
 
  observeEvent(input$do8, {
-     output$CompareMis<- renderPlot(plotCompareMis(input$comp, input$miss, input$hcr, input$plottype))
-     output$CompareAssess<-renderPlot(plotCompareAssess(input$comp, input$miss, input$hcr, input$plottype2))
-     output$CompareManage<-renderPlot(plotCompareManage(input$comp, input$miss, input$hcr, input$plottype3))
+     output$CompareMis<- renderPlot(plotCompareMis(input$comp, input$miss, input$hcr))
+     output$CompareAssess<-renderPlot(plotCompareAssess(input$comp, input$miss, input$hcr))
+     output$CompareManage<-renderPlot(plotCompareManage(input$comp, input$miss, input$hcr))
      
        })
  

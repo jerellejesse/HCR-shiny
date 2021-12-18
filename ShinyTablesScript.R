@@ -17,15 +17,15 @@ for (k in 1:length(sims)){
 }
 sims<-na.omit(sims)
 
-Catchsim<-matrix(NA,nrow=52,ncol=length(sims))
+Catchsim<-matrix(NA,nrow=55,ncol=length(sims))
 
 for (k in 1:length(sims)){
   load(sims[k])
-  Catchsim[,k]<-omvalGlobal[[1]]$R[136:187]
+  Catchsim[,k]<-omvalGlobal[[1]]$SSB[136:190]
 }
 
 Catchsim<-rowMedians(Catchsim,na.rm=T)
-Year<-1986:2037
+Year<-1986:2040
 df<-as.data.frame(cbind(Catchsim,Year))
 
 Catchest<-matrix(NA,nrow=52,ncol=length(sims))
@@ -552,12 +552,12 @@ data_new<-bind_rows(update_data, data_remove)
 write.csv(data_new, here("Data/shiny_data_jj_update.csv"))
 
 #####extended time series for confidence interval plots 
-data<-read.csv(here("Data/Table.csv"))
+data<-read.csv(here("Data/Table.csv"))[-1]
 
 extend<-read.csv(here("Data/SSB_2040.csv"))[-1]%>%
-  full_join(read.csv(here("Data/F_2040.csv"))[-1])%>%
-  full_join(read.csv(here("Data/Catch_2040.csv"))[-1])%>%
-  full_join(read.csv(here("Data/R_2040.csv"))[-1])
+  left_join(read.csv(here("Data/F_2040.csv"))[-1])%>%
+  left_join(read.csv(here("Data/Catch_2040.csv"))[-1])%>%
+  left_join(read.csv(here("Data/R_2040.csv"))[-1])
 
 #Add scenario info
 scenarios<-read.csv(here("Data/scenarios.csv"))
@@ -568,10 +568,16 @@ scenarios$Rho[scenarios$Rho==1]<-"Rho-adjustment"
 scenarios$Frequency[scenarios$Frequency==1]<-"Two year updates"
 scenarios$Frequency[scenarios$Frequency==2]<-"Annual updates"
 
-update_data<-left_join(extend,scenarios, by=c("Scenario"))[,c(2,4,11:14,1,3,5:10)]
+update_data<-full_join(extend,scenarios, by=c("Scenario"))[,c(2,4,11:14,1,3,5:10)]
+
+data2<-select(data, 2,3,1,4:12)%>%
+  filter(Year>2037)
+data3<-filter(data,Year<2038)
 
 #merge in extended data
-data_new<-bind_rows(update_data, data)
+data_new<-full_join(data2, update_data, by=c("Year","Scenario"))%>%
+  full_join(data3)
+
 write.csv(data_new, here("Data/Table_update.csv"))
 
 
@@ -579,8 +585,8 @@ write.csv(data_new, here("Data/Table_update.csv"))
 
 
 ##### update scenario 1 CI data #####
-data_old<-read.csv(here::here("Data/Table_update.csv"))[-1]
-data_left<-data_old[,1:17, 26:28]
+data_old<-read.csv(here::here("Data/Table_update.csv"))[-1][-1]
+data_left<-data_old[c(1:2,13:27)] #grab not CI data columns
 
 #take out old scenario 1
 data_remove<-select(data_old,Year, Scenario, SSBCI_Lower, SSBCI_Upper, FCI_Lower, FCI_Upper, CatchCI_Lower, CatchCI_Upper, RCI_Lower, RCI_Upper)%>%
@@ -592,7 +598,7 @@ scenario1_CI<-read.csv(here::here("Data/SSBCI1.csv"))[-1]%>%
   full_join(read.csv(here::here("Data/CatchCI1.csv"))[-1])%>%
   full_join(read.csv(here::here("Data/RCI1.csv"))[-1])
 
-write.csv(scenario1,here::here("Data/scenario1_CI.csv"))
+#write.csv(scenario1,here::here("Data/scenario1_CI.csv"))
 
 
 #add to old data
@@ -606,6 +612,7 @@ scenario1<-read.csv(here("Data/scenario1.csv"))%>%
 
 data_new_remove<-select(data_new, Year, Scenario, SSB, F_full, Catchsim, R)%>%
   filter(Scenario!= 1)
+
 data_new_replace<-full_join(scenario1, data_new_remove)
 
 data_new_left<-data_new[, c(1:6,8,10,12,14:25)]

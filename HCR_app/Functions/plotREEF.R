@@ -10,8 +10,13 @@ plotREEF <- function(om2,rho2,freq2)
   df$HCR[df$HCR==4]<-'Constrained ramp'
   df$HCR<-as.factor(df$HCR)
   df<-df[df$Year>2019,]
+  
+  miny<-min(-10,min(df$REEF))
+  maxy<-max(10, max(df$REEF))
+  
   ggplot(df)+geom_line(aes(x=Year,y=REEF,color=HCR),size=1)+
     theme_classic()+theme(text=element_text(size=18),legend.position='none')+
     ylab('% REE F')+
-    scale_color_colorblind()
+    scale_color_colorblind()+
+    ylim(miny,maxy)
 }

@@ -21,4 +21,5 @@ medium<-select(df,HCR, MediumtermSSB, MediumtermCatch, MediumCatchstab, MediumFf
                        plot.legend = FALSE,
                        axis.labels=c("Medium term SSB", "Medium term\nCatch", "Catch Stability", "Frequency\nnot overfishing", "Frequency\nnot\noverfished"))
 
+ 
 }

@@ -15,6 +15,7 @@ plotSSBratioBox <- function(om7,rho7,freq7)
     theme_classic()+
     ylab('SSB/SSBMSY')+
     xlab('Time')+
+    geom_hline(yintercept=0.5, linetype="dashed", color = "black", size=1)+
     theme(text=element_text(size=18),legend.position='bottom')+
     scale_fill_colorblind()
   

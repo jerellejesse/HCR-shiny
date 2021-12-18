@@ -10,9 +10,13 @@ plotrhoF <- function(om2,rho2,freq2)
   df$HCR[df$HCR==4]<-'Constrained ramp'
   df$HCR<-as.factor(df$HCR)
   df<-df[df$Year>2019,]
+  
+  miny<-min(-1,min(df$rhoF))
+  maxy<-max(1, max(df$rhoF))
+  
   ggplot(df)+geom_line(aes(x=Year,y=rhoF,color=HCR),size=1)+
     theme_classic()+theme(text=element_text(size=18),legend.position='top')+
     ylab('Monhs Rho for F')+
-    scale_y_continuous(limits = c(-0.50, 0.5))+
+    ylim(miny,maxy)+
     scale_color_colorblind()
 }

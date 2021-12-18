@@ -1,4 +1,4 @@
-plotCompareAssess <- function(comp,miss,hcr, plottype2)
+plotCompareAssess <- function(comp,miss,hcr)
 {
   
   if(comp == "Misspecified and correctly specified stock assessment"){
@@ -430,8 +430,8 @@ plotCompareAssess <- function(comp,miss,hcr, plottype2)
       scale_fill_colorblind()+
       geom_hline(yintercept=1, linetype="dashed", color = "black", size=1)
   }   
-  if (plottype2== "% relative error"){grid.arrange(reessb, reef, ncol=2)}
-  if (plottype2=="Retrospective pattern"){grid.arrange(rhoSSB, rhoF, ncol=2)}
-  if (plottype2=="Reference point accuracy"){grid.arrange(SSBerror, Ferror, ncol=2)}
+  
+  grid.arrange(rhoSSB, rhoF, ncol=2)
+ 
   
 } 

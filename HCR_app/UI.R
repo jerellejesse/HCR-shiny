@@ -123,7 +123,7 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                 tabsetPanel(
                                                     tabPanel("Stock Status Trajectory",
                                                              fluidRow(
-                                                               splitLayout(plotOutput("estimatedkobe"), plotOutput("terminalkobe")))),
+                                                               splitLayout(plotOutput("estimatedkobe", width="75%")))),
                                                     tabPanel("Stock Status Ratio",
                                                              fluidRow(
                                                                splitLayout(plotOutput("SSBratio"), plotOutput("Fratio")))),
@@ -143,18 +143,11 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                                 selectInput("miss", "Misspecification",
                                                                             c("Natural mortality (GoM cod)"="1", "Recruitment (GoM cod)"="2", "Mortality & Recruitment (GoM cod)"="3", "Catchability (GB haddock)"="4"))),
                                                                     style="font-size:100%" ),  
-                                                     tags$div(checkboxGroupInput("hcr", "Harvest Control Rule:",
+                                                     tags$div(radioButtons("hcr", "Harvest Control Rule:",
                                                                                  c("Ramp"="1" ,
                                                                                    "P*"="2" ,
                                                                                    "F-step"="3",
                                                                                    "Contrained ramp"="4"), inline=TRUE, selected = '"Ramp"="1"')),
-                                                     tags$div(radioButtons("plottype", "Stock Performance", 
-                                                                                 c("SSB", "F", "Catch", "R")),
-                                                              radioButtons("plottype2", "Assessment Performance",
-                                                                           c("% relative error", "Retrospective pattern","Reference point accuracy")),
-                                                              radioButtons("plottype3","Management Performance",
-                                                                           c("Kobe","stock status ratio"))),
-
                                                      tags$div(actionButton("do8", "Compare!"))),
                                        mainPanel(width = 8,
                                                  fluidRow(

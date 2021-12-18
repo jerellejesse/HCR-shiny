@@ -1,4 +1,4 @@
-plotCompareManage <- function(comp,miss,hcr, plottype3)
+plotCompareManage <- function(comp,miss,hcr)
 {
   
   if(comp == "Misspecified and correctly specified stock assessment"){
@@ -102,8 +102,8 @@ plotCompareManage <- function(comp,miss,hcr, plottype3)
       Df3$Misspecification<-as.factor(Df3$Misspecification)
       
       
-      maxSSBest<-max(1.1,max(df$SSBestratioreal))
-      maxF<-max(1.1,max(df$Fratioreal))
+      maxSSBest<-max(1.1,max(df$SSBestratioreal), max(Df$SSBestratioreal))
+      maxF<-max(1.1,max(df$Fratioreal), max(Df$Fratioreal))
       
       kobeterm <- ggplot() +
         theme_bw()+
@@ -126,8 +126,8 @@ plotCompareManage <- function(comp,miss,hcr, plottype3)
         geom_text_repel(data=subset(df, Year > 2039 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year))
       
       
-      maxSSB<-max(1.1,max(df2$SSBestratioreal))
-      maxF<-max(1.1,max(df2$Fratioreal))
+      maxSSB<-max(1.1,max(df2$SSBestratioreal), max(Df2$SSBratioreal))
+      maxF<-max(1.1,max(df2$Fratioreal), max(Df2$Fratioreal))
       
       kobeest <- ggplot() +
         theme_bw()+
@@ -205,8 +205,8 @@ plotCompareManage <- function(comp,miss,hcr, plottype3)
       Df3$Misspecification[is.na(Df3$Misspecification)]<-"Not misspecified"
       Df3$Misspecification<-as.factor(Df3$Misspecification)
       
-      maxSSBest<-max(1.1,max(df$SSBestratioreal))
-      maxF<-max(1.1,max(df$Fratioreal))
+      maxSSBest<-max(1.1,max(df$SSBestratioreal), max(Df$SSBestratioreal))
+      maxF<-max(1.1,max(df$Fratioreal), max(Df$Fratioreal))
       
       kobeterm <- ggplot() +
         theme_bw()+
@@ -229,8 +229,8 @@ plotCompareManage <- function(comp,miss,hcr, plottype3)
         geom_text_repel(data=subset(df, Year > 2039 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year))
       
       
-      maxSSB<-max(1.1,max(df2$SSBestratioreal))
-      maxF<-max(1.1,max(df2$Fratioreal))
+      maxSSB<-max(1.1,max(df2$SSBestratioreal), max(Df2$SSBratioreal))
+      maxF<-max(1.1,max(df2$Fratioreal), max(Df2$Fratioreal))
       
       kobeest <- ggplot() +
         theme_bw()+
@@ -337,8 +337,8 @@ plotCompareManage <- function(comp,miss,hcr, plottype3)
     Df3$HCR<-as.factor(Df3$HCR)
     
     
-    maxSSBest<-max(1.1,max(df$SSBestratioreal))
-    maxF<-max(1.1,max(df$Fratioreal))
+    maxSSBest<-max(1.1,max(df$SSBestratioreal), max(Df$SSBestratioreal))
+    maxF<-max(1.1,max(df$Fratioreal), max(Df$Fratioreal))
     
     kobeterm <- ggplot() +
       theme_bw()+
@@ -361,8 +361,8 @@ plotCompareManage <- function(comp,miss,hcr, plottype3)
       geom_text_repel(data=subset(df, Year > 2039 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year))
     
     
-    maxSSB<-max(1.1,max(df2$SSBestratioreal))
-    maxF<-max(1.1,max(df2$Fratioreal))
+    maxSSB<-max(1.1,max(df2$SSBestratioreal), max(Df2$SSBratioreal))
+    maxF<-max(1.1,max(df2$Fratioreal), max(Df2$Fratioreal))
     
     kobeest <- ggplot() +
       theme_bw()+
@@ -466,8 +466,8 @@ plotCompareManage <- function(comp,miss,hcr, plottype3)
     Df3$HCR<-as.factor(Df3$HCR)
     
     
-    maxSSBest<-max(1.1,max(df$SSBestratioreal))
-    maxF<-max(1.1,max(df$Fratioreal))
+    maxSSBest<-max(1.1,max(df$SSBestratioreal), max(Df$SSBestratioreal))
+    maxF<-max(1.1,max(df$Fratioreal), max(Df$Fratioreal))
     
     kobeterm <- ggplot() +
       theme_bw()+
@@ -490,8 +490,8 @@ plotCompareManage <- function(comp,miss,hcr, plottype3)
       geom_text_repel(data=subset(df, Year > 2039 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year))
     
     
-    maxSSB<-max(1.1,max(df2$SSBestratioreal))
-    maxF<-max(1.1,max(df2$Fratioreal))
+    maxSSB<-max(1.1,max(df2$SSBestratioreal), max(Df2$SSBestratioreal))
+    maxF<-max(1.1,max(df2$Fratioreal), max(Df2$Fratioreal))
     
     kobeest <- ggplot() +
       theme_bw()+
@@ -534,8 +534,8 @@ plotCompareManage <- function(comp,miss,hcr, plottype3)
     
 
   }   
-  if (plottype3== "Kobe"){grid.arrange(kobeest, kobeterm, ncol=2)}
-  if (plottype3=="stock status ratio"){grid.arrange(SSBratio, Fratio, ncol=2)}
+  kobeest
+  
   
   
 } 

@@ -1,4 +1,4 @@
-plotCompareMis <- function(comp,miss,hcr, plottype)
+plotCompareMis <- function(comp,miss,hcr)
 {
   
   if(comp == "Misspecified and correctly specified stock assessment"){
@@ -114,6 +114,13 @@ plotCompareMis <- function(comp,miss,hcr, plottype)
     scale_color_colorblind()+ scale_fill_colorblind()+
     theme_classic()+theme(text=element_text(size=18),legend.position='none')
    
+  fci<- ggplot()+geom_line(data=df2,aes(x=Year,y=F_full, color=HCR,linetype=Misspecification), size=1)+
+    geom_ribbon(data=df2, aes(x=Year,y=F_full,ymin=FCI_Lower, ymax=FCI_Upper, fill=HCR, linetype=Misspecification), alpha=0.2)+
+    geom_line(data=Df2,aes(x=Year,y=F_full, color=HCR,linetype=Misspecification), size=1)+
+    geom_ribbon(data=Df2, aes(x=Year, y=F_full,ymin=FCI_Lower, ymax=FCI_Upper, fill=HCR, linetype=Misspecification), alpha=0.2)+
+    ylab('F')+
+    scale_color_colorblind()+ scale_fill_colorblind()+
+    theme_classic()+theme(text=element_text(size=18),legend.position='none')
   
   
     } else {
@@ -191,6 +198,14 @@ plotCompareMis <- function(comp,miss,hcr, plottype)
       geom_line(data=Df2,aes(x=Year,y=SSB, color=HCR,linetype=Misspecification), size=1)+
       geom_ribbon(data=Df2, aes(x=Year, y=SSB,ymin=SSBCI_Lower, ymax=SSBCI_Upper, fill=HCR, linetype=Misspecification), alpha=0.2)+
       ylab('SSB')+
+      scale_color_colorblind()+scale_fill_colorblind()+
+      theme_classic()+theme(text=element_text(size=18),legend.position='none')
+    
+    fci<- ggplot()+geom_line(data=df2,aes(x=Year,y=F_full, color=HCR,linetype=Misspecification), size=1)+
+      geom_ribbon(data=df2, aes(x=Year,y=F_full,ymin=FCI_Lower, ymax=FCI_Upper, fill=HCR, linetype=Misspecification), alpha=0.2)+
+      geom_line(data=Df2,aes(x=Year,y=F_full, color=HCR,linetype=Misspecification), size=1)+
+      geom_ribbon(data=Df2, aes(x=Year, y=F_full,ymin=FCI_Lower, ymax=FCI_Upper, fill=HCR, linetype=Misspecification), alpha=0.2)+
+      ylab('F')+
       scale_color_colorblind()+scale_fill_colorblind()+
       theme_classic()+theme(text=element_text(size=18),legend.position='none')
     
@@ -293,6 +308,14 @@ plotCompareMis <- function(comp,miss,hcr, plottype)
     scale_color_colorblind()+scale_fill_colorblind()+
     theme_classic()+theme(text=element_text(size=18),legend.position='none')
   
+  fci<- ggplot()+geom_line(data=df2,aes(x=Year,y=F_full, color=HCR,linetype=Rho), size=1)+
+    geom_ribbon(data=df2, aes(x=Year,y=F_full,ymin=FCI_Lower, ymax=FCI_Upper, fill=HCR, linetype=Rho), alpha=0.2)+
+    geom_line(data=Df2,aes(x=Year,y=F_full, color=HCR,linetype=Rho), size=1)+
+    geom_ribbon(data=Df2, aes(x=Year, y=F_full,ymin=FCI_Lower, ymax=FCI_Upper, fill=HCR, linetype=Rho), alpha=0.2)+
+    ylab('F')+
+    scale_color_colorblind()+scale_fill_colorblind()+
+    theme_classic()+theme(text=element_text(size=18),legend.position='none')
+  
 }else {
   df<-read.csv(here::here('Data/shiny_data_jj_update.csv'))
   df<-df[df$Compare_Freq==comp,]
@@ -389,11 +412,16 @@ plotCompareMis <- function(comp,miss,hcr, plottype)
    scale_color_colorblind()+scale_fill_colorblind()+
    theme_classic()+theme(text=element_text(size=18),legend.position='none')
  
+ fci<- ggplot()+geom_line(data=df2,aes(x=Year,y=F_full, color=HCR,linetype=Frequency), size=1)+
+   geom_ribbon(data=df2, aes(x=Year,y=F_full,ymin=FCI_Lower, ymax=FCI_Upper, fill=HCR, linetype=Frequency), alpha=0.2)+
+   geom_line(data=Df2,aes(x=Year,y=F_full, color=HCR,linetype=Frequency), size=1)+
+   geom_ribbon(data=Df2, aes(x=Year, y=F_full,ymin=FCI_Lower, ymax=FCI_Upper, fill=HCR, linetype=Frequency), alpha=0.2)+
+   ylab('F')+
+   scale_color_colorblind()+scale_fill_colorblind()+
+   theme_classic()+theme(text=element_text(size=18),legend.position='none')
 }   
-  if (plottype== "SSB"){grid.arrange(ssb, ssbci, nrow=1)}
-  else if (plottype=="F"){f} 
-  else if (plottype =="Catch"){c}
-  else if (plottype== "R"){r}
+  grid.arrange(ssbci,fci, nrow=1)
+
   
   
 

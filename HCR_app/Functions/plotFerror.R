@@ -9,6 +9,7 @@ plotFerror <- function(om2,rho2,freq2)
   df$HCR[df$HCR==3]<-'F-step'
   df$HCR[df$HCR==4]<-'Constrained ramp'
   df$HCR<-as.factor(df$HCR)
+  
   ggplot(df)+
   geom_boxplot(aes(x=Time, y=Fratiot, fill=HCR))+
   theme_classic()+
