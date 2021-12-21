@@ -11,10 +11,10 @@ setwd(paste(wd,"/Sim_1","/sim",sep=""))
 
 sims <- list.files()
 
-Freal<-matrix(NA,ncol=length(sims),nrow=20)
-Fproxy<-matrix(NA,ncol=length(sims),nrow=20)
-SSBestreal<-matrix(NA,ncol=length(sims),nrow=20)
-SSBestproxy<-matrix(NA,ncol=length(sims),nrow=20)
+Freal<-matrix(NA,ncol=length(sims),nrow=22)
+Fproxy<-matrix(NA,ncol=length(sims),nrow=22)
+SSBreal<-matrix(NA,ncol=length(sims),nrow=22)
+SSBproxy<-matrix(NA,ncol=length(sims),nrow=22)
 
 for (k in 1:length(sims)){
   if (file.size(sims[k])==0){
@@ -24,21 +24,21 @@ sims<-na.omit(sims)
 
 for (k in 1:length(sims)){
   load(sims[k])
-  Freal[,k]<-na.omit(tail(omvalGlobal[[1]]$Fest[length(omvalGlobal[[1]]$sumCW),],22))
-  SSBestreal[,k]<-na.omit(tail(omvalGlobal[[1]]$SSBest[length(omvalGlobal[[1]]$sumCW),],22))
-  Fproxy[,k]<-omvalGlobal[[1]]$FPROXY[169:(length(omvalGlobal[[1]]$sumCW)-2)]
-  SSBestproxy[,k]<-omvalGlobal[[1]]$SSBPROXY[169:(length(omvalGlobal[[1]]$sumCW)-2)]
+  Freal[,k]<-omvalGlobal[[1]]$F_full[168:(length(omvalGlobal[[1]]$sumCW)-2)]
+  SSBreal[,k]<-omvalGlobal[[1]]$SSB[168:(length(omvalGlobal[[1]]$sumCW)-2)]
+  Fproxy[,k]<-omvalGlobal[[1]]$FPROXYT[169:(length(omvalGlobal[[1]]$sumCW)-2)]
+  SSBproxy[,k]<-omvalGlobal[[1]]$SSBPROXYT[169:(length(omvalGlobal[[1]]$sumCW)-2)]
 }
 
 Freal<-rowMedians(Freal,na.rm=T)
 Fproxy<-rowMedians(Fproxy,na.rm=T)
 Fratioreal<-Freal/Fproxy
 
-SSBestreal<-rowMedians(SSBestreal,na.rm=T)
-SSBestproxy<-rowMedians(SSBestproxy,na.rm=T)
-SSBestratioreal<-SSBestreal/SSBestproxy
+SSBreal<-rowMedians(SSBreal,na.rm=T)
+SSBproxy<-rowMedians(SSBproxy,na.rm=T)
+SSBratioreal<-SSBreal/SSBproxy
 Year<-2019:((length(omvalGlobal[[1]]$sumCW)-169)+2017)
-Dftrue<-as.data.frame(cbind(SSBestratioreal,Fratioreal,Year))
+Dftrue<-as.data.frame(cbind(SSBratioreal,Fratioreal,Year))
 Dftrue$Scenario<-1
 df<-Dftrue
 
@@ -49,14 +49,14 @@ for (m in 2:32){
   
   Freal<-matrix(NA,ncol=length(sims),nrow=20)
   Fproxy<-matrix(NA,ncol=length(sims),nrow=20)
-  SSBestreal<-matrix(NA,ncol=length(sims),nrow=20)
-  SSBestproxy<-matrix(NA,ncol=length(sims),nrow=20)
+  SSBreal<-matrix(NA,ncol=length(sims),nrow=20)
+  SSBproxy<-matrix(NA,ncol=length(sims),nrow=20)
   
   if (m>20 & m<25){
     Freal<-matrix(NA,ncol=length(sims),nrow=21)
     Fproxy<-matrix(NA,ncol=length(sims),nrow=21)
-    SSBestreal<-matrix(NA,ncol=length(sims),nrow=21)
-    SSBestproxy<-matrix(NA,ncol=length(sims),nrow=21)
+    SSBreal<-matrix(NA,ncol=length(sims),nrow=21)
+    SSBproxy<-matrix(NA,ncol=length(sims),nrow=21)
   }
   
   for (k in 1:length(sims)){
@@ -69,10 +69,10 @@ for (m in 2:32){
     for (k in 1:length(sims)){
       tryCatch({
         load(sims[k])
-        Freal[,k]<-na.omit(tail(omvalGlobal[[1]]$Fest[length(omvalGlobal[[1]]$sumCW),],22))
-        SSBestreal[,k]<-na.omit(tail(omvalGlobal[[1]]$SSBest[length(omvalGlobal[[1]]$sumCW),],22))
-        Fproxy[,k]<-omvalGlobal[[1]]$FPROXY[169:(length(omvalGlobal[[1]]$sumCW)-1)]
-        SSBestproxy[,k]<-omvalGlobal[[1]]$SSBPROXY[169:(length(omvalGlobal[[1]]$sumCW)-1)]
+        Freal[,k]<-na.omit(tail(omvalGlobal[[1]]$F_full[length(omvalGlobal[[1]]$sumCW),],22))
+        SSBreal[,k]<-na.omit(tail(omvalGlobal[[1]]$SSB[length(omvalGlobal[[1]]$sumCW),],22))
+        Fproxy[,k]<-omvalGlobal[[1]]$FPROXYT[169:(length(omvalGlobal[[1]]$sumCW)-1)]
+        SSBproxy[,k]<-omvalGlobal[[1]]$SSBPROXYT[169:(length(omvalGlobal[[1]]$sumCW)-1)]
       },error=function(e){})
     }
   }
@@ -80,10 +80,10 @@ for (m in 2:32){
     for (k in 1:length(sims)){
       tryCatch({
         load(sims[k])
-        Freal[,k]<-na.omit(tail(omvalGlobal[[1]]$Fest[length(omvalGlobal[[1]]$sumCW),],22))
-        SSBestreal[,k]<-na.omit(tail(omvalGlobal[[1]]$SSBest[length(omvalGlobal[[1]]$sumCW),],22))
-        Fproxy[,k]<-omvalGlobal[[1]]$FPROXY[169:(length(omvalGlobal[[1]]$sumCW)-2)]
-        SSBestproxy[,k]<-omvalGlobal[[1]]$SSBPROXY[169:(length(omvalGlobal[[1]]$sumCW)-2)]
+        Freal[,k]<-na.omit(tail(omvalGlobal[[1]]$F_full[length(omvalGlobal[[1]]$sumCW),],22))
+        SSBreal[,k]<-na.omit(tail(omvalGlobal[[1]]$SSB[length(omvalGlobal[[1]]$sumCW),],22))
+        Fproxy[,k]<-omvalGlobal[[1]]$FPROXYT[169:(length(omvalGlobal[[1]]$sumCW)-2)]
+        SSBproxy[,k]<-omvalGlobal[[1]]$SSBPROXYT[169:(length(omvalGlobal[[1]]$sumCW)-2)]
       },error=function(e){})
     }
   }
@@ -92,15 +92,15 @@ for (m in 2:32){
   Fproxy<-rowMedians(Fproxy,na.rm=T)
   Fratioreal<-Freal/Fproxy
   
-  SSBestreal<-rowMedians(SSBestreal,na.rm=T)
-  SSBestproxy<-rowMedians(SSBestproxy,na.rm=T)
-  SSBestratioreal<-SSBestreal/SSBestproxy
+  SSBreal<-rowMedians(SSBreal,na.rm=T)
+  SSBproxy<-rowMedians(SSBproxy,na.rm=T)
+  SSBratioreal<-SSBreal/SSBproxy
   Year<-2019:((length(omvalGlobal[[1]]$sumCW)-169)+2017)
-  Dftrue2<-as.data.frame(cbind(SSBestratioreal,Fratioreal,Year))
+  Dftrue2<-as.data.frame(cbind(SSBratioreal,Fratioreal,Year))
   Dftrue2$Scenario<-m
   df<-full_join(df,Dftrue2)
 }
 
 
-write.csv(df,here("Data/kobeestimated_data_jj.csv"))
+write.csv(df,here("Data/kobetrue_data_jj.csv"))
 

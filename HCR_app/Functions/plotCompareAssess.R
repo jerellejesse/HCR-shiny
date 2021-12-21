@@ -100,17 +100,25 @@ plotCompareAssess <- function(comp,miss,hcr)
         scale_color_colorblind()+
         theme_classic()+theme(text=element_text(size=18),legend.position='none')
       
+      miny<-min(c(-1,min(df2$rhoSSB, na.rm=TRUE), min(Df2$rhoSSB, na.rm=TRUE)))
+      maxy<-max(c(1, max(df2$rhoSSB, na.rm=TRUE), max(Df2$rhoSSB, na.rm=TRUE)))
+      
       rhoSSB<-ggplot()+geom_line(data=df2,aes(x=Year,y=rhoSSB,color=HCR, linetype=Misspecification),size=1)+
         geom_line(data=Df2,aes(x=Year,y=rhoSSB, color=HCR, linetype=Misspecification), size=1)+
         theme_classic()+theme(text=element_text(size=18),legend.position='none')+
         ylab('Monhs Rho for SSB')+
-        scale_color_colorblind()
+        scale_color_colorblind()+
+        ylim(miny,maxy)
+      
+      min<-min(c(-1,min(df2$rhoF, na.rm=TRUE), min(Df2$rhoF, na.rm=TRUE)))
+      max<-max(c(1, max(df2$rhoF, na.rm=TRUE), max(Df2$rhoF, na.rm=TRUE)))
       
       rhoF<-ggplot()+geom_line(data=df2,aes(x=Year,y=rhoF,color=HCR, linetype=Misspecification),size=1)+
         geom_line(data=Df2,aes(x=Year,y=rhoF, color=HCR, linetype=Misspecification), size=1)+
         theme_classic()+theme(text=element_text(size=18),legend.position='none')+
         ylab('Monhs Rho for F')+
-        scale_color_colorblind()
+        scale_color_colorblind()+
+        ylim(min,max)
       
       SSBerror<-ggplot()+
         geom_boxplot(data=df3,aes(x=Time, y=SSBratiot, fill=HCR, linetype=Misspecification))+
@@ -180,17 +188,25 @@ plotCompareAssess <- function(comp,miss,hcr)
         scale_color_colorblind()+
         theme_classic()+theme(text=element_text(size=18),legend.position='none')
       
+      miny<-min(c(-1,min(df2$rhoSSB, na.rm=TRUE), min(Df2$rhoSSB, na.rm=TRUE)))
+      maxy<-max(c(1, max(df2$rhoSSB, na.rm=TRUE), max(Df2$rhoSSB, na.rm=TRUE)))
+      
       rhoSSB<-ggplot()+geom_line(data=df2,aes(x=Year,y=rhoSSB,color=HCR, linetype=Misspecification),size=1)+
         geom_line(data=Df2,aes(x=Year,y=rhoSSB, color=HCR, linetype=Misspecification), size=1)+
         theme_classic()+theme(text=element_text(size=18),legend.position='none')+
         ylab('Monhs Rho for SSB')+
-        scale_color_colorblind()
+        scale_color_colorblind()+
+        ylim(miny,maxy)
+      
+      min<-min(c(-1,min(df2$rhoF, na.rm=TRUE), min(Df2$rhoF, na.rm=TRUE)))
+      max<-max(c(1, max(df2$rhoF, na.rm=TRUE), max(Df2$rhoF, na.rm=TRUE)))
       
       rhoF<-ggplot()+geom_line(data=df2,aes(x=Year,y=rhoF,color=HCR, linetype=Misspecification),size=1)+
         geom_line(data=Df2,aes(x=Year,y=rhoF, color=HCR, linetype=Misspecification), size=1)+
         theme_classic()+theme(text=element_text(size=18),legend.position='none')+
         ylab('Monhs Rho for F')+
-        scale_color_colorblind()
+        scale_color_colorblind()+
+        ylim(min,max)
       
       
       SSBerror<-ggplot()+
@@ -289,17 +305,25 @@ plotCompareAssess <- function(comp,miss,hcr)
       scale_color_colorblind()+
       theme_classic()+theme(text=element_text(size=18),legend.position='none')
     
+    miny<-min(c(-1,min(df2$rhoSSB, na.rm=TRUE), min(Df2$rhoSSB, na.rm=TRUE)))
+    maxy<-max(c(1, max(df2$rhoSSB, na.rm=TRUE), max(Df2$rhoSSB, na.rm=TRUE)))
+    
     rhoSSB<-ggplot()+geom_line(data=df2,aes(x=Year,y=rhoSSB,color=HCR, linetype=Rho),size=1)+
       geom_line(data=Df2,aes(x=Year,y=rhoSSB, color=HCR, linetype=Rho), size=1)+
       theme_classic()+theme(text=element_text(size=18),legend.position='none')+
       ylab('Monhs Rho for SSB')+
-      scale_color_colorblind()
+      scale_color_colorblind()+
+      ylim(miny,maxy)
+    
+    min<-min(c(-1,min(df2$rhoF, na.rm=TRUE), min(Df2$rhoF, na.rm=TRUE)))
+    max<-max(c(1, max(df2$rhoF, na.rm=TRUE), max(Df2$rhoF, na.rm=TRUE)))
     
     rhoF<-ggplot()+geom_line(data=df2,aes(x=Year,y=rhoF,color=HCR, linetype=Rho),size=1)+
       geom_line(data=Df2,aes(x=Year,y=rhoF, color=HCR, linetype=Rho), size=1)+
       theme_classic()+theme(text=element_text(size=18),legend.position='none')+
       ylab('Monhs Rho for F')+
-      scale_color_colorblind()
+      scale_color_colorblind()+
+      ylim(min,max)
     
     
     SSBerror<-ggplot()+
@@ -397,17 +421,25 @@ plotCompareAssess <- function(comp,miss,hcr)
       scale_color_colorblind()+
       theme_classic()+theme(text=element_text(size=18),legend.position='none')
     
+    miny<-min(c(-1,min(df2$rhoSSB, na.rm=TRUE), min(Df2$rhoSSB, na.rm=TRUE)))
+    maxy<-max(c(1, max(df2$rhoSSB, na.rm=TRUE), max(Df2$rhoSSB, na.rm=TRUE)))
+    
     rhoSSB<-ggplot()+geom_line(data=df2,aes(x=Year,y=rhoSSB,color=HCR, linetype=Frequency),size=1)+
       geom_line(data=Df2,aes(x=Year,y=rhoSSB, color=HCR, linetype=Frequency), size=1)+
       theme_classic()+theme(text=element_text(size=18),legend.position='none')+
       ylab('Monhs Rho for SSB')+
-      scale_color_colorblind()
+      scale_color_colorblind()+
+      ylim(miny,maxy)
+    
+    min<-min(c(-1,min(df2$rhoF, na.rm=TRUE), min(Df2$rhoF, na.rm=TRUE)))
+    max<-max(c(1, max(df2$rhoF, na.rm=TRUE), max(Df2$rhoF, na.rm=TRUE)))
     
     rhoF<-ggplot()+geom_line(data=df2,aes(x=Year,y=rhoF,color=HCR, linetype=Frequency),size=1)+
       geom_line(data=Df2,aes(x=Year,y=rhoF, color=HCR, linetype=Frequency), size=1)+
       theme_classic()+theme(text=element_text(size=18),legend.position='none')+
       ylab('Monhs Rho for F')+
-      scale_color_colorblind()
+      scale_color_colorblind()+
+      ylim(min,max)
     
     
     SSBerror<-ggplot()+

@@ -102,8 +102,8 @@ plotCompareManage <- function(comp,miss,hcr)
       Df3$Misspecification<-as.factor(Df3$Misspecification)
       
       
-      maxSSBest<-max(1.1,max(df$SSBestratioreal), max(Df$SSBestratioreal))
-      maxF<-max(1.1,max(df$Fratioreal), max(Df$Fratioreal))
+      maxSSBest<-max(1.1,max(df$SSBestratioreal, na.rm=TRUE), max(Df$SSBestratioreal, na.rm=TRUE))
+      maxF<-max(1.1,max(df$Fratioreal, na.rm=TRUE), max(Df$Fratioreal, na.rm=TRUE))
       
       kobeterm <- ggplot() +
         theme_bw()+
@@ -122,12 +122,11 @@ plotCompareManage <- function(comp,miss,hcr)
         scale_color_colorblind()+
         geom_vline(xintercept=0.5, linetype='dotted')+
         theme(text=element_text(size=16),legend.position='none')+
-        ggtitle("Terminal")+
         geom_text_repel(data=subset(df, Year > 2039 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year))
       
       
-      maxSSB<-max(1.1,max(df2$SSBestratioreal), max(Df2$SSBratioreal))
-      maxF<-max(1.1,max(df2$Fratioreal), max(Df2$Fratioreal))
+      maxSSB<-max(c(1.1,max(df2$SSBestratioreal, na.rm=TRUE), max(Df2$SSBratioreal, na.rm=TRUE)))
+      maxF<-max(c(1.1,max(df2$Fratioreal, na.rm=TRUE), max(Df2$Fratioreal, na.rm=TRUE)))
       
       kobeest <- ggplot() +
         theme_bw()+
@@ -135,9 +134,9 @@ plotCompareManage <- function(comp,miss,hcr)
         annotate(geom = "rect", xmin = 0, xmax = 1, ymin = 1, ymax = maxF, fill = "red", colour = "red", alpha = 0.5) +
         annotate(geom = "rect", xmin = 0, xmax = 1, ymin = 0, ymax = 1, fill = "yellow", colour = "yellow", alpha = 0.5) +
         annotate(geom = "rect", xmin = 1, xmax = maxSSB, ymin = 1, ymax = maxF, fill = "yellow", colour = "yellow", alpha = 0.5) +
-        geom_path(data=df2, aes(x = SSBestratioreal, y = Fratioreal, linetype = Misspecification,colour=HCR), size = 0.3) +
+        geom_path(data=df2, aes(x = SSBestratioreal, y = Fratioreal, linetype = Misspecification,colour=HCR), size = 1) +
         geom_point(data=df2, aes(x = SSBestratioreal, y = Fratioreal,shape=Misspecification, color=HCR)) + 
-        geom_path(data=Df2, aes(x = SSBestratioreal, y = Fratioreal, linetype = Misspecification,colour=HCR), size = 0.3) +
+        geom_path(data=Df2, aes(x = SSBestratioreal, y = Fratioreal, linetype = Misspecification,colour=HCR), size = 1) +
         geom_point(data=Df2, aes(x = SSBestratioreal, y = Fratioreal, shape=Misspecification, color=HCR)) +
         labs(x = 'SSB/SSB MSY',
              y = 'F/F MSY') +
@@ -146,10 +145,10 @@ plotCompareManage <- function(comp,miss,hcr)
         scale_color_colorblind()+
         geom_vline(xintercept=0.5, linetype='dotted')+
         theme(text=element_text(size=16),legend.position='none')+
-        ggtitle("Estimated")+
-        geom_text_repel(data=subset(df, Year > 2037 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year))
+        geom_text_repel(data=subset(df2, Year > 2037 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year))+
+        geom_text_repel(data=subset(Df2, Year > 2037 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year))
       
-      
+       
      SSBratio<- ggplot()+
         geom_boxplot(data=df3,aes(x=Time, y=SSBratio, fill=HCR, linetype=Misspecification)) +
         geom_boxplot(data=Df3,aes(x=Time, y=SSBratio, fill=HCR, linetype=Misspecification)) +
@@ -205,8 +204,8 @@ plotCompareManage <- function(comp,miss,hcr)
       Df3$Misspecification[is.na(Df3$Misspecification)]<-"Not misspecified"
       Df3$Misspecification<-as.factor(Df3$Misspecification)
       
-      maxSSBest<-max(1.1,max(df$SSBestratioreal), max(Df$SSBestratioreal))
-      maxF<-max(1.1,max(df$Fratioreal), max(Df$Fratioreal))
+      maxSSBest<-max(1.1,max(df$SSBestratioreal, na.rm=TRUE), max(Df$SSBestratioreal, na.rm=TRUE))
+      maxF<-max(1.1,max(df$Fratioreal, na.rm=TRUE), max(Df$Fratioreal, na.rm=TRUE))
       
       kobeterm <- ggplot() +
         theme_bw()+
@@ -225,12 +224,11 @@ plotCompareManage <- function(comp,miss,hcr)
         scale_color_colorblind()+
         geom_vline(xintercept=0.5, linetype='dotted')+
         theme(text=element_text(size=16),legend.position='none')+
-        ggtitle("Terminal")+
         geom_text_repel(data=subset(df, Year > 2039 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year))
       
       
-      maxSSB<-max(1.1,max(df2$SSBestratioreal), max(Df2$SSBratioreal))
-      maxF<-max(1.1,max(df2$Fratioreal), max(Df2$Fratioreal))
+      maxSSB<-max(1.1,max(df2$SSBestratioreal, na.rm=TRUE), max(Df2$SSBratioreal, na.rm=TRUE))
+      maxF<-max(1.1,max(df2$Fratioreal, na.rm=TRUE), max(Df2$Fratioreal, na.rm=TRUE))
       
       kobeest <- ggplot() +
         theme_bw()+
@@ -238,9 +236,9 @@ plotCompareManage <- function(comp,miss,hcr)
         annotate(geom = "rect", xmin = 0, xmax = 1, ymin = 1, ymax = maxF, fill = "red", colour = "red", alpha = 0.5) +
         annotate(geom = "rect", xmin = 0, xmax = 1, ymin = 0, ymax = 1, fill = "yellow", colour = "yellow", alpha = 0.5) +
         annotate(geom = "rect", xmin = 1, xmax = maxSSB, ymin = 1, ymax = maxF, fill = "yellow", colour = "yellow", alpha = 0.5) +
-        geom_path(data=df2, aes(x = SSBestratioreal, y = Fratioreal, linetype = Misspecification,colour=HCR), size = 0.3) +
+        geom_path(data=df2, aes(x = SSBestratioreal, y = Fratioreal, linetype = Misspecification,colour=HCR), size = 1) +
         geom_point(data=df2, aes(x = SSBestratioreal, y = Fratioreal,shape=Misspecification, color=HCR)) + 
-        geom_path(data=Df2, aes(x = SSBestratioreal, y = Fratioreal, linetype = Misspecification,colour=HCR), size = 0.3) +
+        geom_path(data=Df2, aes(x = SSBestratioreal, y = Fratioreal, linetype = Misspecification,colour=HCR), size = 1) +
         geom_point(data=Df2, aes(x = SSBestratioreal, y = Fratioreal, shape=Misspecification, color=HCR)) +
         labs(x = 'SSB/SSB MSY',
              y = 'F/F MSY') +
@@ -249,8 +247,8 @@ plotCompareManage <- function(comp,miss,hcr)
         scale_color_colorblind()+
         geom_vline(xintercept=0.5, linetype='dotted')+
         theme(text=element_text(size=16),legend.position='none')+
-        ggtitle("Estimated")+
-        geom_text_repel(data=subset(df, Year > 2037 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year))
+        geom_text_repel(data=subset(df2, Year > 2037 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year))+
+        geom_text_repel(data=subset(Df2, Year > 2037 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year))
       
       
       SSBratio<- ggplot()+
@@ -337,8 +335,8 @@ plotCompareManage <- function(comp,miss,hcr)
     Df3$HCR<-as.factor(Df3$HCR)
     
     
-    maxSSBest<-max(1.1,max(df$SSBestratioreal), max(Df$SSBestratioreal))
-    maxF<-max(1.1,max(df$Fratioreal), max(Df$Fratioreal))
+    maxSSBest<-max(1.1,max(df$SSBestratioreal, na.rm=TRUE), max(Df$SSBestratioreal, na.rm=TRUE))
+    maxF<-max(1.1,max(df$Fratioreal, na.rm=TRUE), max(Df$Fratioreal, na.rm=TRUE))
     
     kobeterm <- ggplot() +
       theme_bw()+
@@ -357,12 +355,11 @@ plotCompareManage <- function(comp,miss,hcr)
       scale_color_colorblind()+
       geom_vline(xintercept=0.5, linetype='dotted')+
       theme(text=element_text(size=16),legend.position='none')+
-      ggtitle("Terminal")+
       geom_text_repel(data=subset(df, Year > 2039 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year))
     
     
-    maxSSB<-max(1.1,max(df2$SSBestratioreal), max(Df2$SSBratioreal))
-    maxF<-max(1.1,max(df2$Fratioreal), max(Df2$Fratioreal))
+    maxSSB<-max(1.1,max(df2$SSBestratioreal, na.rm=TRUE), max(Df2$SSBratioreal, na.rm=TRUE))
+    maxF<-max(1.1,max(df2$Fratioreal, na.rm=TRUE), max(Df2$Fratioreal), na.rm=TRUE)
     
     kobeest <- ggplot() +
       theme_bw()+
@@ -370,9 +367,9 @@ plotCompareManage <- function(comp,miss,hcr)
       annotate(geom = "rect", xmin = 0, xmax = 1, ymin = 1, ymax = maxF, fill = "red", colour = "red", alpha = 0.5) +
       annotate(geom = "rect", xmin = 0, xmax = 1, ymin = 0, ymax = 1, fill = "yellow", colour = "yellow", alpha = 0.5) +
       annotate(geom = "rect", xmin = 1, xmax = maxSSB, ymin = 1, ymax = maxF, fill = "yellow", colour = "yellow", alpha = 0.5) +
-      geom_path(data=df2, aes(x = SSBestratioreal, y = Fratioreal, linetype = Rho,colour=HCR), size = 0.3) +
+      geom_path(data=df2, aes(x = SSBestratioreal, y = Fratioreal, linetype = Rho,colour=HCR), size = 1) +
       geom_point(data=df2, aes(x = SSBestratioreal, y = Fratioreal,shape=Rho, color=HCR)) + 
-      geom_path(data=Df2, aes(x = SSBestratioreal, y = Fratioreal, linetype = Rho,colour=HCR), size = 0.3) +
+      geom_path(data=Df2, aes(x = SSBestratioreal, y = Fratioreal, linetype = Rho,colour=HCR), size = 1) +
       geom_point(data=Df2, aes(x = SSBestratioreal, y = Fratioreal, shape=Rho, color=HCR)) +
       labs(x = 'SSB/SSB MSY',
            y = 'F/F MSY') +
@@ -381,8 +378,8 @@ plotCompareManage <- function(comp,miss,hcr)
       scale_color_colorblind()+
       geom_vline(xintercept=0.5, linetype='dotted')+
       theme(text=element_text(size=16),legend.position='none')+
-      ggtitle("Estimated")+
-      geom_text_repel(data=subset(df, Year > 2037 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year))
+      geom_text_repel(data=subset(df2, Year > 2037 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year))+
+      geom_text_repel(data=subset(Df2, Year > 2037 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year))
     
     
     SSBratio<- ggplot()+
@@ -466,8 +463,8 @@ plotCompareManage <- function(comp,miss,hcr)
     Df3$HCR<-as.factor(Df3$HCR)
     
     
-    maxSSBest<-max(1.1,max(df$SSBestratioreal), max(Df$SSBestratioreal))
-    maxF<-max(1.1,max(df$Fratioreal), max(Df$Fratioreal))
+    maxSSBest<-max(1.1,max(df$SSBestratioreal, na.rm=TRUE), max(Df$SSBestratioreal, na.rm=TRUE))
+    maxF<-max(1.1,max(df$Fratioreal, na.rm=TRUE), max(Df$Fratioreal, na.rm=TRUE))
     
     kobeterm <- ggplot() +
       theme_bw()+
@@ -486,12 +483,11 @@ plotCompareManage <- function(comp,miss,hcr)
       scale_color_colorblind()+
       geom_vline(xintercept=0.5, linetype='dotted')+
       theme(text=element_text(size=16),legend.position='none')+
-      ggtitle("Terminal")+
       geom_text_repel(data=subset(df, Year > 2039 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year))
     
     
-    maxSSB<-max(1.1,max(df2$SSBestratioreal), max(Df2$SSBestratioreal))
-    maxF<-max(1.1,max(df2$Fratioreal), max(Df2$Fratioreal))
+    maxSSB<-max(1.1,max(df2$SSBestratioreal, na.rm=TRUE), max(Df2$SSBestratioreal, na.rm=TRUE))
+    maxF<-max(1.1,max(df2$Fratioreal, na.rm=TRUE), max(Df2$Fratioreal, na.rm=TRUE))
     
     kobeest <- ggplot() +
       theme_bw()+
@@ -499,9 +495,9 @@ plotCompareManage <- function(comp,miss,hcr)
       annotate(geom = "rect", xmin = 0, xmax = 1, ymin = 1, ymax = maxF, fill = "red", colour = "red", alpha = 0.5) +
       annotate(geom = "rect", xmin = 0, xmax = 1, ymin = 0, ymax = 1, fill = "yellow", colour = "yellow", alpha = 0.5) +
       annotate(geom = "rect", xmin = 1, xmax = maxSSB, ymin = 1, ymax = maxF, fill = "yellow", colour = "yellow", alpha = 0.5) +
-      geom_path(data=df2, aes(x = SSBestratioreal, y = Fratioreal, linetype =Frequency,colour=HCR), size = 0.3) +
+      geom_path(data=df2, aes(x = SSBestratioreal, y = Fratioreal, linetype =Frequency,colour=HCR), size = 1) +
       geom_point(data=df2, aes(x = SSBestratioreal, y = Fratioreal,shape=Frequency, color=HCR)) + 
-      geom_path(data=Df2, aes(x = SSBestratioreal, y = Fratioreal, linetype = Frequency,colour=HCR), size = 0.3) +
+      geom_path(data=Df2, aes(x = SSBestratioreal, y = Fratioreal, linetype = Frequency,colour=HCR), size = 1) +
       geom_point(data=Df2, aes(x = SSBestratioreal, y = Fratioreal, shape=Frequency, color=HCR)) +
       labs(x = 'SSB/SSB MSY',
            y = 'F/F MSY') +
@@ -510,8 +506,8 @@ plotCompareManage <- function(comp,miss,hcr)
       scale_color_colorblind()+
       geom_vline(xintercept=0.5, linetype='dotted')+
       theme(text=element_text(size=16),legend.position='none')+
-      ggtitle("Estimated")+
-      geom_text_repel(data=subset(df, Year > 2037 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year))
+      geom_text_repel(data=subset(df2, Year > 2037 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year),size=10)+
+     geom_text_repel(data=subset(Df2, Year > 2037 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year),size=10)
     
     
     SSBratio<- ggplot()+

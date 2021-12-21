@@ -28,4 +28,7 @@ output: html_document
 
 <br>
 
-* Please cite full report linked above
+* Please cite full report:
+<br>
+
+Mazur, M., Cadrin, S., Jesse, J. & Kerr, L. 2021. Evaluation of Alternative Harvest Control Rules for New England Groundfish. 

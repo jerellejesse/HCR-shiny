@@ -90,7 +90,13 @@ There are five tabs across the top of the page designed to walk users through th
        + stock assessment frequency <br>
 <br>
 
-5. **Compare Scenarios:** Compare scenarios based on guided prompts with choice of HCRs and performance metrics. 
+5. **Compare Scenarios:** Compare scenarios based on guided prompts <br>
+  * **User chooses to compare:**
+      + Misspecified versus correctly specified stock assessment with             further choice of the type of misspecification
+      + Rho-adjusted versus not rho-adjusted for the natural mortality and         recruitment misspecified scenario
+      + Two-year versus annual stock assessment update frequency for the          natural mortality and recruitment misspecified scenario <br>
+      
+  * Natural mortality and recruitment misspecification used for               rho-adjustment and frequency comparisons because it is likely             multiple parameters are misspecified and the combination produced         retrospective patterns similar to those in the most recent GOM cod        stock assessment.
 
 <br>
 </details>

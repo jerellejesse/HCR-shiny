@@ -12,11 +12,11 @@ output: html_document
 
 - **Not Overfished**: emulates a groundfish stock in good status with random large recruitment events (Georges Bank Haddock) <br>
 
-- **Mortality Misspecified**: natural mortality misspecification in stock assessment <br>
+- **Natural Mortality Misspecified**: natural mortality misspecification in stock assessment <br>
 
 - **Recruitment Misspecified**: recruitment misspecification in stock assessment <br>
 
-- **Catchability Misspecified**: survey catchability misspecification in stock assessment <br>
+- **Survey Catchability Misspecified**: survey catchability misspecification in stock assessment <br>
 
 - **Rho-adjusted**: apply retrospective adjustments <br>
 
