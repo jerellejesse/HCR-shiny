@@ -1,5 +1,17 @@
 plotrhoSSB <- function(om2,rho2,freq2)
-{
+{library(ggplot2)
+  library(ggthemes)
+  library(here)
+  library(gridExtra)
+  library(tidyverse)
+  library(rmarkdown)
+  library(knitr)
+  library(DT)
+  library(ggrepel)
+  library(ggradar)
+  library(grid)
+  library(plotly)
+  
   df<-read.csv(here('Data/shiny_data_jj_update.csv'))
   df<-df[df$OM==om2,]
   df<-df[df$Rho==rho2,]

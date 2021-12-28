@@ -1,5 +1,16 @@
 plotCompareMis <- function(comp,miss,hcr)
-{
+{library(ggplot2)
+  library(ggthemes)
+  library(here)
+  library(gridExtra)
+  library(tidyverse)
+  library(rmarkdown)
+  library(knitr)
+  library(DT)
+  library(ggrepel)
+  library(ggradar)
+  library(grid)
+  library(plotly)
   
   if(comp == "Misspecified and correctly specified stock assessment"){
   df<-read.csv(here::here('Data/shiny_data_jj_update.csv'))%>%

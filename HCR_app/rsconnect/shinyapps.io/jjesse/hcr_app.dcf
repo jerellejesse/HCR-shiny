@@ -1,0 +1,13 @@
+name: hcr_app
+title:
+username:
+account: jjesse
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5359769
+bundleId: 5414732
+url: https://jjesse.shinyapps.io/hcr_app/
+when: 1640703160.78611
+lastSyncTime: 1640703160.78611
+asMultiple: FALSE
+asStatic: FALSE

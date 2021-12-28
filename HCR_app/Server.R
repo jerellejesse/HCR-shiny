@@ -2,7 +2,7 @@
 ## Define server logic required to run scripts
 ## ------------------------------------------------------------------------------------ ##
 defaultVals<-c(0.1,.1,.3,.5,.5)
-NumberOfOptions <- 2
+NumberOfOptions <- 1
 library(ggplot2)
 library(ggthemes)
 library(here)
@@ -57,22 +57,22 @@ output$glossary<-renderDataTable(Glossary())
 #render gifs
 observeEvent(input$do3, {
 output$trajectorygif<- renderImage(
-  list(src=here("HCR_app/www/trajectory.gif"), align="left", height="300px", width="600px"), deleteFile = FALSE)
+  list(src=here("www/trajectory.gif"), align="left", height="300px", width="600px"), deleteFile = FALSE)
    })
 
 observeEvent(input$do4,{
 output$boxplotsgif<- renderImage(
-  list(src=here("HCR_app/www/boxplots.gif"), align="left", height="300px", width="600px"), deleteFile = FALSE)
+  list(src=here("www/boxplots.gif"), align="left", height="300px", width="600px"), deleteFile = FALSE)
   })
 
 observeEvent(input$do5,{
 output$kobegif<- renderImage(
-  list(src=here("HCR_app/www/kobe.gif"), align="left", height="300px", width="500px"), deleteFile = FALSE)
+  list(src=here("www/kobe.gif"), align="left", height="300px", width="500px"), deleteFile = FALSE)
   })
 
 observeEvent(input$do6,{
 output$radargif<- renderImage(
-  list(src=here("HCR_app/www/radar.gif"), align="left", height="300px", width="300px"), deleteFile = FALSE)
+  list(src=here("www/radar.gif"), align="left", height="300px", width="300px"), deleteFile = FALSE)
   })
    
 

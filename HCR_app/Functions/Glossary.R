@@ -1,4 +1,17 @@
 Glossary<-function(){
+  library(ggplot2)
+  library(ggthemes)
+  library(here)
+  library(gridExtra)
+  library(tidyverse)
+  library(rmarkdown)
+  library(knitr)
+  library(DT)
+  library(ggrepel)
+  library(ggradar)
+  library(grid)
+  library(plotly)
+  
   Term=c("Management strategy evaluation", 
          "Harvest control rule",
          "Operating Model")
