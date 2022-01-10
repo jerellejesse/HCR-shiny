@@ -20,7 +20,7 @@ Glossary<-function(){
                  "HCR",
                  "OM")
   
-  Definition=c("Iterative process of simulation testing alternate harvest strategies and assessing performance against management goals",
+  Definition=c("Iterative process of simulation testing alternate managment procedures and assessing performance against management goals",
                "Pre-agreed guidlines that determine the level of fishing that can take place, based on preceived stock status",
                "Model used to describe the dynamics of the fish and fishery")
     
