@@ -50,9 +50,9 @@ shinyServer(function(input, output, session){
   
 
   
-output$metrics<- renderDataTable(metrics())
-output$scenarios<-renderDataTable(scenarios())
-output$glossary<-renderDataTable(Glossary())
+output$metrics<- DT::renderDataTable(metrics())
+output$scenarios<-DT::renderDataTable(scenarios())
+output$glossary<-DT::renderDataTable(Glossary())
 
 #render gifs
 observeEvent(input$do3, {
@@ -103,7 +103,7 @@ output$radargif<- renderImage(
   observeEvent(input$do7, {
     output$SSBratio<- renderPlot(plotSSBratioBox(input$om7, input$rho7, input$freq7))
     output$Fratio<- renderPlot(plotFratioBox(input$om7, input$rho7, input$freq7))
-    output$kobe<-renderPlot(plotkobe(input$om7,input$rho7, input$freq7))
+    output$kobe<-renderPlot(plotKobe(input$om7,input$rho7, input$freq7))
     output$shortradar<-renderPlot(plotshortradar(input$om7, input$rho7, input$freq7))
     output$mediumradar<-renderPlot(plotmediumradar(input$om7, input$rho7, input$freq7))
     output$longradar<-renderPlot(plotlongradar(input$om7, input$rho7, input$freq7))
@@ -116,7 +116,7 @@ output$radargif<- renderImage(
      output$CompareMis<- renderPlot(plotCompareMis(input$comp, input$miss, input$hcr))
      output$CompareAssess<-renderPlot(plotCompareAssess(input$comp, input$miss, input$hcr))
      output$CompareManage<-renderPlot(plotCompareManage(input$comp, input$miss, input$hcr))
-     
+     output$CompareCatch <- renderPlot(plotCompareCatch(input$comp, input$miss, input$hcr))
        })
  
 

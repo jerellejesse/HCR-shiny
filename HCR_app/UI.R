@@ -23,8 +23,8 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                          fluidRow(column(12,
                                           tabsetPanel(
                                            tabPanel("Harvest Control Rules",includeMarkdown("HCR.Rmd"),img(src="HCR.png")),
-                                           tabPanel("Scenarios",includeMarkdown("Scenarios.Rmd"),dataTableOutput("scenarios")),
-                                           tabPanel("Performance Metrics", includeMarkdown("metrics.Rmd"),dataTableOutput("metrics"), includeMarkdown("plots.Rmd"), 
+                                           tabPanel("Scenarios",includeMarkdown("Scenarios.Rmd"),DT::dataTableOutput("scenarios")),
+                                           tabPanel("Performance Metrics", includeMarkdown("metrics.Rmd"),DT::dataTableOutput("metrics"), includeMarkdown("plots.Rmd"), 
                                                    fluidRow(
                                                     column(6, includeMarkdown("trajectory.Rmd")),
                                                     column(6, actionButton("do3", "Animate"), imageOutput("trajectorygif"))),
@@ -37,7 +37,7 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                    fluidRow(
                                                      column(6, includeMarkdown("radar.Rmd")),
                                                      column(6, actionButton("do6", "Animate"), imageOutput("radargif")))),
-                                           tabPanel("Glossary", dataTableOutput("glossary")),
+                                           tabPanel("Glossary", DT::dataTableOutput("glossary")),
                                            tabPanel("Acknowledgments", includeMarkdown("Acknowledgments.Rmd"))
                                          )#close tabset
                                          )))))# close rows
@@ -123,7 +123,7 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                 tabsetPanel(
                                                     tabPanel("Stock Status Trajectory",
                                                              fluidRow(
-                                                               splitLayout(plotOutput("estimatedkobe", width="75%")))),
+                                                               splitLayout(plotOutput("kobe", width="75%")))),
                                                     tabPanel("Stock Status Ratio",
                                                              fluidRow(
                                                                splitLayout(plotOutput("SSBratio"), plotOutput("Fratio")))),
@@ -151,7 +151,7 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                      tags$div(actionButton("do8", "Compare!"))),
                                        mainPanel(width = 8,
                                                  fluidRow(
-                                                   plotOutput("CompareMis"), plotOutput("CompareAssess"), plotOutput("CompareManage"))
+                                                   plotOutput("CompareMis"), plotOutput("CompareAssess"), plotOutput("CompareManage"), plotOutput("CompareCatch"))
                                       )  # close main panel 
                                       )) # close tab panel
                                 ),#close navbar

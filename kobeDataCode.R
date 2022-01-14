@@ -1,5 +1,5 @@
 #kobe data pull
-setwd("C:/Users/jjesse/Box/HCR_Sims")#change this accordingly 
+setwd("C:/Users/jjesse/Box/Kerr Lab/Fisheries Science Lab/HCR_Evaluation")#change this accordingly 
 wd<-getwd()
 
 ####Set up files####
@@ -11,10 +11,10 @@ setwd(paste(wd,"/Sim_1","/sim",sep=""))
 
 sims <- list.files()
 
-Freal<-matrix(NA,ncol=length(sims),nrow=22)
-Fproxy<-matrix(NA,ncol=length(sims),nrow=22)
-SSBreal<-matrix(NA,ncol=length(sims),nrow=22)
-SSBproxy<-matrix(NA,ncol=length(sims),nrow=22)
+Freal<-matrix(NA,ncol=length(sims),nrow=20)
+Fproxy<-matrix(NA,ncol=length(sims),nrow=20)
+SSBreal<-matrix(NA,ncol=length(sims),nrow=20)
+SSBproxy<-matrix(NA,ncol=length(sims),nrow=20)
 
 for (k in 1:length(sims)){
   if (file.size(sims[k])==0){

@@ -5,9 +5,9 @@ account: jjesse
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 5359769
-bundleId: 5414732
+bundleId: 5469984
 url: https://jjesse.shinyapps.io/hcr_app/
-when: 1640703160.78611
-lastSyncTime: 1640703160.78611
+when: 1642195555.04725
+lastSyncTime: 1642195555.04725
 asMultiple: FALSE
 asStatic: FALSE

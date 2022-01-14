@@ -29,7 +29,7 @@ plotCompareManage <- function(comp,miss,hcr)
     df$Misspecification<-as.factor(df$Misspecification)
     
     
-    df2<-read.csv(here('Data/kobeestimated_data_jj.csv'))
+    df2<-read.csv(here('Data/kobe_data_jj.csv'))
     df2<-df2[df2$Compare_Mis==comp,]
     df2<-df2[df2$Misspecification==miss,]
     df2<-df2[df2$HCR==hcr,]
@@ -89,7 +89,7 @@ plotCompareManage <- function(comp,miss,hcr)
       Df$Misspecification<-as.factor(Df$Misspecification)
       
       
-      data2<-read.csv(here::here('Data/kobeestimated_data_jj.csv'))
+      data2<-read.csv(here::here('Data/kobe_data_jj.csv'))
       Df2<-filter(data2, Scenario %in% c(25,26,27,28))
       Df2<-Df2[Df2$HCR==hcr,]
       Df2$HCR[Df2$HCR==1]<-'Ramp'
@@ -139,7 +139,7 @@ plotCompareManage <- function(comp,miss,hcr)
       maxSSB<-max(c(1.1,max(df2$SSBestratioreal, na.rm=TRUE), max(Df2$SSBratioreal, na.rm=TRUE)))
       maxF<-max(c(1.1,max(df2$Fratioreal, na.rm=TRUE), max(Df2$Fratioreal, na.rm=TRUE)))
       
-      kobeest <- ggplot() +
+      kobe <- ggplot() +
         theme_bw()+
         annotate(geom = "rect", xmin = 1, xmax = maxSSB, ymin = 0, ymax = 1, fill = "green", colour = "green", alpha = 0.5) +
         annotate(geom = "rect", xmin = 0, xmax = 1, ymin = 1, ymax = maxF, fill = "red", colour = "red", alpha = 0.5) +
@@ -193,7 +193,7 @@ plotCompareManage <- function(comp,miss,hcr)
       Df$Misspecification[is.na(Df$Misspecification)]<-"Not misspecified"
       Df$Misspecification<-as.factor(Df$Misspecification)
       
-      data2<-read.csv(here::here('Data/kobeestimated_data_jj.csv'))
+      data2<-read.csv(here::here('Data/kobe_data_jj.csv'))
       Df2<-filter(data2, Scenario %in% c(1,2,3,4))
       Df2<-Df2[Df2$HCR==hcr,]
       Df2$HCR[Df2$HCR==1]<-'Ramp'
@@ -241,7 +241,7 @@ plotCompareManage <- function(comp,miss,hcr)
       maxSSB<-max(1.1,max(df2$SSBestratioreal, na.rm=TRUE), max(Df2$SSBratioreal, na.rm=TRUE))
       maxF<-max(1.1,max(df2$Fratioreal, na.rm=TRUE), max(Df2$Fratioreal, na.rm=TRUE))
       
-      kobeest <- ggplot() +
+      kobe <- ggplot() +
         theme_bw()+
         annotate(geom = "rect", xmin = 1, xmax = maxSSB, ymin = 0, ymax = 1, fill = "green", colour = "green", alpha = 0.5) +
         annotate(geom = "rect", xmin = 0, xmax = 1, ymin = 1, ymax = maxF, fill = "red", colour = "red", alpha = 0.5) +
@@ -306,7 +306,7 @@ plotCompareManage <- function(comp,miss,hcr)
     Df$HCR<-as.factor(Df$HCR)
     
     
-    df2<-read.csv(here::here('Data/kobeestimated_data_jj.csv'))
+    df2<-read.csv(here::here('Data/kobe_data_jj.csv'))
     df2<-df2[df2$Compare_Rho==comp,]
     df2<-df2[df2$HCR==hcr,]
     df2$HCR[df2$HCR==1]<-'Ramp'
@@ -316,7 +316,7 @@ plotCompareManage <- function(comp,miss,hcr)
     df2$HCR<-as.factor(df2$HCR)
     
     
-    data2<-read.csv(here::here('Data/kobeestimated_data_jj.csv'))
+    data2<-read.csv(here::here('Data/kobe_data_jj.csv'))
     Df2<-filter(data2, Scenario %in% c(13,14,15,16))
     Df2<-Df2[Df2$HCR==hcr,]
     Df2$HCR[Df2$HCR==1]<-'Ramp'
@@ -372,7 +372,7 @@ plotCompareManage <- function(comp,miss,hcr)
     maxSSB<-max(1.1,max(df2$SSBestratioreal, na.rm=TRUE), max(Df2$SSBratioreal, na.rm=TRUE))
     maxF<-max(1.1,max(df2$Fratioreal, na.rm=TRUE), max(Df2$Fratioreal), na.rm=TRUE)
     
-    kobeest <- ggplot() +
+    kobe <- ggplot() +
       theme_bw()+
       annotate(geom = "rect", xmin = 1, xmax = maxSSB, ymin = 0, ymax = 1, fill = "green", colour = "green", alpha = 0.5) +
       annotate(geom = "rect", xmin = 0, xmax = 1, ymin = 1, ymax = maxF, fill = "red", colour = "red", alpha = 0.5) +
@@ -434,7 +434,7 @@ plotCompareManage <- function(comp,miss,hcr)
     
     
     
-    df2<-read.csv(here::here('Data/kobeestimated_data_jj.csv'))
+    df2<-read.csv(here::here('Data/kobe_data_jj.csv'))
     df2<-df2[df2$Compare_Freq==comp,]
     df2<-df2[df2$HCR==hcr,]
     df2$HCR[df2$HCR==1]<-'Ramp'
@@ -444,7 +444,7 @@ plotCompareManage <- function(comp,miss,hcr)
     df2$HCR<-as.factor(df2$HCR)
     
     
-    data2<-read.csv(here::here('Data/kobeestimated_data_jj.csv'))
+    data2<-read.csv(here::here('Data/kobe_data_jj.csv'))
     Df2<-filter(data2, Scenario %in% c(13,14,15,16))
     Df2<-Df2[Df2$HCR==hcr,]
     Df2$HCR[Df2$HCR==1]<-'Ramp'
@@ -500,7 +500,7 @@ plotCompareManage <- function(comp,miss,hcr)
     maxSSB<-max(1.1,max(df2$SSBestratioreal, na.rm=TRUE), max(Df2$SSBestratioreal, na.rm=TRUE))
     maxF<-max(1.1,max(df2$Fratioreal, na.rm=TRUE), max(Df2$Fratioreal, na.rm=TRUE))
     
-    kobeest <- ggplot() +
+    kobe <- ggplot() +
       theme_bw()+
       annotate(geom = "rect", xmin = 1, xmax = maxSSB, ymin = 0, ymax = 1, fill = "green", colour = "green", alpha = 0.5) +
       annotate(geom = "rect", xmin = 0, xmax = 1, ymin = 1, ymax = maxF, fill = "red", colour = "red", alpha = 0.5) +
@@ -517,8 +517,8 @@ plotCompareManage <- function(comp,miss,hcr)
       scale_color_colorblind()+
       geom_vline(xintercept=0.5, linetype='dotted')+
       theme(text=element_text(size=16),legend.position='none')+
-      geom_text_repel(data=subset(df2, Year > 2037 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year),size=10)+
-     geom_text_repel(data=subset(Df2, Year > 2037 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year),size=10)
+      geom_text_repel(data=subset(df2, Year > 2037 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year))+
+     geom_text_repel(data=subset(Df2, Year > 2037 | Year < 2020),aes(x = SSBestratioreal, y = Fratioreal, label = Year))
     
     
     SSBratio<- ggplot()+
@@ -541,7 +541,7 @@ plotCompareManage <- function(comp,miss,hcr)
     
 
   }   
-  kobeest
+  kobe
   
   
   

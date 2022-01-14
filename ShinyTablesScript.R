@@ -653,13 +653,19 @@ scenarios$Rho[scenarios$Rho==1]<-"Rho-adjustment"
 scenarios$Frequency[scenarios$Frequency==1]<-"Two year updates"
 scenarios$Frequency[scenarios$Frequency==2]<-"Annual updates"
 
-update_ree<-left_join(data,scenarios, by=c("Scenario"))
+update_ree<-left_join(annual,scenarios, by=c("Scenario"))
 
 write.csv(update_ree, here("Data/ree_new.csv"))  
   
-  
+#kobe annual and two-year update merge
+kobe<-read.csv(here("Data/kobe_data_jj.csv"))%>%
+  filter(Scenario!= c(21:24))
+annual <- read.csv(here("Data/kobe_annual.csv"))%>%
+  rename(SSBestratioreal=SSBratioreal)
+kobe_merge <- full_join(kobe,annual)
+  data<-kobe_merge
 ##### add columns for comparison tab #####
-data<-read.csv(here::here("Data/Table_update.csv"))
+data<-read.csv(here::here("Data/kobe_data_jj.csv"))
 scenarios<-read.csv(here::here("Data/scenarios.csv"))
 
 data$Misspecification[data$Scenario %in% c(5,6,7,8)]<-1 #cod M
@@ -671,7 +677,7 @@ data$Compare_Mis[data$Scenario %in% c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,25,
 data$Compare_Rho[data$Scenario %in% c(17,18,19,20)]<-"Rho-adjusted and not rho-adjusted"
 data$Compare_Freq[data$Scenario %in% c(21,22,23,24)]<-"Two-year and annual stock assessment updates"
 
-write.csv(data, here::here("Data/Table_update.csv"))
+write.csv(data, here::here("Data/kobe_data_jj.csv"))
 
 
 data$Rho[data$Rho==2]<-"No rho-adjustment"
