@@ -2,6 +2,7 @@ library(shiny)
 library(markdown)
 library(ggmap)
 library(here)
+library(shinycssloaders)
 # ----------------------------------------#
 # MAIN USER INTERFACE FOR THE APPLICATION #
 # ----------------------------------------#
@@ -27,16 +28,16 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                            tabPanel("Performance Metrics", includeMarkdown("metrics.Rmd"),DT::dataTableOutput("metrics"), includeMarkdown("plots.Rmd"), 
                                                    fluidRow(
                                                     column(6, includeMarkdown("trajectory.Rmd")),
-                                                    column(6, actionButton("do3", "Animate"), imageOutput("trajectorygif"))),
+                                                    column(6, img(src="trajectory.PNG"))),
                                                    fluidRow(
                                                      column(6, includeMarkdown("boxplots.Rmd")),
-                                                     column(6, actionButton("do4", "Animate"), imageOutput("boxplotsgif"))),
+                                                     column(6, img(src="boxplots.PNG"))),
                                                    fluidRow(
                                                      column(6, includeMarkdown("kobe.Rmd")),
-                                                     column(6, actionButton("do5", "Animate"), imageOutput("kobegif"))),
+                                                     column(6, img(src="kobe.PNG"))),
                                                    fluidRow(
                                                      column(6, includeMarkdown("radar.Rmd")),
-                                                     column(6, actionButton("do6", "Animate"), imageOutput("radargif")))),
+                                                     column(6, img(src="radar.PNG")))),
                                            tabPanel("Glossary", DT::dataTableOutput("glossary")),
                                            tabPanel("Acknowledgments", includeMarkdown("Acknowledgments.Rmd"))
                                          )#close tabset
@@ -133,7 +134,7 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                          )#close tabset
                                        )# close main panel
                                       )), #close tab panel
-                             tabPanel("Compare Scenarios",
+                             tabPanel("Misspecifications",
                                       sidebarLayout(
                                         sidebarPanel(width=4,
                                                      div(helpText("Specifications"), style = "font-size:100%"),
@@ -151,7 +152,10 @@ shinyUI(fluidPage(navbarPage("New England Groundfish MSE",
                                                      tags$div(actionButton("do8", "Compare!"))),
                                        mainPanel(width = 8,
                                                  fluidRow(
-                                                   plotOutput("CompareMis"), plotOutput("CompareAssess"), plotOutput("CompareManage"), plotOutput("CompareCatch"))
+                                                   conditionalPanel(
+                                                     condition = "input.do8 > 0",
+                                                     style = "display: none;",
+                                                  withSpinner(plotOutput("CompareMis"), type=1), plotOutput("CompareAssess"), plotOutput("CompareManage"), plotOutput("CompareCatch")))
                                       )  # close main panel 
                                       )) # close tab panel
                                 ),#close navbar

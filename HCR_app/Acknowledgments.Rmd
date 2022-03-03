@@ -5,7 +5,9 @@ output: html_document
 ### Acknowledgments
 
 * Funding support for this research is provided by the New England Fishery Management Council (NEFMC)
-
+  + PI: **Lisa Kerr**
+  + Lead analyst: **Mackenzie Mazur** 
+  
 <br>
 
 * Technical support:
@@ -26,7 +28,10 @@ output: html_document
 
 * Development of the MSE modeling architecture by **Samuel Truesdell, Mackenzie Mazur, Lisa Kerr, Andrew Pershing, Ashley Weston, Steve Cadrin, Gavin Fay, Jonathan Cummings, Sarah Gaichas, Min-Yang Lee, and Anna Birkenbach**. This work was supported by NOAA COCA program and NOAA SK Program.
 
+* Web application development by Jerelle Jesse
+
 <br>
+
 
 * Please cite full report:
 <br>

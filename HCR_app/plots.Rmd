@@ -8,7 +8,7 @@ output: html_document
 
 ### How to read plots?
 
-Click **Animate** to see an example of each plot type!
+
 <br>
 
 

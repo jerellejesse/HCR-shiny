@@ -16,8 +16,7 @@ div.blue{background-color:#e6f0ff; border-radius: 5px; padding: 10px; font-size:
 Introduction:
 </div>
 
-<details>
-<summary><i class="fas fa-fish"> Click to Read </i></summary>
+
 
 
 Management of New England groundfish fisheries has been challenging due to the multispecies nature of the fishery and the varied status of stocks that ranges from historic low to record high biomasses. Additionally, most groundfish stock assessments exhibit inconsistencies among recent stock assessment estimates (a.k.a. retrospective patterns), which can present
@@ -28,7 +27,6 @@ challenges for sustainable management of fisheries. Accordingly, the New England
 
 <br>
 
-</details>
 
 
 <style>
@@ -39,9 +37,7 @@ div.blue{background-color:#e6f0ff; border-radius: 5px; padding: 10px; font-size:
 Approach:
 </div>
 
-<details>
 
-<summary><i class="fas fa-fish"> Click to Read </i></summary>
 
 This project focused on testing alternative HCR performance under a range of current groundfish conditions and stock assessment issues.<br>
   * **It did not test:**
@@ -58,8 +54,6 @@ This tool allows users to explore performance of HCRs through scenarios with dif
 <br>
 
 
-</details>
-
 
 
 <style>
@@ -70,8 +64,6 @@ div.blue{background-color:#e6f0ff; border-radius: 5px; padding: 10px; font-size:
 How to use this tool:
 </div>
 
-<details> 
-<summary><i class="fas fa-fish"> Click to Read </i></summary>
 
 
 There are five tabs across the top of the page designed to walk users through the results from the MSE. 
@@ -79,18 +71,18 @@ There are five tabs across the top of the page designed to walk users through th
 
 1. **Home:** Introduces the rationale, goals, approach of the project. This page also links to the full report, executive summary, and GMRI project site. Further down the page there are also tabs that explain the alternative HCRs, scenarios, and performance metrics in more detail. There are also glossary and acknowledgment tabs included here. <br>
 
-2. **Stock Performance:** Results from the MSE pertaining to the stock are displayed here by choosing model specifications, clicking "create plots" and moving across the tabs to see different performance metrics. <br>
+2. **Stock Performance:** Results from the MSE pertaining to the stock are displayed here by choosing model specifications, clicking "create plots" and moving across the tabs to see different performance metrics comparing HCRs. <br>
 
-3. **Assessment Performance:** Results from the MSE pertaining to the stock assessment are displayed here by choosing model specifications, clicking "create plots" and moving across the tabs to see different performance metrics. <br>
+3. **Assessment Performance:** Results from the MSE pertaining to the stock assessment are displayed here by choosing model specifications, clicking "create plots" and moving across the tabs to see different performance metrics comparing HCRs. <br>
 
-4. **Management Performance:** Results from the MSE pertaining to the stock management are displayed here by choosing model specifications, clicking "create plots" and moving across the tabs to see different performance metrics. <br>
+4. **Management Performance:** Results from the MSE pertaining to the stock management are displayed here by choosing model specifications, clicking "create plots" and moving across the tabs to see different performance metrics comparing HCRs. <br>
     * **User specifies:** 
        + operating model (OM) and misspecification scenario 
        + rho-adjustment option
        + stock assessment frequency <br>
 <br>
 
-5. **Compare Scenarios:** Compare scenarios based on guided prompts <br>
+5. **Misspecifications:** Compare misspecifications based on guided prompts <br>
   * **User chooses to compare:**
       + Misspecified versus correctly specified stock assessment with             further choice of the type of misspecification
       + Rho-adjusted versus not rho-adjusted for the natural mortality and         recruitment misspecified scenario
@@ -99,5 +91,4 @@ There are five tabs across the top of the page designed to walk users through th
   * Natural mortality and recruitment misspecification used for               rho-adjustment and frequency comparisons because it is likely             multiple parameters are misspecified and the combination produced         retrospective patterns similar to those in the most recent GOM cod        stock assessment.
 
 <br>
-</details>
 

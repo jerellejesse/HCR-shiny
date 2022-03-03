@@ -54,27 +54,27 @@ output$metrics<- DT::renderDataTable(metrics())
 output$scenarios<-DT::renderDataTable(scenarios())
 output$glossary<-DT::renderDataTable(Glossary())
 
-#render gifs
-observeEvent(input$do3, {
-output$trajectorygif<- renderImage(
-  list(src=here("www/trajectory.gif"), align="left", height="300px", width="600px"), deleteFile = FALSE)
-   })
-
-observeEvent(input$do4,{
-output$boxplotsgif<- renderImage(
-  list(src=here("www/boxplots.gif"), align="left", height="300px", width="600px"), deleteFile = FALSE)
-  })
-
-observeEvent(input$do5,{
-output$kobegif<- renderImage(
-  list(src=here("www/kobe.gif"), align="left", height="300px", width="500px"), deleteFile = FALSE)
-  })
-
-observeEvent(input$do6,{
-output$radargif<- renderImage(
-  list(src=here("www/radar.gif"), align="left", height="300px", width="300px"), deleteFile = FALSE)
-  })
-   
+# #render gifs
+# observeEvent(input$do3, {
+# output$trajectorygif<- renderImage(
+#   list(src=here("www/trajectory.gif"), align="left", height="300px", width="600px"), deleteFile = FALSE)
+#    })
+# 
+# observeEvent(input$do4,{
+# output$boxplotsgif<- renderImage(
+#   list(src=here("www/boxplots.gif"), align="left", height="300px", width="600px"), deleteFile = FALSE)
+#   })
+# 
+# observeEvent(input$do5,{
+# output$kobegif<- renderImage(
+#   list(src=here("www/kobe.gif"), align="left", height="300px", width="500px"), deleteFile = FALSE)
+#   })
+# 
+# observeEvent(input$do6,{
+# output$radargif<- renderImage(
+#   list(src=here("www/radar.gif"), align="left", height="300px", width="300px"), deleteFile = FALSE)
+#   })
+#    
 
   # Do a control rule 
   observeEvent(input$do,{
