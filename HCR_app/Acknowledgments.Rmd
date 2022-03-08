@@ -29,7 +29,9 @@ output: html_document
 * Development of the MSE modeling architecture by **Samuel Truesdell, Mackenzie Mazur, Lisa Kerr, Andrew Pershing, Ashley Weston, Steve Cadrin, Gavin Fay, Jonathan Cummings, Sarah Gaichas, Min-Yang Lee, and Anna Birkenbach**. This work was supported by NOAA COCA program and NOAA SK Program.
 
 * Web application development by Jerelle Jesse
-
+* Glossary based on The Joint Tuna RFMO Management Strategy Evaluation Working Group Meeting in Seattle, WA June 13-15, 2018
+  - Anon. 2018. Glossary of terms for harvest strategies, management procedures and management strategy evaluation, http://www.tunaorg.org/Documents/MSEGlossary_tRFMO_MSEWG2018.pdf. 
+  
 <br>
 
 
